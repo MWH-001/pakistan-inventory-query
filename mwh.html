@@ -159,8 +159,9 @@
             left: 0;
             right: 0;
             z-index: 100;
-            flex-direction: column;
-            gap: 6px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 4px 12px;
             max-height: 200px;
             overflow-y: auto;
             padding: 6px 8px;
@@ -169,10 +170,12 @@
             border-top: none;
             border-radius: 0 0 6px 6px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            column-count: 2;
+            column-gap: 12px;
         }
         
         .warehouse-box:focus-within .warehouse-list {
-            display: flex;
+            display: block;
         }
         
         .warehouse-item {
@@ -180,6 +183,7 @@
             align-items: center;
             gap: 3px;
             font-size: 11px;
+            break-inside: avoid;
         }
         
         .warehouse-item input[type="checkbox"] {
