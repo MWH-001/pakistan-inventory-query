@@ -489,7 +489,7 @@
                 const warehouses = new Set();
                 Object.values(inventoryData).forEach(warehousesObj => {
                     Object.keys(warehousesObj).forEach(wh => {
-                        if (!wh.includes('MWH')) {
+                        if (!wh.includes('MWH') && !wh.includes('ESS')) {
                             warehouses.add(wh);
                         }
                     });
