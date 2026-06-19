@@ -523,6 +523,14 @@
                     });
                 });
                 
+                // Show all warehouse names when search box is focused
+                warehouseSearch.addEventListener('focus', () => {
+                    warehouseSearch.value = '';
+                    document.querySelectorAll('.warehouse-item').forEach(item => {
+                        item.style.display = 'flex';
+                    });
+                });
+                
                 // Update search box to show selected warehouse
                 warehouseList.addEventListener('change', (e) => {
                     if (e.target.type === 'checkbox') {
