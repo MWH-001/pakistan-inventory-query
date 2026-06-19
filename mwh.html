@@ -558,7 +558,7 @@
         // Search
         async function search() {
             const materialCode = document.getElementById('materialCode').value.trim();
-            const warehouse = document.getElementById('warehouse').value;
+            const selectedWarehouses = Array.from(document.querySelectorAll('#warehouseList input[type="checkbox"]:checked')).map(cb => cb.value);
             
             if (!materialCode) {
                 showError('Please enter a material code');
@@ -582,18 +582,20 @@
             const mainResults = [];
             
             if (inventoryData[materialCode]) {
-                if (warehouse) {
-                    const stock = inventoryData[materialCode][warehouse]?.Good || 0;
-                    mainStock = stock;
-                    if (stock > 0) {
-                        mainResults.push({
-                            code: materialCode,
-                            desc: 'Main Material',
-                            warehouse: warehouse,
-                            stock: stock,
-                            type: 'main'
-                        });
-                    }
+                if (selectedWarehouses.length > 0) {
+                    selectedWarehouses.forEach(wh => {
+                        const stock = inventoryData[materialCode][wh]?.Good || 0;
+                        mainStock += stock;
+                        if (stock > 0) {
+                            mainResults.push({
+                                code: materialCode,
+                                desc: 'Main Material',
+                                warehouse: wh,
+                                stock: stock,
+                                type: 'main'
+                            });
+                        }
+                    });
                 } else {
                     Object.entries(inventoryData[materialCode]).forEach(([wh, data]) => {
                         const stock = data.Good || 0;
@@ -621,18 +623,20 @@
                     const subDesc = sub.desc || '';
                     
                     if (inventoryData[subCode]) {
-                        if (warehouse) {
-                            const stock = inventoryData[subCode][warehouse]?.Good || 0;
-                            subStock += stock;
-                            if (stock > 0) {
-                                subResults.push({
-                                    code: subCode,
-                                    desc: subDesc,
-                                    warehouse: warehouse,
-                                    stock: stock,
-                                    type: 'sub'
-                                });
-                            }
+                        if (selectedWarehouses.length > 0) {
+                            selectedWarehouses.forEach(wh => {
+                                const stock = inventoryData[subCode][wh]?.Good || 0;
+                                subStock += stock;
+                                if (stock > 0) {
+                                    subResults.push({
+                                        code: subCode,
+                                        desc: subDesc,
+                                        warehouse: wh,
+                                        stock: stock,
+                                        type: 'sub'
+                                    });
+                                }
+                            });
                         } else {
                             Object.entries(inventoryData[subCode]).forEach(([wh, data]) => {
                                 const stock = data.Good || 0;
@@ -662,8 +666,10 @@
             }
             allCodes.forEach(code => {
                 if (inTransitData && inTransitData[code]) {
-                    if (warehouse) {
-                        totalInTransit += inTransitData[code][warehouse] || 0;
+                    if (selectedWarehouses.length > 0) {
+                        selectedWarehouses.forEach(wh => {
+                            totalInTransit += inTransitData[code][wh] || 0;
+                        });
                     } else {
                         Object.values(inTransitData[code]).forEach(qty => {
                             totalInTransit += qty;
