@@ -21,8 +21,7 @@
       "Defective": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 2.0,
-      "Defective": 1.0
+      "Good": 2.0
     },
     "PCC-E-NOWSHEHRA": {
       "Good": 2.0
@@ -52,8 +51,7 @@
       "Good": 1.0
     },
     "PK-L4-Device": {
-      "Good": 2.0,
-      "Defective": 7.0
+      "Defective": 9.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -115,8 +113,7 @@
       "Good": 2.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 3.0,
-      "Defective": 1.0
+      "Good": 3.0
     },
     "JM TECH-M-CHAKWAL": {
       "Good": 1.0
@@ -135,8 +132,8 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 21.0,
-      "Defective": 216.0
+      "Good": 18.0,
+      "Defective": 206.0
     },
     "Carlcare-Lahore": {
       "Defective": 1.0
@@ -318,8 +315,7 @@
       "Defective": 2.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Good": 1.0
     },
     "Ali Mobile Zone-M-Kabirwala": {
       "Good": 1.0
@@ -339,7 +335,7 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 64.0,
+      "Good": 62.0,
       "Defective": 79.0
     },
     "Carlcare-Lahore": {
@@ -745,13 +741,16 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 40.0,
+      "Good": 39.0,
       "Defective": 1.0
     },
     "Carlcare-Lahore": {
       "Good": 6.0
     },
     "Advance-E-Gujrat": {
+      "Good": 1.0
+    },
+    "Gulf Mobile-E-Taxila": {
       "Good": 1.0
     },
     "Carlcare-Hyderabad": {
@@ -852,7 +851,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 18.0,
+      "Good": 17.0,
       "Defective": 6.0
     },
     "Carlcare-Lahore": {
@@ -888,8 +887,8 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 3.0,
-      "Defective": 11.0,
+      "Good": 1.0,
+      "Defective": 10.0,
       "Damage": 14.0
     },
     "Carlcare-Hyderabad": {
@@ -964,7 +963,7 @@
     },
     "Pakistan-MWH": {
       "Good": 263.0,
-      "Defective": 271.0
+      "Defective": 266.0
     },
     "Carlcare-Lahore": {
       "Good": 5.0
@@ -1028,9 +1027,6 @@
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 3.0
-    },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
     },
     "Pakistan-MWH": {
       "Good": 20.0,
@@ -1100,9 +1096,6 @@
     },
     "MMT-E-Faisalabad": {
       "Good": 1.0
-    },
-    "Advance-E-Faisalabad": {
-      "Defective": 2.0
     },
     "Advance-E-Bahawalpur": {
       "Good": 1.0
@@ -1282,11 +1275,8 @@
     "MMT-E-Faisalabad": {
       "Good": 5.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 2.0
-    },
     "MMT-E-Multan": {
-      "Good": 1.0,
+      "Good": 2.0,
       "Defective": 1.0
     },
     "PCC-E-NOWSHEHRA": {
@@ -1370,7 +1360,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 33.0
+      "Good": 77.0
     },
     "Carlcare-Lahore": {
       "Good": 15.0
@@ -1429,8 +1419,7 @@
       "Good": 5.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 2.0
+      "Good": 1.0
     },
     "MMT-E-Multan": {
       "Good": 1.0,
@@ -1446,7 +1435,7 @@
       "Defective": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 238.0,
+      "Good": 235.0,
       "Defective": 47.0,
       "Damage": 2.0
     },
@@ -1676,8 +1665,7 @@
       "Defective": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Good": 1.0
     },
     "MMT-E-Multan": {
       "Good": 1.0
@@ -1689,7 +1677,7 @@
       "Good": 3.0
     },
     "Pakistan-MWH": {
-      "Good": 204.0,
+      "Good": 206.0,
       "Defective": 19.0
     },
     "Carlcare-Lahore": {
@@ -1762,7 +1750,7 @@
       "Good": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0
+      "Good": 2.0
     },
     "MMT-E-Multan": {
       "Good": 8.0
@@ -1774,7 +1762,7 @@
       "Good": 3.0
     },
     "Pakistan-MWH": {
-      "Good": 105.0
+      "Good": 104.0
     },
     "Carlcare-Lahore": {
       "Good": 5.0
@@ -1795,7 +1783,7 @@
       "Good": 1.0
     },
     "M&P-M-Karachi-saddar": {
-      "Good": 2.0
+      "Good": 1.0
     },
     "AL Noor Mobile-E-Quetta": {
       "Good": 1.0
@@ -1838,7 +1826,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 4.0,
+      "Good": 3.0,
       "Defective": 5.0
     },
     "Advance-E-Gujrat": {
@@ -1895,7 +1883,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 71.0,
+      "Good": 68.0,
       "Defective": 2.0
     },
     "Gulf Mobile-E-Taxila": {
@@ -1957,15 +1945,16 @@
       "Good": 1.0,
       "Defective": 1.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "Pakistan-MWH": {
-      "Good": 21.0,
+      "Good": 19.0,
       "Defective": 6.0
     },
     "Carlcare-Lahore": {
-      "Good": 5.0
+      "Good": 4.0,
+      "Defective": 1.0
+    },
+    "Gulf Mobile-E-Taxila": {
+      "Good": 1.0
     },
     "DLI-M-MARDAN": {
       "Defective": 1.0
@@ -2065,7 +2054,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 19.0,
+      "Good": 17.0,
       "Defective": 23.0,
       "Damage": 22.0
     },
@@ -2173,7 +2162,8 @@
       "Defective": 2.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 10.0
+      "Good": 9.0,
+      "Defective": 1.0
     },
     "JM TECH-M-CHAKWAL": {
       "Good": 2.0
@@ -2195,7 +2185,7 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 1609.0,
+      "Good": 1602.0,
       "Defective": 105.0
     },
     "Carlcare-Lahore": {
@@ -2206,7 +2196,7 @@
       "Good": 5.0
     },
     "Gulf Mobile-E-Taxila": {
-      "Good": 3.0
+      "Good": 6.0
     },
     "Carlcare-Hyderabad": {
       "Good": 11.0,
@@ -2217,8 +2207,7 @@
       "Defective": 7.0
     },
     "DLI-M-MARDAN": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Defective": 2.0
     },
     "Advance-E-Sareena": {
       "Good": 5.0
@@ -2359,8 +2348,7 @@
       "Good": 3.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Good": 1.0
     },
     "MMT-E-Multan": {
       "Good": 2.0,
@@ -2376,8 +2364,8 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 52.0,
-      "Defective": 36.0
+      "Good": 51.0,
+      "Defective": 29.0
     },
     "Carlcare-Lahore": {
       "Good": 4.0,
@@ -2466,7 +2454,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 123.0,
+      "Good": 121.0,
       "Defective": 6.0
     },
     "Carlcare-Lahore": {
@@ -2726,7 +2714,7 @@
     },
     "Pakistan-MWH": {
       "Good": 117.0,
-      "Defective": 62.0
+      "Defective": 60.0
     },
     "Carlcare-Lahore": {
       "Good": 3.0
@@ -3048,8 +3036,7 @@
       "Good": 1.0
     },
     "PK-L4-Device": {
-      "Good": 2.0,
-      "Defective": 19.0
+      "Defective": 21.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 2.0
@@ -3200,7 +3187,8 @@
       "Good": 2.0
     },
     "MMT-E-Multan": {
-      "Good": 25.0
+      "Good": 24.0,
+      "Defective": 1.0
     },
     "Pakistan-MWH": {
       "Good": 263.0,
@@ -3285,7 +3273,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 25.0,
+      "Good": 23.0,
       "Defective": 6.0
     },
     "Carlcare-Lahore": {
@@ -3964,13 +3952,11 @@
       "Defective": 1.0
     },
     "PK-L4-Device": {
-      "Semi-manufactured": 8.0
+      "Semi-manufactured": 8.0,
+      "Good": 3.0
     },
     "MMT-E-Faisalabad": {
       "Defective": 3.0
-    },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
     },
     "JM TECH-M-CHAKWAL": {
       "Defective": 1.0
@@ -4236,7 +4222,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 58.0
+      "Good": 57.0
     },
     "Carlcare-Lahore": {
       "Good": 1.0
@@ -4246,6 +4232,9 @@
     },
     "Carlcare-Hyderabad": {
       "Good": 3.0
+    },
+    "M&P-E-Lahore": {
+      "Good": 1.0
     },
     "Advance-E-Sukkur": {
       "Good": 2.0
@@ -4283,8 +4272,7 @@
       "Defective": 17.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 4.0
+      "Good": 3.0
     },
     "JM TECH-M-CHAKWAL": {
       "Good": 4.0
@@ -4293,7 +4281,7 @@
       "Good": 3.0
     },
     "MMT-E-Multan": {
-      "Good": 7.0,
+      "Good": 9.0,
       "Defective": 11.0
     },
     "Advance-E-Bahawalpur": {
@@ -4307,35 +4295,35 @@
       "Good": 3.0
     },
     "Pakistan-MWH": {
-      "Good": 1506.0,
+      "Good": 1440.0,
       "Defective": 366.0
     },
     "Carlcare-Lahore": {
-      "Good": 26.0,
-      "Defective": 2.0
+      "Good": 25.0,
+      "Defective": 3.0
     },
     "Advance-E-Gujrat": {
       "Good": 3.0,
       "Defective": 1.0
     },
     "Gulf Mobile-E-Taxila": {
-      "Good": 5.0,
+      "Good": 8.0,
       "Defective": 1.0
     },
     "Carlcare-Hyderabad": {
       "Defective": 2.0
     },
     "M&P-E-Lahore": {
-      "Good": 7.0,
-      "Defective": 17.0
+      "Good": 6.0,
+      "Defective": 18.0
     },
     "DLI-M-MARDAN": {
       "Good": 3.0,
       "Defective": 2.0
     },
     "Advance-E-Sareena": {
-      "Good": 4.0,
-      "Defective": 3.0
+      "Good": 3.0,
+      "Defective": 4.0
     },
     "Advance-E-Sukkur": {
       "Defective": 10.0
@@ -4348,14 +4336,15 @@
       "Defective": 3.0
     },
     "M&P-M-Karachi-saddar": {
-      "Good": 8.0
+      "Good": 5.0,
+      "Defective": 3.0
     },
     "Carlcare-Peshawar": {
-      "Good": 2.0
+      "Defective": 2.0
     },
     "MMT-E-RAWALPINDI": {
-      "Good": 16.0,
-      "Defective": 4.0
+      "Good": 14.0,
+      "Defective": 6.0
     },
     "Carlcare-Islamabad": {
       "Good": 8.0,
@@ -4369,7 +4358,6 @@
       "Good": 2.0
     },
     "Advance-E-Sargodha": {
-      "Good": 1.0,
       "Defective": 1.0
     },
     "Qaisar Telecom-M-Samundri": {
@@ -4386,14 +4374,15 @@
       "Defective": 1.0
     },
     "Fancy Mobile-E-Charsada": {
-      "Good": 2.0,
-      "Defective": 5.0
+      "Good": 1.0,
+      "Defective": 6.0
     },
     "M&P-E-Rawalpindi": {
       "Defective": 2.0
     },
     "PGS Mobile-M-ABT": {
-      "Good": 4.0
+      "Good": 3.0,
+      "Defective": 1.0
     },
     "AL Noor Mobile-E-Quetta": {
       "Good": 3.0,
@@ -4439,7 +4428,7 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 88.0,
+      "Good": 86.0,
       "Defective": 46.0
     },
     "Carlcare-Lahore": {
@@ -4695,7 +4684,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 70.0,
+      "Good": 66.0,
       "Defective": 8.0
     },
     "Carlcare-Lahore": {
@@ -4731,7 +4720,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 66.0,
+      "Good": 64.0,
       "Defective": 2.0
     },
     "Carlcare-Lahore": {
@@ -4779,7 +4768,7 @@
       "Good": 6.0
     },
     "Pakistan-MWH": {
-      "Good": 98.0
+      "Good": 96.0
     },
     "Carlcare-Lahore": {
       "Good": 11.0
@@ -5151,7 +5140,8 @@
       "Good": 1.0
     },
     "Advance-E-Sialkot": {
-      "Good": 2.0
+      "Good": 1.0,
+      "Defective": 1.0
     }
   },
   "12114910": {
@@ -5186,7 +5176,7 @@
     },
     "Pakistan-MWH": {
       "Good": 121.0,
-      "Defective": 4.0,
+      "Defective": 3.0,
       "Damage": 24.0
     },
     "Carlcare-Lahore": {
@@ -5320,7 +5310,7 @@
       "Good": 5.0
     },
     "Pakistan-MWH": {
-      "Good": 34.0,
+      "Good": 32.0,
       "Defective": 9.0,
       "Damage": 32.0
     },
@@ -5344,7 +5334,8 @@
       "Good": 1.0
     },
     "M&P-M-Karachi-saddar": {
-      "Good": 2.0
+      "Good": 1.0,
+      "Defective": 1.0
     },
     "Carlcare-Peshawar": {
       "Good": 1.0,
@@ -5499,8 +5490,7 @@
       "Defective": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 3.0,
-      "Defective": 3.0
+      "Good": 2.0
     },
     "JM TECH-M-CHAKWAL": {
       "Good": 1.0,
@@ -5536,6 +5526,7 @@
       "Defective": 1.0
     },
     "Gulf Mobile-E-Taxila": {
+      "Good": 1.0,
       "Defective": 6.0
     },
     "Carlcare-Hyderabad": {
@@ -5558,7 +5549,7 @@
       "Good": 6.0
     },
     "Carlcare-Peshawar": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "MMT-E-RAWALPINDI": {
       "Good": 19.0,
@@ -5836,7 +5827,7 @@
       "Good": 16.0
     },
     "Pakistan-MWH": {
-      "Good": 54.0
+      "Good": 59.0
     },
     "Carlcare-Lahore": {
       "Good": 8.0
@@ -5976,7 +5967,7 @@
       "Good": 3.0
     },
     "Pakistan-MWH": {
-      "Defective": 20.0,
+      "Defective": 19.0,
       "Damage": 51.0
     },
     "Carlcare-Lahore": {
@@ -6055,8 +6046,7 @@
       "Defective": 11.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 5.0
+      "Good": 1.0
     },
     "JM TECH-M-CHAKWAL": {
       "Defective": 2.0
@@ -6138,12 +6128,15 @@
     "MMT-E-Faisalabad": {
       "Good": 1.0
     },
+    "MMT-E-Multan": {
+      "Good": 1.0
+    },
     "Advance-E-Bahawalpur": {
       "Good": 1.0
     },
     "Pakistan-MWH": {
       "Good": 10.0,
-      "Defective": 14.0,
+      "Defective": 13.0,
       "Damage": 9.0
     },
     "Carlcare-Lahore": {
@@ -6334,7 +6327,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 295.0,
+      "Good": 291.0,
       "Defective": 24.0
     },
     "Carlcare-Lahore": {
@@ -6495,9 +6488,6 @@
     "Carlcare-Islamabad": {
       "Good": 2.0
     },
-    "Advance-E-Sargodha": {
-      "Good": 1.0
-    },
     "PK-L4-PCBA": {
       "Semi-manufactured": 131.0
     },
@@ -6516,7 +6506,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 76.0
+      "Good": 75.0
     },
     "Grace Mobile-M-Haroonabad": {
       "Good": 1.0
@@ -6548,7 +6538,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 79.0,
+      "Good": 78.0,
       "Defective": 13.0
     },
     "Carlcare-Lahore": {
@@ -6625,7 +6615,7 @@
       "Defective": 2.0
     },
     "M&P-M-Karachi-saddar": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Carlcare-Islamabad": {
       "Good": 2.0
@@ -6781,8 +6771,8 @@
       "Defective": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 2.0
+      "Good": 2.0,
+      "Defective": 1.0
     },
     "JM TECH-M-CHAKWAL": {
       "Good": 1.0
@@ -6797,22 +6787,25 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 188.0,
-      "Defective": 74.0
+      "Good": 178.0,
+      "Defective": 45.0
     },
     "Carlcare-Lahore": {
-      "Good": 12.0,
-      "Defective": 2.0
+      "Good": 11.0,
+      "Defective": 3.0
     },
     "Advance-E-Gujrat": {
+      "Good": 3.0
+    },
+    "Gulf Mobile-E-Taxila": {
       "Good": 3.0
     },
     "Carlcare-Hyderabad": {
       "Good": 1.0
     },
     "M&P-E-Lahore": {
-      "Good": 8.0,
-      "Defective": 2.0
+      "Good": 7.0,
+      "Defective": 3.0
     },
     "DLI-M-MARDAN": {
       "Good": 1.0
@@ -6892,8 +6885,7 @@
       "Defective": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 2.0,
-      "Defective": 1.0
+      "Good": 2.0
     },
     "MMT-E-Multan": {
       "Good": 3.0
@@ -6909,6 +6901,9 @@
       "Defective": 1.0
     },
     "Advance-E-Gujrat": {
+      "Good": 1.0
+    },
+    "Gulf Mobile-E-Taxila": {
       "Good": 1.0
     },
     "Carlcare-Hyderabad": {
@@ -7072,7 +7067,7 @@
     },
     "Pakistan-MWH": {
       "Good": 175.0,
-      "Defective": 48.0
+      "Defective": 45.0
     },
     "Carlcare-Lahore": {
       "Good": 3.0
@@ -7172,8 +7167,7 @@
       "Good": 2.0
     },
     "PK-L4-Device": {
-      "Good": 3.0,
-      "Defective": 2.0
+      "Defective": 5.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -7274,11 +7268,14 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 495.0,
-      "Defective": 271.0
+      "Good": 494.0,
+      "Defective": 268.0
     },
     "Carlcare-Lahore": {
       "Good": 4.0
+    },
+    "Gulf Mobile-E-Taxila": {
+      "Good": 1.0
     },
     "Carlcare-Hyderabad": {
       "Good": 1.0
@@ -7343,9 +7340,6 @@
     "Carlcare-Karachi(Saddar)": {
       "Good": 2.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "MMT-E-Multan": {
       "Good": 1.0
     },
@@ -7397,7 +7391,7 @@
       "Defective": 7.0
     },
     "Pakistan-MWH": {
-      "Good": 303.0,
+      "Good": 302.0,
       "Defective": 22.0,
       "Damage": 1.0
     },
@@ -7583,8 +7577,7 @@
       "Defective": 2.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 5.0,
-      "Defective": 5.0
+      "Good": 5.0
     },
     "JM TECH-M-CHAKWAL": {
       "Defective": 2.0
@@ -7695,7 +7688,7 @@
     },
     "Pakistan-MWH": {
       "Good": 33.0,
-      "Defective": 16.0,
+      "Defective": 5.0,
       "Damage": 15.0
     },
     "Carlcare-Lahore": {
@@ -7762,8 +7755,7 @@
       "Good": 2.0
     },
     "PK-L4-Device": {
-      "Good": 3.0,
-      "Defective": 3.0
+      "Defective": 6.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -7792,7 +7784,8 @@
       "Good": 1.0
     },
     "Advance-E-Sareena": {
-      "Good": 2.0
+      "Good": 1.0,
+      "Defective": 1.0
     },
     "M&P-M-Karachi-saddar": {
       "Good": 7.0
@@ -7854,15 +7847,15 @@
       "Good": 11.0
     },
     "MMT-E-Multan": {
-      "Good": 6.0,
-      "Defective": 5.0
+      "Good": 5.0,
+      "Defective": 6.0
     },
     "Advance-E-Bahawalpur": {
       "Good": 7.0,
       "Defective": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 1107.0,
+      "Good": 1089.0,
       "Defective": 59.0
     },
     "Carlcare-Lahore": {
@@ -7945,8 +7938,7 @@
       "Good": 1.0
     },
     "PK-L4-Device": {
-      "Good": 7.0,
-      "Defective": 26.0
+      "Defective": 33.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -8082,9 +8074,6 @@
     "MMT-E-Faisalabad": {
       "Good": 1.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "Advance-E-Bahawalpur": {
       "Good": 1.0
     },
@@ -8214,7 +8203,7 @@
       "Good": 6.0
     },
     "Pakistan-MWH": {
-      "Good": 719.0
+      "Good": 718.0
     },
     "Carlcare-Lahore": {
       "Good": 68.0
@@ -8606,8 +8595,7 @@
       "Good": 1.0
     },
     "PK-L4-Device": {
-      "Good": 1.0,
-      "Defective": 6.0
+      "Defective": 7.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -8672,6 +8660,7 @@
       "Good": 2.0
     },
     "Advance-E-Faisalabad": {
+      "Good": 1.0,
       "Defective": 1.0
     },
     "PCC-E-NOWSHEHRA": {
@@ -8840,15 +8829,14 @@
       "Good": 1.0
     },
     "PK-L4-Device": {
-      "Good": 4.0,
-      "Defective": 30.0
+      "Good": 1.0,
+      "Defective": 33.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Defective": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Good": 1.0
     },
     "MMT-E-Multan": {
       "Good": 4.0
@@ -8864,7 +8852,7 @@
     },
     "Pakistan-MWH": {
       "Good": 89.0,
-      "Defective": 8.0
+      "Defective": 2.0
     },
     "Carlcare-Lahore": {
       "Good": 11.0
@@ -9151,7 +9139,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 8.0
+      "Good": 7.0
     },
     "Carlcare-Lahore": {
       "Good": 2.0
@@ -9488,7 +9476,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 31.0
+      "Good": 30.0
     },
     "Carlcare-Lahore": {
       "Good": 4.0
@@ -9512,6 +9500,9 @@
   "12029974": {
     "ITS4U-M-Attock": {
       "Defective": 1.0
+    },
+    "Advance-E-Faisalabad": {
+      "Good": 1.0
     },
     "Pakistan-MWH": {
       "Defective": 52.0
@@ -9558,11 +9549,11 @@
       "Good": 2.0
     },
     "MMT-E-Faisalabad": {
-      "Good": 3.0,
-      "Defective": 1.0
+      "Good": 2.0,
+      "Defective": 2.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 4.0,
+      "Good": 3.0,
       "Defective": 1.0
     },
     "JM TECH-M-CHAKWAL": {
@@ -9579,8 +9570,8 @@
       "Good": 4.0
     },
     "Pakistan-MWH": {
-      "Good": 190.0,
-      "Defective": 130.0
+      "Good": 182.0,
+      "Defective": 103.0
     },
     "Carlcare-Lahore": {
       "Good": 11.0
@@ -9593,8 +9584,8 @@
       "Good": 1.0
     },
     "M&P-E-Lahore": {
-      "Good": 8.0,
-      "Defective": 3.0
+      "Good": 7.0,
+      "Defective": 4.0
     },
     "DLI-M-MARDAN": {
       "Good": 1.0,
@@ -9711,8 +9702,7 @@
       "Defective": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Good": 1.0
     },
     "MMT-E-Multan": {
       "Defective": 2.0
@@ -9725,7 +9715,7 @@
       "Good": 3.0
     },
     "Pakistan-MWH": {
-      "Good": 539.0,
+      "Good": 542.0,
       "Defective": 20.0
     },
     "Carlcare-Lahore": {
@@ -9876,8 +9866,7 @@
       "Defective": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 2.0
+      "Good": 1.0
     },
     "Pakistan-MWH": {
       "Good": 41.0,
@@ -9908,8 +9897,8 @@
       "Defective": 1.0
     },
     "MMT-E-Faisalabad": {
-      "Good": 4.0,
-      "Defective": 1.0
+      "Good": 3.0,
+      "Defective": 2.0
     },
     "MMT-E-Multan": {
       "Good": 5.0
@@ -9922,7 +9911,7 @@
       "Defective": 24.0
     },
     "Pakistan-MWH": {
-      "Good": 7.0,
+      "Good": 2.0,
       "Defective": 33.0
     },
     "Advance-E-Gujrat": {
@@ -9970,7 +9959,7 @@
     },
     "Pakistan-MWH": {
       "Good": 77.0,
-      "Defective": 18.0,
+      "Defective": 10.0,
       "Damage": 26.0
     },
     "Carlcare-Lahore": {
@@ -10026,8 +10015,8 @@
       "Good": 3.0
     },
     "Pakistan-MWH": {
-      "Good": 51.0,
-      "Defective": 67.0
+      "Good": 50.0,
+      "Defective": 57.0
     },
     "Carlcare-Lahore": {
       "Good": 2.0
@@ -10387,9 +10376,6 @@
     "ITS4U-M-Attock": {
       "Good": 2.0
     },
-    "Pakistan-MWH": {
-      "Good": 1.0
-    },
     "Carlcare-Islamabad": {
       "Good": 1.0
     }
@@ -10469,7 +10455,7 @@
     },
     "Pakistan-MWH": {
       "Good": 8.0,
-      "Defective": 44.0
+      "Defective": 43.0
     },
     "Carlcare-Lahore": {
       "Good": 2.0
@@ -10510,7 +10496,7 @@
       "Good": 2.0
     },
     "MMT-E-Multan": {
-      "Good": 4.0
+      "Good": 5.0
     },
     "Advance-E-Bahawalpur": {
       "Good": 6.0
@@ -10534,7 +10520,7 @@
       "Good": 2.0
     },
     "M&P-E-Lahore": {
-      "Good": 3.0
+      "Good": 4.0
     },
     "MMT-E-RAWALPINDI": {
       "Good": 1.0
@@ -10543,7 +10529,7 @@
       "Good": 1.0
     },
     "Advance-E-Hall Road (LHR)": {
-      "Good": 5.0
+      "Good": 1.0
     },
     "Advance-E-Township (LHR)": {
       "Good": 1.0
@@ -10572,7 +10558,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 4.0,
+      "Good": 2.0,
       "Defective": 39.0,
       "Damage": 50.0
     },
@@ -10710,8 +10696,7 @@
       "Defective": 8.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 9.0,
-      "Defective": 1.0
+      "Good": 9.0
     },
     "JM TECH-M-CHAKWAL": {
       "Good": 1.0
@@ -10750,8 +10735,8 @@
       "Good": 1.0
     },
     "MMT-E-RAWALPINDI": {
-      "Good": 3.0,
-      "Defective": 3.0
+      "Good": 2.0,
+      "Defective": 4.0
     },
     "Carlcare-Islamabad": {
       "Good": 2.0
@@ -11064,7 +11049,7 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 192.0,
+      "Good": 188.0,
       "Defective": 41.0,
       "Damage": 1.0
     },
@@ -11236,8 +11221,8 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 80.0,
-      "Defective": 8.0
+      "Good": 79.0,
+      "Defective": 2.0
     },
     "Carlcare-Lahore": {
       "Good": 2.0
@@ -11279,8 +11264,7 @@
       "Defective": 104.0
     },
     "Fancy Mobile-E-Charsada": {
-      "Good": 1.0,
-      "Defective": 2.0
+      "Defective": 3.0
     },
     "AL Noor Mobile-E-Quetta": {
       "Good": 1.0
@@ -11593,7 +11577,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 45.0,
+      "Good": 43.0,
       "Defective": 4.0
     },
     "Carlcare-Lahore": {
@@ -11661,7 +11645,7 @@
       "Good": 1.0
     },
     "M&P-E-Rawalpindi": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Ahmad Mobile-M-Burewala": {
       "Good": 1.0
@@ -11675,8 +11659,7 @@
       "Good": 1.0
     },
     "PK-L4-Device": {
-      "Good": 5.0,
-      "Defective": 3.0
+      "Defective": 8.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -11764,7 +11747,7 @@
       "Good": 1.0
     },
     "MMT-E-Multan": {
-      "Good": 3.0,
+      "Good": 2.0,
       "Defective": 1.0
     },
     "Smart Mobile Solutions-E-Mansehra": {
@@ -12166,8 +12149,7 @@
       "Defective": 11.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Good": 1.0
     },
     "PCC-E-NOWSHEHRA": {
       "Defective": 1.0
@@ -12294,7 +12276,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 176.0,
+      "Good": 175.0,
       "Defective": 2.0
     },
     "Carlcare-Lahore": {
@@ -12375,8 +12357,8 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 229.0,
-      "Defective": 175.0
+      "Good": 228.0,
+      "Defective": 167.0
     },
     "Carlcare-Lahore": {
       "Good": 1.0,
@@ -12425,8 +12407,7 @@
       "Defective": 1.0
     },
     "Advance-E-Sargodha": {
-      "Good": 1.0,
-      "Defective": 2.0
+      "Defective": 3.0
     },
     "Qaisar Telecom-M-Samundri": {
       "Good": 1.0,
@@ -12471,8 +12452,7 @@
       "Defective": 13.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 3.0
+      "Good": 2.0
     },
     "Ali Mobile Zone-M-Kabirwala": {
       "Good": 2.0
@@ -12490,7 +12470,7 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Defective": 24.0,
+      "Defective": 23.0,
       "Damage": 45.0
     },
     "Carlcare-Lahore": {
@@ -12501,10 +12481,12 @@
       "Defective": 1.0
     },
     "M&P-M-Karachi-saddar": {
-      "Good": 3.0
+      "Good": 2.0,
+      "Defective": 1.0
     },
     "Qaiser Telecom-M-TT Singh": {
-      "Good": 2.0
+      "Good": 1.0,
+      "Defective": 1.0
     },
     "Advance-E-Hall Road (LHR)": {
       "Defective": 2.0
@@ -12822,7 +12804,7 @@
       "Good": 3.0
     },
     "Advance-E-Hall Road (LHR)": {
-      "Good": 2.0
+      "Good": 1.0
     },
     "Advance-E-Sargodha": {
       "Good": 19.0
@@ -12925,7 +12907,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 2996.0,
+      "Good": 2995.0,
       "Defective": 3.0,
       "Damage": 17.0
     },
@@ -12980,8 +12962,7 @@
       "Good": 1.0
     },
     "PK-L4-Device": {
-      "Good": 4.0,
-      "Defective": 26.0
+      "Defective": 30.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 3.0
@@ -13003,11 +12984,12 @@
       "Defective": 3.0
     },
     "Pakistan-MWH": {
-      "Good": 37.0,
+      "Good": 31.0,
       "Defective": 13.0
     },
     "Carlcare-Lahore": {
-      "Good": 3.0
+      "Good": 2.0,
+      "Defective": 1.0
     },
     "Advance-E-Gujrat": {
       "Good": 2.0
@@ -13128,8 +13110,8 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 682.0,
-      "Defective": 69.0
+      "Good": 679.0,
+      "Defective": 45.0
     },
     "Carlcare-Lahore": {
       "Good": 3.0,
@@ -13233,17 +13215,15 @@
       "Defective": 1.0
     },
     "MMT-E-Faisalabad": {
-      "Good": 4.0,
-      "Defective": 1.0
-    },
-    "Advance-E-Faisalabad": {
-      "Good": 1.0
+      "Good": 3.0,
+      "Defective": 2.0
     },
     "JM TECH-M-CHAKWAL": {
       "Good": 1.0
     },
     "MMT-E-Multan": {
-      "Good": 3.0
+      "Good": 2.0,
+      "Defective": 1.0
     },
     "Advance-E-Bahawalpur": {
       "Good": 4.0
@@ -13255,7 +13235,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 318.0,
+      "Good": 316.0,
       "Defective": 50.0
     },
     "Carlcare-Lahore": {
@@ -13269,8 +13249,8 @@
       "Good": 4.0
     },
     "M&P-E-Lahore": {
-      "Good": 3.0,
-      "Defective": 1.0
+      "Good": 2.0,
+      "Defective": 2.0
     },
     "Advance-E-Sareena": {
       "Good": 4.0
@@ -13333,7 +13313,7 @@
     },
     "MMT-E-Multan": {
       "Good": 1.0,
-      "Defective": 1.0
+      "Defective": 2.0
     },
     "PCC-E-NOWSHEHRA": {
       "Good": 5.0
@@ -13342,7 +13322,7 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 200.0,
+      "Good": 217.0,
       "Defective": 13.0
     },
     "Carlcare-Lahore": {
@@ -13366,9 +13346,6 @@
     },
     "Carlcare-Islamabad": {
       "Good": 1.0
-    },
-    "Advance-E-Hall Road (LHR)": {
-      "Defective": 1.0
     },
     "Advance-E-Sargodha": {
       "Good": 1.0
@@ -13457,6 +13434,9 @@
       "Good": 347.0
     },
     "Advance-E-Gujrat": {
+      "Good": 1.0
+    },
+    "Gulf Mobile-E-Taxila": {
       "Good": 1.0
     },
     "M&P-E-Lahore": {
@@ -13564,6 +13544,9 @@
     "Carlcare-Lahore": {
       "Good": 1.0
     },
+    "Gulf Mobile-E-Taxila": {
+      "Good": 1.0
+    },
     "M&P-E-Lahore": {
       "Good": 1.0
     },
@@ -13606,7 +13589,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 144.0
+      "Good": 143.0
     },
     "Carlcare-Lahore": {
       "Good": 8.0
@@ -13668,9 +13651,6 @@
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 2.0
-    },
     "MMT-E-Multan": {
       "Good": 4.0
     },
@@ -13706,7 +13686,7 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 91.0,
+      "Good": 90.0,
       "Defective": 2.0
     },
     "Carlcare-Lahore": {
@@ -13736,7 +13716,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 1137.0
+      "Good": 1136.0
     },
     "Grace Mobile-M-Haroonabad": {
       "Good": 1.0
@@ -13879,7 +13859,7 @@
       "Good": 5.0
     },
     "Pakistan-MWH": {
-      "Good": 71.0,
+      "Good": 69.0,
       "Defective": 5.0
     },
     "Carlcare-Lahore": {
@@ -13971,8 +13951,7 @@
   },
   "38104998": {
     "PK-L4-Device": {
-      "Good": 1.0,
-      "Defective": 6.0
+      "Defective": 7.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -14593,7 +14572,7 @@
     },
     "Pakistan-MWH": {
       "Good": 60.0,
-      "Defective": 34.0
+      "Defective": 32.0
     },
     "Carlcare-Hyderabad": {
       "Good": 2.0
@@ -14651,7 +14630,7 @@
     },
     "Pakistan-MWH": {
       "Good": 6.0,
-      "Defective": 8.0,
+      "Defective": 5.0,
       "Damage": 5.0
     },
     "Carlcare-Lahore": {
@@ -14722,7 +14701,8 @@
   },
   "38102335": {
     "PK-L4-Device": {
-      "Good": 13.0
+      "Good": 12.0,
+      "Defective": 1.0
     },
     "Pakistan-MWH": {
       "Good": 2.0
@@ -14883,7 +14863,7 @@
     },
     "Pakistan-MWH": {
       "Good": 101.0,
-      "Defective": 55.0
+      "Defective": 53.0
     },
     "Carlcare-Lahore": {
       "Good": 2.0
@@ -14964,7 +14944,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 42.0,
+      "Good": 41.0,
       "Defective": 1.0
     },
     "Carlcare-Lahore": {
@@ -15016,7 +14996,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 13.0
+      "Good": 12.0
     },
     "Carlcare-Lahore": {
       "Good": 3.0
@@ -15161,9 +15141,6 @@
       "Good": 2.0
     },
     "Grace Mobile-M-Haroonabad": {
-      "Good": 1.0
-    },
-    "M&P-M-Karachi-saddar": {
       "Good": 1.0
     },
     "M&P-E-Rawalpindi": {
@@ -15701,7 +15678,8 @@
   },
   "38101929": {
     "PK-L4-Device": {
-      "Good": 4.0
+      "Good": 3.0,
+      "Defective": 1.0
     },
     "Pakistan-MWH": {
       "Good": 20.0
@@ -15764,7 +15742,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 89.0,
+      "Good": 88.0,
       "Defective": 3.0
     },
     "Carlcare-Lahore": {
@@ -15865,7 +15843,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 140.0,
+      "Good": 138.0,
       "Defective": 1.0
     },
     "Carlcare-Lahore": {
@@ -15912,13 +15890,13 @@
     },
     "Pakistan-MWH": {
       "Good": 20.0,
-      "Defective": 144.0
+      "Defective": 141.0
     },
     "Carlcare-Lahore": {
       "Good": 4.0
     },
     "Gulf Mobile-E-Taxila": {
-      "Good": 2.0
+      "Good": 3.0
     },
     "Carlcare-Hyderabad": {
       "Good": 2.0
@@ -16024,8 +16002,8 @@
   },
   "38105105": {
     "PK-L4-Device": {
-      "Good": 77.0,
-      "Defective": 19.0
+      "Good": 54.0,
+      "Defective": 42.0
     },
     "Pakistan-MWH": {
       "Good": 164.0
@@ -16200,8 +16178,8 @@
   },
   "37000463": {
     "PK-L4-Device": {
-      "Good": 24.0,
-      "Defective": 3.0
+      "Good": 16.0,
+      "Defective": 11.0
     },
     "Pakistan-MWH": {
       "Good": 222.0,
@@ -16270,9 +16248,6 @@
     "MMT-E-Faisalabad": {
       "Good": 1.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "MMT-E-Multan": {
       "Good": 1.0
     },
@@ -16338,8 +16313,7 @@
       "Defective": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 2.0,
-      "Defective": 2.0
+      "Good": 2.0
     },
     "MMT-E-Multan": {
       "Defective": 1.0
@@ -16370,9 +16344,6 @@
       "Defective": 1.0
     },
     "Carlcare-Islamabad": {
-      "Good": 1.0
-    },
-    "Advance-E-Township (LHR)": {
       "Good": 1.0
     },
     "Advance-E-Multan": {
@@ -16559,7 +16530,7 @@
   },
   "12206196": {
     "PK-L4-Device": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -16676,8 +16647,8 @@
   },
   "37600881": {
     "PK-L4-Device": {
-      "Good": 32.0,
-      "Defective": 2.0
+      "Good": 24.0,
+      "Defective": 10.0
     },
     "Pakistan-MWH": {
       "Defective": 6.0
@@ -16685,7 +16656,8 @@
   },
   "37600878": {
     "PK-L4-Device": {
-      "Good": 10.0
+      "Good": 4.0,
+      "Defective": 6.0
     },
     "Pakistan-MWH": {
       "Good": 26.0
@@ -16736,7 +16708,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 261.0,
+      "Good": 265.0,
       "Defective": 68.0
     },
     "Carlcare-Lahore": {
@@ -16809,8 +16781,8 @@
   },
   "37000480": {
     "PK-L4-Device": {
-      "Good": 64.0,
-      "Defective": 20.0
+      "Good": 43.0,
+      "Defective": 41.0
     },
     "Pakistan-MWH": {
       "Good": 100.0
@@ -16839,7 +16811,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 18.0
+      "Good": 17.0
     },
     "Advance-E-Gujrat": {
       "Good": 1.0
@@ -16894,9 +16866,6 @@
     },
     "M&P-M-Karachi-saddar": {
       "Good": 3.0
-    },
-    "Advance-E-Hall Road (LHR)": {
-      "Defective": 1.0
     },
     "PGS Mobile-M-ABT": {
       "Good": 1.0
@@ -16955,8 +16924,8 @@
       "Good": 1.0
     },
     "M&P-E-Lahore": {
-      "Good": 2.0,
-      "Defective": 3.0
+      "Good": 1.0,
+      "Defective": 4.0
     },
     "DLI-M-MARDAN": {
       "Defective": 2.0
@@ -17230,6 +17199,21 @@
       "Defective": 1.0
     }
   },
+  "12033859": {
+    "PK-L4-Device": {
+      "Good": 2.0
+    },
+    "JM TECH-M-CHAKWAL": {
+      "Defective": 1.0
+    },
+    "Pakistan-MWH": {
+      "Good": 17.0,
+      "Defective": 44.0
+    },
+    "Carlcare-Gujranwala": {
+      "Defective": 1.0
+    }
+  },
   "12204105": {
     "PK-L4-Device": {
       "Defective": 1.0
@@ -17266,9 +17250,6 @@
       "Good": 6.0,
       "Defective": 1.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "Ali Mobile Zone-M-Kabirwala": {
       "Good": 3.0
     },
@@ -17287,7 +17268,7 @@
       "Defective": 3.0
     },
     "Pakistan-MWH": {
-      "Good": 690.0,
+      "Good": 685.0,
       "Defective": 33.0
     },
     "Advance-E-Gujrat": {
@@ -17351,7 +17332,7 @@
   },
   "37200420": {
     "PK-L4-Device": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Pakistan-MWH": {
       "Good": 107.0,
@@ -17865,7 +17846,7 @@
   },
   "12706938": {
     "PK-L4-Device": {
-      "Good": 3.0
+      "Defective": 3.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -17892,9 +17873,6 @@
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
-    },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
     },
     "MMT-E-Multan": {
       "Good": 1.0
@@ -17929,7 +17907,7 @@
   },
   "12708518": {
     "PK-L4-Device": {
-      "Good": 2.0
+      "Defective": 2.0
     },
     "Pakistan-MWH": {
       "Good": 14.0
@@ -18179,12 +18157,15 @@
     },
     "Pakistan-MWH": {
       "Good": 16.0,
-      "Defective": 6.0
+      "Defective": 4.0
     },
     "Carlcare-Lahore": {
       "Good": 3.0
     },
     "Advance-E-Gujrat": {
+      "Good": 1.0
+    },
+    "Gulf Mobile-E-Taxila": {
       "Good": 1.0
     },
     "Carlcare-Hyderabad": {
@@ -18237,7 +18218,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 26.0
+      "Good": 25.0
     },
     "Carlcare-Lahore": {
       "Good": 1.0
@@ -18260,8 +18241,7 @@
   },
   "17001293": {
     "PK-L4-Device": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Defective": 2.0
     },
     "Pakistan-MWH": {
       "Good": 16.0,
@@ -18402,9 +18382,6 @@
     "MMT-E-Faisalabad": {
       "Good": 7.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "JM TECH-M-CHAKWAL": {
       "Good": 1.0
     },
@@ -18420,7 +18397,7 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 123.0,
+      "Good": 121.0,
       "Defective": 34.0
     },
     "Carlcare-Lahore": {
@@ -18462,7 +18439,8 @@
       "Good": 1.0
     },
     "Advance-E-Sargodha": {
-      "Good": 3.0
+      "Good": 2.0,
+      "Defective": 1.0
     },
     "Qaisar Telecom-M-Samundri": {
       "Good": 3.0
@@ -18650,7 +18628,7 @@
   },
   "37300845": {
     "PK-L4-Device": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Pakistan-MWH": {
       "Good": 79.0,
@@ -18710,8 +18688,7 @@
       "Good": 2.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 3.0,
-      "Defective": 2.0
+      "Good": 3.0
     },
     "JM TECH-M-CHAKWAL": {
       "Good": 1.0
@@ -18727,7 +18704,7 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 63.0,
+      "Good": 61.0,
       "Defective": 3.0,
       "Damage": 24.0
     },
@@ -19027,8 +19004,7 @@
   },
   "38105888": {
     "PK-L4-Device": {
-      "Good": 2.0,
-      "Defective": 14.0
+      "Defective": 16.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 4.0
@@ -19505,8 +19481,7 @@
   },
   "38106109": {
     "PK-L4-Device": {
-      "Good": 5.0,
-      "Defective": 3.0
+      "Defective": 8.0
     },
     "Pakistan-MWH": {
       "Good": 67.0
@@ -19652,7 +19627,7 @@
     },
     "Pakistan-MWH": {
       "Good": 75.0,
-      "Defective": 61.0
+      "Defective": 60.0
     },
     "Carlcare-Lahore": {
       "Good": 2.0
@@ -19748,7 +19723,8 @@
       "Good": 1.0
     },
     "M&P-M-Karachi-saddar": {
-      "Good": 2.0
+      "Good": 1.0,
+      "Defective": 1.0
     },
     "Carlcare-Peshawar": {
       "Good": 2.0
@@ -19816,11 +19792,14 @@
     "JM TECH-M-CHAKWAL": {
       "Good": 1.0
     },
+    "MMT-E-Multan": {
+      "Good": 1.0
+    },
     "Smart Mobile Solutions-E-Mansehra": {
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 106.0,
+      "Good": 104.0,
       "Defective": 1.0
     },
     "Carlcare-Lahore": {
@@ -19840,8 +19819,7 @@
       "Good": 1.0
     },
     "Carlcare-Peshawar": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Defective": 2.0
     },
     "MMT-E-RAWALPINDI": {
       "Defective": 1.0
@@ -19970,9 +19948,6 @@
       "Good": 2.0
     },
     "Ahmad Mobile-M-Burewala": {
-      "Good": 1.0
-    },
-    "Advance-E-Sialkot": {
       "Good": 1.0
     }
   },
@@ -20111,10 +20086,6 @@
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
     },
-    "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 1.0
-    },
     "Pakistan-MWH": {
       "Good": 56.0,
       "Defective": 4.0
@@ -20231,7 +20202,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 101.0,
+      "Good": 100.0,
       "Defective": 8.0
     },
     "Carlcare-Lahore": {
@@ -20302,8 +20273,8 @@
   },
   "12207297": {
     "PK-L4-Device": {
-      "Good": 22.0,
-      "Defective": 47.0
+      "Good": 1.0,
+      "Defective": 68.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 2.0
@@ -20466,7 +20437,7 @@
   },
   "38103511": {
     "PK-L4-Device": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Pakistan-MWH": {
       "Good": 11.0
@@ -20798,7 +20769,7 @@
   },
   "12202516": {
     "PK-L4-Device": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Pakistan-MWH": {
       "Good": 4.0
@@ -21720,13 +21691,16 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 159.0,
+      "Good": 158.0,
       "Defective": 1.0
     },
     "Carlcare-Lahore": {
       "Good": 3.0
     },
     "Advance-E-Gujrat": {
+      "Good": 1.0
+    },
+    "Gulf Mobile-E-Taxila": {
       "Good": 1.0
     },
     "Carlcare-Hyderabad": {
@@ -21812,8 +21786,7 @@
       "Semi-manufactured": 2.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 2.0
+      "Good": 1.0
     },
     "Pakistan-MWH": {
       "Good": 10.0,
@@ -21865,8 +21838,7 @@
       "Defective": 2.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 4.0,
-      "Defective": 2.0
+      "Good": 4.0
     },
     "JM TECH-M-CHAKWAL": {
       "Defective": 1.0
@@ -21914,7 +21886,7 @@
       "Good": 1.0
     },
     "Advance-E-Township (LHR)": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Advance-E-Multan": {
       "Defective": 6.0
@@ -21967,8 +21939,8 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 245.0,
-      "Defective": 17.0
+      "Good": 243.0,
+      "Defective": 16.0
     },
     "Carlcare-Lahore": {
       "Good": 4.0
@@ -21981,9 +21953,6 @@
     },
     "M&P-E-Lahore": {
       "Good": 3.0
-    },
-    "Advance-E-Sareena": {
-      "Good": 1.0
     },
     "Advance-E-Sukkur": {
       "Good": 3.0
@@ -22035,7 +22004,7 @@
   },
   "17201835": {
     "PK-L4-Device": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "PK-L4-PCBA": {
       "Good": 3.0
@@ -22055,7 +22024,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 2.0,
+      "Good": 1.0,
       "Defective": 1.0
     },
     "Advance-E-Gujrat": {
@@ -22098,7 +22067,7 @@
       "Semi-manufactured": 4.0
     },
     "Pakistan-MWH": {
-      "Good": 8.0
+      "Good": 7.0
     },
     "Gulf Mobile-E-Taxila": {
       "Good": 1.0
@@ -22301,7 +22270,7 @@
       "Good": 4.0
     },
     "Pakistan-MWH": {
-      "Good": 18.0,
+      "Good": 17.0,
       "Defective": 6.0
     },
     "Carlcare-Lahore": {
@@ -22348,9 +22317,6 @@
     "MMT-E-Faisalabad": {
       "Good": 1.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "MMT-E-Multan": {
       "Good": 1.0
     },
@@ -22364,7 +22330,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 81.0,
+      "Good": 80.0,
       "Defective": 4.0
     },
     "Carlcare-Lahore": {
@@ -22829,7 +22795,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 194.0,
+      "Good": 193.0,
       "Defective": 3.0
     },
     "Carlcare-Lahore": {
@@ -23102,9 +23068,6 @@
     "MMT-E-Faisalabad": {
       "Defective": 1.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "MMT-E-Multan": {
       "Good": 1.0
     },
@@ -23118,7 +23081,7 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 178.0,
+      "Good": 187.0,
       "Defective": 15.0
     },
     "Carlcare-Lahore": {
@@ -23175,9 +23138,6 @@
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 2.0
-    },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
     },
     "MMT-E-Multan": {
       "Good": 1.0
@@ -23315,7 +23275,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 11.0,
+      "Good": 10.0,
       "Defective": 2.0,
       "Damage": 2.0
     },
@@ -23403,7 +23363,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Defective": 7.0
+      "Defective": 4.0
     },
     "Carlcare-Lahore": {
       "Good": 3.0
@@ -23521,8 +23481,7 @@
   },
   "37301096": {
     "PK-L4-Device": {
-      "Good": 2.0,
-      "Defective": 7.0
+      "Defective": 9.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -23588,7 +23547,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 15.0,
+      "Good": 14.0,
       "Defective": 1.0
     },
     "Carlcare-Lahore": {
@@ -23732,6 +23691,9 @@
     "Pakistan-MWH": {
       "Good": 69.0
     },
+    "Gulf Mobile-E-Taxila": {
+      "Good": 1.0
+    },
     "Advance-E-Sareena": {
       "Good": 1.0
     },
@@ -23752,7 +23714,7 @@
   },
   "38103722": {
     "PK-L4-Device": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 2.0
@@ -23809,8 +23771,7 @@
   },
   "38104833": {
     "PK-L4-Device": {
-      "Good": 1.0,
-      "Defective": 11.0
+      "Defective": 12.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -23972,8 +23933,7 @@
       "Defective": 4.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Good": 1.0
     },
     "JM TECH-M-CHAKWAL": {
       "Good": 1.0
@@ -24006,6 +23966,9 @@
     },
     "Advance-E-Gujrat": {
       "Good": 2.0
+    },
+    "Gulf Mobile-E-Taxila": {
+      "Good": 1.0
     },
     "Carlcare-Hyderabad": {
       "Good": 4.0,
@@ -24087,7 +24050,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 65.0,
+      "Good": 64.0,
       "Defective": 2.0
     },
     "Carlcare-Lahore": {
@@ -24136,7 +24099,7 @@
   },
   "17201528": {
     "PK-L4-Device": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Pakistan-MWH": {
       "Good": 138.0
@@ -24152,14 +24115,11 @@
   },
   "12114042": {
     "PK-L4-Device": {
-      "Good": 62.0,
-      "Defective": 87.0
+      "Good": 48.0,
+      "Defective": 101.0
     },
     "MMT-E-Faisalabad": {
       "Good": 2.0
-    },
-    "Advance-E-Faisalabad": {
-      "Defective": 3.0
     },
     "MMT-E-Multan": {
       "Good": 2.0
@@ -24623,9 +24583,6 @@
     "ASC-M-Jhelum": {
       "Good": 1.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "MMT-E-Multan": {
       "Defective": 1.0
     },
@@ -24673,9 +24630,6 @@
     },
     "PK-L4-PCBA": {
       "Semi-manufactured": 12.0
-    },
-    "M&P-E-Rawalpindi": {
-      "Good": 1.0
     },
     "AL Noor Mobile-E-Quetta": {
       "Good": 2.0
@@ -24806,7 +24760,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 13.0,
+      "Good": 12.0,
       "Defective": 2.0
     },
     "Carlcare-Lahore": {
@@ -24947,7 +24901,7 @@
   },
   "12204867": {
     "PK-L4-Device": {
-      "Good": 3.0
+      "Defective": 3.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -25239,9 +25193,6 @@
     },
     "Carlcare-Islamabad": {
       "Good": 1.0
-    },
-    "Advance-E-Sialkot": {
-      "Good": 1.0
     }
   },
   "10061378": {
@@ -25347,7 +25298,7 @@
   },
   "37300844": {
     "PK-L4-Device": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Pakistan-MWH": {
       "Good": 77.0
@@ -25423,7 +25374,7 @@
       "Good": 1.0
     },
     "Carlcare-Peshawar": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Carlcare-Islamabad": {
       "Good": 1.0
@@ -25488,9 +25439,6 @@
   "19401369": {
     "PK-L4-Device": {
       "Defective": 27.0
-    },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
     },
     "MMT-E-Multan": {
       "Good": 1.0
@@ -25681,7 +25629,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 18.0
+      "Good": 17.0
     },
     "Carlcare-Lahore": {
       "Good": 3.0
@@ -25946,7 +25894,7 @@
   },
   "37000265": {
     "PK-L4-Device": {
-      "Good": 2.0
+      "Defective": 2.0
     },
     "Pakistan-MWH": {
       "Good": 53.0
@@ -26004,6 +25952,9 @@
     "Pakistan-MWH": {
       "Good": 53.0,
       "Defective": 7.0
+    },
+    "Gulf Mobile-E-Taxila": {
+      "Good": 1.0
     },
     "Carlcare-Hyderabad": {
       "Good": 1.0
@@ -26653,7 +26604,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 30.0,
+      "Good": 29.0,
       "Defective": 3.0,
       "Damage": 20.0
     },
@@ -26809,8 +26760,8 @@
   },
   "37600880": {
     "PK-L4-Device": {
-      "Good": 30.0,
-      "Defective": 5.0
+      "Good": 17.0,
+      "Defective": 18.0
     },
     "Pakistan-MWH": {
       "Good": 10.0
@@ -27027,8 +26978,7 @@
   },
   "38106110": {
     "PK-L4-Device": {
-      "Good": 4.0,
-      "Defective": 5.0
+      "Defective": 9.0
     },
     "Pakistan-MWH": {
       "Good": 84.0,
@@ -27100,8 +27050,7 @@
   },
   "38103513": {
     "PK-L4-Device": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Defective": 2.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -27452,7 +27401,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 11.0,
+      "Good": 10.0,
       "Defective": 3.0
     },
     "Carlcare-Lahore": {
@@ -27605,7 +27554,7 @@
     },
     "Pakistan-MWH": {
       "Good": 93.0,
-      "Defective": 30.0,
+      "Defective": 12.0,
       "Damage": 17.0
     },
     "Carlcare-Lahore": {
@@ -27662,7 +27611,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 346.0,
+      "Good": 345.0,
       "Defective": 98.0
     },
     "Carlcare-Lahore": {
@@ -27755,8 +27704,7 @@
   },
   "38106119": {
     "PK-L4-Device": {
-      "Good": 3.0,
-      "Defective": 20.0
+      "Defective": 23.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -27782,6 +27730,9 @@
       "Good": 98.0
     },
     "Carlcare-Lahore": {
+      "Good": 1.0
+    },
+    "Gulf Mobile-E-Taxila": {
       "Good": 1.0
     },
     "Carlcare-Hyderabad": {
@@ -27909,9 +27860,6 @@
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "Ali Mobile Zone-M-Kabirwala": {
       "Good": 1.0
     },
@@ -27931,9 +27879,6 @@
       "Good": 1.0
     },
     "Qaisar Telecom-M-Samundri": {
-      "Good": 1.0
-    },
-    "Advance-E-Sialkot": {
       "Good": 1.0
     }
   },
@@ -28004,9 +27949,6 @@
     },
     "ASC-M-Jhelum": {
       "Good": 1.0
-    },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
     },
     "Pakistan-MWH": {
       "Good": 81.0,
@@ -28145,6 +28087,9 @@
       "Defective": 78.0
     },
     "Ali Mobile Zone-M-Kabirwala": {
+      "Good": 1.0
+    },
+    "MMT-E-Multan": {
       "Good": 1.0
     },
     "Pakistan-MWH": {
@@ -28537,7 +28482,7 @@
       "Good": 3.0
     },
     "Pakistan-MWH": {
-      "Good": 65.0
+      "Good": 64.0
     },
     "Carlcare-Lahore": {
       "Good": 8.0
@@ -28685,6 +28630,9 @@
     "MMT-E-Faisalabad": {
       "Good": 2.0
     },
+    "MMT-E-Multan": {
+      "Defective": 1.0
+    },
     "Advance-E-Bahawalpur": {
       "Good": 1.0
     },
@@ -28803,8 +28751,7 @@
   },
   "17201830": {
     "PK-L4-Device": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Defective": 2.0
     },
     "Pakistan-MWH": {
       "Good": 5.0
@@ -28966,7 +28913,7 @@
       "Good": 1.0
     },
     "MMT-E-Multan": {
-      "Good": 1.0
+      "Good": 2.0
     },
     "Advance-E-Bahawalpur": {
       "Good": 1.0,
@@ -29023,8 +28970,7 @@
   },
   "38106116": {
     "PK-L4-Device": {
-      "Good": 9.0,
-      "Defective": 26.0
+      "Defective": 35.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -29242,7 +29188,7 @@
       "Defective": 400.0
     },
     "Pakistan-MWH": {
-      "Good": 500.0
+      "Good": 499.0
     }
   },
   "37000393": {
@@ -29461,8 +29407,7 @@
   },
   "38106107": {
     "PK-L4-Device": {
-      "Good": 3.0,
-      "Defective": 19.0
+      "Defective": 22.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -29553,7 +29498,7 @@
   },
   "12708459": {
     "PK-L4-Device": {
-      "Good": 6.0
+      "Defective": 6.0
     },
     "Pakistan-MWH": {
       "Good": 6.0
@@ -29728,13 +29673,10 @@
   },
   "17601337": {
     "PK-L4-Device": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
-    },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
     },
     "Pakistan-MWH": {
       "Good": 6.0,
@@ -29763,7 +29705,7 @@
       "Semi-manufactured": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 5.0
+      "Good": 7.0
     },
     "Carlcare-Lahore": {
       "Good": 1.0
@@ -29866,7 +29808,8 @@
   },
   "38101924": {
     "PK-L4-Device": {
-      "Good": 19.0
+      "Good": 17.0,
+      "Defective": 2.0
     },
     "Pakistan-MWH": {
       "Good": 10.0
@@ -29984,16 +29927,13 @@
     "PK-L4-Device": {
       "Defective": 1.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "MMT-E-Multan": {
-      "Good": 1.0,
+      "Good": 2.0,
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 22.0,
-      "Defective": 8.0
+      "Good": 20.0,
+      "Defective": 5.0
     },
     "Carlcare-Lahore": {
       "Good": 5.0
@@ -30252,8 +30192,7 @@
   },
   "12710140": {
     "PK-L4-Device": {
-      "Good": 1.0,
-      "Defective": 4.0
+      "Defective": 5.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Defective": 1.0
@@ -30268,7 +30207,7 @@
       "Good": 1.0
     },
     "Carlcare-Islamabad": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "PK-L4-PCBA": {
       "Semi-manufactured": 1.0
@@ -30449,15 +30388,14 @@
       "Good": 2.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Good": 1.0
     },
     "PCC-E-NOWSHEHRA": {
       "Defective": 1.0
     },
     "Pakistan-MWH": {
       "Good": 1.0,
-      "Defective": 14.0
+      "Defective": 10.0
     },
     "Carlcare-Lahore": {
       "Good": 12.0
@@ -30559,9 +30497,6 @@
   "12109787": {
     "PK-L4-Device": {
       "Defective": 2.0
-    },
-    "Pakistan-MWH": {
-      "Defective": 1.0
     }
   },
   "37600538": {
@@ -30639,7 +30574,7 @@
   },
   "37000264": {
     "PK-L4-Device": {
-      "Good": 2.0
+      "Defective": 2.0
     },
     "Pakistan-MWH": {
       "Good": 53.0,
@@ -30663,8 +30598,7 @@
       "Defective": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 2.0,
-      "Defective": 1.0
+      "Good": 2.0
     },
     "MMT-E-Multan": {
       "Good": 1.0
@@ -30768,8 +30702,7 @@
   },
   "37301012": {
     "PK-L4-Device": {
-      "Good": 1.0,
-      "Defective": 7.0
+      "Defective": 8.0
     },
     "Pakistan-MWH": {
       "Good": 144.0
@@ -30818,8 +30751,7 @@
   },
   "37301057": {
     "PK-L4-Device": {
-      "Good": 1.0,
-      "Defective": 5.0
+      "Defective": 6.0
     },
     "Pakistan-MWH": {
       "Good": 73.0,
@@ -30845,7 +30777,7 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 13.0,
+      "Good": 12.0,
       "Defective": 3.0
     },
     "Carlcare-Lahore": {
@@ -31025,7 +30957,7 @@
   },
   "25002092": {
     "PK-L4-Device": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Pakistan-MWH": {
       "Defective": 1.0
@@ -31248,8 +31180,7 @@
   },
   "12115835": {
     "PK-L4-Device": {
-      "Good": 7.0,
-      "Defective": 14.0
+      "Defective": 21.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -31258,7 +31189,7 @@
       "Good": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "MMT-E-Multan": {
       "Good": 1.0,
@@ -31271,7 +31202,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 28.0,
+      "Good": 27.0,
       "Damage": 3.0
     },
     "Carlcare-Lahore": {
@@ -31378,7 +31309,6 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 1.0,
       "Defective": 5.0
     },
     "Carlcare-Lahore": {
@@ -31556,7 +31486,7 @@
   },
   "38103881": {
     "PK-L4-Device": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Advance-E-Faisalabad": {
       "Good": 1.0
@@ -31587,8 +31517,8 @@
     "Carlcare-Karachi(Saddar)": {
       "Good": 2.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 4.0
+    "MMT-E-Multan": {
+      "Defective": 2.0
     },
     "Advance-E-Bahawalpur": {
       "Defective": 1.0
@@ -31645,7 +31575,7 @@
     "MMT-E-Faisalabad": {
       "Defective": 1.0
     },
-    "Advance-E-Faisalabad": {
+    "MMT-E-Multan": {
       "Defective": 1.0
     },
     "PCC-E-NOWSHEHRA": {
@@ -31779,8 +31709,7 @@
   },
   "38106118": {
     "PK-L4-Device": {
-      "Good": 4.0,
-      "Defective": 5.0
+      "Defective": 9.0
     },
     "Pakistan-MWH": {
       "Good": 94.0,
@@ -32010,8 +31939,8 @@
   },
   "38106108": {
     "PK-L4-Device": {
-      "Good": 10.0,
-      "Defective": 25.0
+      "Good": 1.0,
+      "Defective": 34.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -32519,7 +32448,7 @@
   },
   "37200295": {
     "PK-L4-Device": {
-      "Good": 3.0
+      "Defective": 3.0
     },
     "Pakistan-MWH": {
       "Good": 53.0
@@ -32633,7 +32562,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 11.0,
+      "Good": 10.0,
       "Defective": 4.0
     },
     "Carlcare-Lahore": {
@@ -32849,8 +32778,7 @@
   },
   "37301005": {
     "PK-L4-Device": {
-      "Good": 1.0,
-      "Defective": 11.0
+      "Defective": 12.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -33094,9 +33022,6 @@
     "MMT-E-Faisalabad": {
       "Good": 1.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "JM TECH-M-CHAKWAL": {
       "Good": 1.0
     },
@@ -33303,7 +33228,7 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 29.0,
+      "Good": 27.0,
       "Defective": 3.0
     },
     "Carlcare-Lahore": {
@@ -33342,8 +33267,7 @@
   },
   "17202012": {
     "PK-L4-Device": {
-      "Good": 1.0,
-      "Defective": 7.0
+      "Defective": 8.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 3.0
@@ -33422,7 +33346,7 @@
   },
   "38102515": {
     "PK-L4-Device": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Pakistan-MWH": {
       "Good": 25.0
@@ -33556,9 +33480,6 @@
     "PK-L4-Device": {
       "Semi-manufactured": 3.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "Pakistan-MWH": {
       "Good": 24.0,
       "Defective": 72.0
@@ -33636,9 +33557,6 @@
     },
     "Sonie-M-Swat": {
       "Good": 5.0
-    },
-    "M&P-M-Karachi-saddar": {
-      "Good": 1.0
     },
     "Advance-E-Hall Road (LHR)": {
       "Good": 1.0
@@ -33923,8 +33841,8 @@
   },
   "37600879": {
     "PK-L4-Device": {
-      "Good": 10.0,
-      "Defective": 5.0
+      "Good": 2.0,
+      "Defective": 13.0
     },
     "Pakistan-MWH": {
       "Good": 29.0,
@@ -34013,8 +33931,7 @@
   },
   "17201986": {
     "PK-L4-Device": {
-      "Good": 1.0,
-      "Defective": 11.0
+      "Defective": 12.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -34065,7 +33982,7 @@
     },
     "Pakistan-MWH": {
       "Good": 373.0,
-      "Defective": 11.0
+      "Defective": 10.0
     },
     "Carlcare-Lahore": {
       "Good": 2.0
@@ -34193,8 +34110,8 @@
       "Good": 3.0
     },
     "Pakistan-MWH": {
-      "Good": 6.0,
-      "Defective": 15.0,
+      "Good": 4.0,
+      "Defective": 14.0,
       "Damage": 24.0
     },
     "Carlcare-Lahore": {
@@ -34464,7 +34381,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 38.0,
+      "Good": 33.0,
       "Defective": 3.0
     },
     "Carlcare-Lahore": {
@@ -34486,7 +34403,8 @@
   },
   "12204868": {
     "PK-L4-Device": {
-      "Good": 5.0
+      "Good": 2.0,
+      "Defective": 3.0
     },
     "Pakistan-MWH": {
       "Good": 28.0
@@ -34506,7 +34424,7 @@
   },
   "38105959": {
     "PK-L4-Device": {
-      "Good": 2.0
+      "Defective": 2.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 2.0
@@ -34613,8 +34531,7 @@
       "Good": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Good": 1.0
     },
     "Carlcare-Lahore": {
       "Good": 2.0
@@ -34836,8 +34753,8 @@
   },
   "17201847": {
     "PK-L4-Device": {
-      "Good": 3.0,
-      "Defective": 1.0
+      "Good": 2.0,
+      "Defective": 2.0
     },
     "Pakistan-MWH": {
       "Good": 128.0
@@ -34947,8 +34864,7 @@
       "Good": 3.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 2.0,
-      "Defective": 1.0
+      "Good": 2.0
     },
     "Pakistan-MWH": {
       "Good": 11.0,
@@ -35056,7 +34972,7 @@
   },
   "38101922": {
     "PK-L4-Device": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Pakistan-MWH": {
       "Good": 28.0
@@ -35243,8 +35159,7 @@
   },
   "38106121": {
     "PK-L4-Device": {
-      "Good": 5.0,
-      "Defective": 3.0
+      "Defective": 8.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -35305,7 +35220,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 77.0
+      "Good": 76.0
     },
     "Carlcare-Lahore": {
       "Good": 1.0
@@ -35477,7 +35392,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 127.0,
+      "Good": 126.0,
       "Defective": 56.0
     },
     "Carlcare-Lahore": {
@@ -35509,10 +35424,10 @@
     "Gulf Mobile-E-Taxila": {
       "Defective": 1.0
     },
-    "Grace Mobile-M-Haroonabad": {
+    "M&P-E-Lahore": {
       "Defective": 1.0
     },
-    "Advance-E-Hall Road (LHR)": {
+    "Grace Mobile-M-Haroonabad": {
       "Defective": 1.0
     },
     "Carlcare-Gujranwala": {
@@ -35610,8 +35525,7 @@
       "Defective": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 3.0,
-      "Defective": 1.0
+      "Good": 3.0
     },
     "Ali Mobile Zone-M-Kabirwala": {
       "Good": 1.0
@@ -35643,7 +35557,7 @@
       "Good": 2.0
     },
     "Qaiser Telecom-M-TT Singh": {
-      "Defective": 3.0
+      "Defective": 4.0
     },
     "Advance-E-Sargodha": {
       "Defective": 1.0
@@ -35669,8 +35583,7 @@
   },
   "12111999": {
     "PK-L4-Device": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Defective": 2.0
     },
     "Pakistan-MWH": {
       "Good": 55.0,
@@ -35697,7 +35610,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 29.0,
+      "Good": 28.0,
       "Defective": 4.0
     },
     "Carlcare-Lahore": {
@@ -35734,8 +35647,7 @@
   },
   "38105958": {
     "PK-L4-Device": {
-      "Good": 4.0,
-      "Defective": 8.0
+      "Defective": 12.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 3.0
@@ -35826,9 +35738,6 @@
   "12025396": {
     "PK-L4-Device": {
       "Semi-manufactured": 1.0
-    },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
     },
     "Smart Mobile Solutions-E-Mansehra": {
       "Good": 1.0
@@ -36081,8 +35990,8 @@
   },
   "38104824": {
     "PK-L4-Device": {
-      "Good": 77.0,
-      "Defective": 19.0
+      "Good": 54.0,
+      "Defective": 42.0
     },
     "Pakistan-MWH": {
       "Good": 179.0
@@ -36108,7 +36017,7 @@
     },
     "Pakistan-MWH": {
       "Good": 14.0,
-      "Defective": 63.0
+      "Defective": 61.0
     },
     "Carlcare-Lahore": {
       "Good": 2.0
@@ -36624,7 +36533,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 35.0,
+      "Good": 34.0,
       "Defective": 8.0
     },
     "Carlcare-Lahore": {
@@ -37136,8 +37045,7 @@
   },
   "38105887": {
     "PK-L4-Device": {
-      "Good": 2.0,
-      "Defective": 14.0
+      "Defective": 16.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 5.0
@@ -37208,11 +37116,10 @@
       "Defective": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 6.0,
+      "Good": 5.0,
       "Defective": 11.0,
       "Damage": 21.0
     },
@@ -37631,7 +37538,8 @@
   },
   "38101923": {
     "PK-L4-Device": {
-      "Good": 23.0
+      "Good": 21.0,
+      "Defective": 2.0
     },
     "Pakistan-MWH": {
       "Good": 43.0
@@ -37681,8 +37589,8 @@
   },
   "38104829": {
     "PK-L4-Device": {
-      "Good": 93.0,
-      "Defective": 19.0
+      "Good": 70.0,
+      "Defective": 42.0
     },
     "Pakistan-MWH": {
       "Good": 473.0,
@@ -38235,8 +38143,8 @@
   },
   "37200519": {
     "PK-L4-Device": {
-      "Good": 45.0,
-      "Defective": 18.0
+      "Good": 39.0,
+      "Defective": 24.0
     },
     "Advance-E-Bahawalpur": {
       "Good": 1.0
@@ -38256,8 +38164,8 @@
       "Good": 1.0
     },
     "MMT-E-Faisalabad": {
-      "Good": 3.0,
-      "Defective": 1.0
+      "Good": 2.0,
+      "Defective": 2.0
     },
     "MMT-E-Multan": {
       "Good": 3.0
@@ -38267,7 +38175,7 @@
     },
     "Pakistan-MWH": {
       "Good": 88.0,
-      "Defective": 21.0
+      "Defective": 16.0
     },
     "Carlcare-Lahore": {
       "Good": 3.0
@@ -38343,7 +38251,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Defective": 46.0
+      "Defective": 42.0
     },
     "Carlcare-Lahore": {
       "Good": 2.0
@@ -38711,8 +38619,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 3.0,
-      "Defective": 1.0
+      "Good": 3.0
     },
     "Carlcare-Lahore": {
       "Good": 4.0
@@ -38967,8 +38874,8 @@
   },
   "37000366": {
     "PK-L4-Device": {
-      "Good": 81.0,
-      "Defective": 26.0
+      "Good": 58.0,
+      "Defective": 49.0
     },
     "Pakistan-MWH": {
       "Good": 541.0,
@@ -39372,7 +39279,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 189.0,
+      "Good": 187.0,
       "Defective": 14.0
     },
     "Carlcare-Lahore": {
@@ -39602,7 +39509,7 @@
       "Good": 2.0
     },
     "Advance-E-Faisalabad": {
-      "Defective": 3.0
+      "Defective": 1.0
     },
     "JM TECH-M-CHAKWAL": {
       "Good": 1.0
@@ -39620,7 +39527,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 5.0,
+      "Good": 4.0,
       "Defective": 17.0
     },
     "Carlcare-Lahore": {
@@ -39633,7 +39540,8 @@
       "Good": 1.0
     },
     "M&P-M-Karachi-saddar": {
-      "Good": 3.0
+      "Good": 2.0,
+      "Defective": 1.0
     },
     "MMT-E-RAWALPINDI": {
       "Good": 2.0
@@ -39674,7 +39582,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 28.0
+      "Good": 26.0
     },
     "Advance-E-Sareena": {
       "Good": 1.0
@@ -39874,7 +39782,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 26.0,
+      "Good": 25.0,
       "Defective": 7.0,
       "Damage": 1.0
     },
@@ -39949,7 +39857,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 80.0,
+      "Good": 79.0,
       "Defective": 3.0
     },
     "Carlcare-Lahore": {
@@ -40145,8 +40053,8 @@
   },
   "12709833": {
     "PK-L4-Device": {
-      "Good": 9.0,
-      "Defective": 4.0
+      "Good": 8.0,
+      "Defective": 5.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 5.0
@@ -40351,8 +40259,7 @@
   },
   "37301093": {
     "PK-L4-Device": {
-      "Good": 2.0,
-      "Defective": 4.0
+      "Defective": 6.0
     },
     "Pakistan-MWH": {
       "Good": 111.0
@@ -40689,7 +40596,7 @@
       "Good": 1.0
     },
     "MMT-E-Multan": {
-      "Good": 1.0
+      "Good": 2.0
     },
     "Advance-E-Bahawalpur": {
       "Good": 1.0
@@ -40766,7 +40673,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 14.0,
+      "Good": 13.0,
       "Damage": 13.0
     },
     "Carlcare-Lahore": {
@@ -40828,9 +40735,6 @@
     },
     "Pakistan-MWH": {
       "Good": 6.0,
-      "Defective": 1.0
-    },
-    "Carlcare-Islamabad": {
       "Defective": 1.0
     }
   },
@@ -41123,8 +41027,8 @@
   },
   "38104828": {
     "PK-L4-Device": {
-      "Good": 77.0,
-      "Defective": 19.0
+      "Good": 54.0,
+      "Defective": 42.0
     },
     "Pakistan-MWH": {
       "Good": 164.0
@@ -41154,7 +41058,8 @@
   },
   "38101928": {
     "PK-L4-Device": {
-      "Good": 10.0
+      "Good": 8.0,
+      "Defective": 2.0
     },
     "Pakistan-MWH": {
       "Good": 36.0
@@ -41275,9 +41180,6 @@
       "Defective": 5.0
     },
     "Carlcare-Lahore": {
-      "Defective": 1.0
-    },
-    "Advance-E-Hall Road (LHR)": {
       "Defective": 1.0
     },
     "M&P-E-Rawalpindi": {
@@ -41694,9 +41596,6 @@
     },
     "Grace Mobile-M-Haroonabad": {
       "Defective": 1.0
-    },
-    "Advance-E-Hall Road (LHR)": {
-      "Defective": 1.0
     }
   },
   "12113038": {
@@ -41718,7 +41617,7 @@
     },
     "Pakistan-MWH": {
       "Good": 8.0,
-      "Defective": 101.0
+      "Defective": 99.0
     },
     "Carlcare-Lahore": {
       "Good": 2.0
@@ -41786,8 +41685,8 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 90.0,
-      "Defective": 30.0
+      "Good": 84.0,
+      "Defective": 19.0
     },
     "Carlcare-Lahore": {
       "Good": 5.0,
@@ -41845,9 +41744,6 @@
     "M&P-E-Rawalpindi": {
       "Defective": 1.0
     },
-    "PGS Mobile-M-ABT": {
-      "Good": 1.0
-    },
     "AL Noor Mobile-E-Quetta": {
       "Good": 2.0,
       "Defective": 1.0
@@ -41874,14 +41770,14 @@
       "Semi-manufactured": 1.0,
       "Good": 5.0
     },
+    "MMT-E-Multan": {
+      "Defective": 1.0
+    },
     "Pakistan-MWH": {
       "Good": 17.0,
       "Defective": 70.0
     },
     "Grace Mobile-M-Haroonabad": {
-      "Defective": 1.0
-    },
-    "Advance-E-Hall Road (LHR)": {
       "Defective": 1.0
     },
     "Carlcare-Gujranwala": {
@@ -42065,7 +41961,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 179.0,
+      "Good": 178.0,
       "Defective": 10.0
     },
     "Carlcare-Lahore": {
@@ -42222,9 +42118,6 @@
     "MMT-E-Faisalabad": {
       "Good": 2.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "MMT-E-Multan": {
       "Good": 4.0
     },
@@ -42233,7 +42126,7 @@
     },
     "Pakistan-MWH": {
       "Good": 224.0,
-      "Defective": 4.0,
+      "Defective": 3.0,
       "Damage": 29.0
     },
     "Carlcare-Lahore": {
@@ -42675,8 +42568,7 @@
       "Defective": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 4.0
+      "Good": 1.0
     },
     "Pakistan-MWH": {
       "Good": 47.0,
@@ -42693,7 +42585,9 @@
       "Defective": 1.0
     },
     "Advance-E-Hall Road (LHR)": {
-      "Good": 1.0,
+      "Good": 1.0
+    },
+    "Advance-E-Township (LHR)": {
       "Defective": 1.0
     },
     "M&P-E-Rawalpindi": {
@@ -42743,8 +42637,7 @@
   },
   "37301272": {
     "PK-L4-Device": {
-      "Good": 6.0,
-      "Defective": 4.0
+      "Defective": 10.0
     },
     "MMT-E-Faisalabad": {
       "Good": 1.0
@@ -42819,8 +42712,8 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 117.0,
-      "Defective": 98.0
+      "Good": 112.0,
+      "Defective": 85.0
     },
     "Carlcare-Lahore": {
       "Defective": 2.0
@@ -42828,12 +42721,15 @@
     "Advance-E-Gujrat": {
       "Good": 1.0
     },
+    "Gulf Mobile-E-Taxila": {
+      "Good": 1.0
+    },
     "Carlcare-Hyderabad": {
       "Good": 3.0
     },
     "M&P-E-Lahore": {
-      "Good": 7.0,
-      "Defective": 1.0
+      "Good": 6.0,
+      "Defective": 2.0
     },
     "Advance-E-Sareena": {
       "Good": 2.0
@@ -42947,7 +42843,7 @@
   },
   "12708484": {
     "PK-L4-Device": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 2.0
@@ -42956,6 +42852,7 @@
       "Good": 2.0
     },
     "Advance-E-Faisalabad": {
+      "Good": 2.0,
       "Defective": 1.0
     },
     "Ali Mobile Zone-M-Kabirwala": {
@@ -43104,8 +43001,7 @@
   },
   "38105955": {
     "PK-L4-Device": {
-      "Good": 4.0,
-      "Defective": 7.0
+      "Defective": 11.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 3.0
@@ -43161,7 +43057,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 43.0
+      "Good": 42.0
     },
     "Carlcare-Lahore": {
       "Good": 2.0
@@ -43216,8 +43112,8 @@
   },
   "37200618": {
     "PK-L4-Device": {
-      "Good": 34.0,
-      "Defective": 20.0
+      "Good": 13.0,
+      "Defective": 41.0
     },
     "Pakistan-MWH": {
       "Good": 162.0
@@ -43294,14 +43190,11 @@
     "Carlcare-Karachi(Saddar)": {
       "Damage": 2.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "Ali Mobile Zone-M-Kabirwala": {
       "Good": 1.0
     },
     "MMT-E-Multan": {
-      "Good": 2.0,
+      "Good": 3.0,
       "Defective": 1.0
     },
     "Advance-E-Bahawalpur": {
@@ -43500,7 +43393,7 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 32.0,
+      "Good": 31.0,
       "Defective": 9.0
     },
     "Carlcare-Lahore": {
@@ -43657,7 +43550,7 @@
   },
   "12205349": {
     "PK-L4-Device": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Advance-E-Bahawalpur": {
       "Good": 1.0
@@ -43768,8 +43661,7 @@
       "Semi-manufactured": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Good": 1.0
     },
     "PCC-E-NOWSHEHRA": {
       "Good": 1.0
@@ -43906,7 +43798,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 23.0,
+      "Good": 22.0,
       "Defective": 40.0
     },
     "Carlcare-Lahore": {
@@ -43969,9 +43861,6 @@
     "MMT-E-Faisalabad": {
       "Good": 1.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "Advance-E-Bahawalpur": {
       "Good": 2.0
     },
@@ -43984,6 +43873,9 @@
     },
     "Advance-E-Gujrat": {
       "Good": 2.0
+    },
+    "Gulf Mobile-E-Taxila": {
+      "Good": 1.0
     },
     "Carlcare-Hyderabad": {
       "Good": 1.0,
@@ -44116,7 +44008,7 @@
   },
   "37000119": {
     "PK-L4-Device": {
-      "Good": 7.0
+      "Defective": 7.0
     },
     "Pakistan-MWH": {
       "Good": 23.0
@@ -44124,7 +44016,7 @@
   },
   "38103372": {
     "PK-L4-Device": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -44157,9 +44049,6 @@
     "PK-L4-Device": {
       "Semi-manufactured": 1.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "Pakistan-MWH": {
       "Good": 17.0,
       "Defective": 38.0
@@ -44168,9 +44057,6 @@
       "Defective": 1.0
     },
     "DLI-M-MARDAN": {
-      "Defective": 1.0
-    },
-    "Advance-E-Hall Road (LHR)": {
       "Defective": 1.0
     }
   },
@@ -44200,7 +44086,7 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 180.0,
+      "Good": 184.0,
       "Defective": 73.0
     },
     "M&P-E-Lahore": {
@@ -44330,7 +44216,8 @@
   },
   "25001527": {
     "PK-L4-Device": {
-      "Good": 3.0
+      "Good": 1.0,
+      "Defective": 2.0
     },
     "MMT-E-Multan": {
       "Good": 1.0
@@ -44515,9 +44402,6 @@
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "MMT-E-Multan": {
       "Good": 1.0
     },
@@ -44526,7 +44410,7 @@
     },
     "Pakistan-MWH": {
       "Good": 13.0,
-      "Defective": 25.0
+      "Defective": 22.0
     },
     "Carlcare-Lahore": {
       "Good": 1.0
@@ -44747,11 +44631,13 @@
       "Defective": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 2.0,
-      "Defective": 2.0
+      "Good": 2.0
     },
     "Ali Mobile Zone-M-Kabirwala": {
       "Good": 1.0
+    },
+    "MMT-E-Multan": {
+      "Defective": 1.0
     },
     "PCC-E-NOWSHEHRA": {
       "Defective": 1.0
@@ -44767,6 +44653,9 @@
       "Good": 1.0
     },
     "Carlcare-Hyderabad": {
+      "Defective": 1.0
+    },
+    "M&P-E-Lahore": {
       "Defective": 1.0
     },
     "Advance-E-Sareena": {
@@ -44812,7 +44701,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Defective": 13.0,
+      "Defective": 12.0,
       "Damage": 21.0
     },
     "Carlcare-Lahore": {
@@ -44906,7 +44795,7 @@
   },
   "38103373": {
     "PK-L4-Device": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Pakistan-MWH": {
       "Good": 5.0
@@ -45027,8 +44916,7 @@
   },
   "17201909": {
     "PK-L4-Device": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Defective": 2.0
     },
     "Pakistan-MWH": {
       "Good": 24.0
@@ -45178,8 +45066,7 @@
   },
   "12207147": {
     "PK-L4-Device": {
-      "Good": 4.0,
-      "Defective": 11.0
+      "Defective": 15.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 5.0
@@ -45200,8 +45087,8 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 10.0,
-      "Defective": 31.0
+      "Good": 9.0,
+      "Defective": 28.0
     },
     "Carlcare-Lahore": {
       "Good": 13.0,
@@ -45415,9 +45302,6 @@
     "PK-L4-Device": {
       "Defective": 2.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "Pakistan-MWH": {
       "Good": 8.0
     },
@@ -45526,7 +45410,7 @@
   },
   "23002801": {
     "PK-L4-Device": {
-      "Good": 2.0
+      "Defective": 2.0
     },
     "Advance-E-Bahawalpur": {
       "Good": 1.0
@@ -45930,7 +45814,8 @@
   },
   "38101927": {
     "PK-L4-Device": {
-      "Good": 12.0
+      "Good": 9.0,
+      "Defective": 3.0
     },
     "Pakistan-MWH": {
       "Good": 51.0
@@ -45989,11 +45874,12 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 213.0,
+      "Good": 210.0,
       "Defective": 2.0
     },
     "Carlcare-Lahore": {
-      "Good": 2.0
+      "Good": 1.0,
+      "Defective": 1.0
     },
     "Advance-E-Gujrat": {
       "Good": 1.0
@@ -46112,6 +45998,9 @@
       "Good": 3.0
     },
     "Advance-E-Gujrat": {
+      "Good": 1.0
+    },
+    "Gulf Mobile-E-Taxila": {
       "Good": 1.0
     },
     "Carlcare-Hyderabad": {
@@ -46405,14 +46294,11 @@
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
     },
-    "Advance-E-Faisalabad": {
-      "Good": 1.0
-    },
     "Smart Mobile Solutions-E-Mansehra": {
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Defective": 36.0
+      "Defective": 28.0
     },
     "Carlcare-Lahore": {
       "Good": 1.0,
@@ -46550,7 +46436,7 @@
     },
     "Pakistan-MWH": {
       "Good": 65.0,
-      "Defective": 7.0
+      "Defective": 6.0
     },
     "Carlcare-Hyderabad": {
       "Good": 2.0
@@ -46885,8 +46771,10 @@
       "Good": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 2.0,
-      "Defective": 1.0
+      "Good": 2.0
+    },
+    "MMT-E-Multan": {
+      "Good": 1.0
     },
     "Advance-E-Bahawalpur": {
       "Good": 1.0
@@ -46940,7 +46828,7 @@
   },
   "38105956": {
     "PK-L4-Device": {
-      "Good": 2.0
+      "Defective": 2.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 2.0
@@ -46975,8 +46863,7 @@
   },
   "37301059": {
     "PK-L4-Device": {
-      "Good": 1.0,
-      "Defective": 6.0
+      "Defective": 7.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
@@ -47063,7 +46950,8 @@
       "Good": 2.0
     },
     "M&P-M-Karachi-saddar": {
-      "Good": 4.0
+      "Good": 3.0,
+      "Defective": 1.0
     },
     "MMT-E-RAWALPINDI": {
       "Good": 6.0
@@ -47225,7 +47113,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 96.0
+      "Good": 93.0
     },
     "Carlcare-Lahore": {
       "Good": 2.0
@@ -47278,7 +47166,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 43.0,
+      "Good": 42.0,
       "Defective": 5.0
     },
     "Carlcare-Lahore": {
@@ -47329,8 +47217,8 @@
   },
   "37000088": {
     "PK-L4-Device": {
-      "Good": 191.0,
-      "Defective": 221.0
+      "Good": 168.0,
+      "Defective": 244.0
     },
     "Pakistan-MWH": {
       "Good": 603.0
@@ -47441,8 +47329,7 @@
       "Defective": 2.0
     },
     "Carlcare-Lahore": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Good": 1.0
     },
     "MMT-E-RAWALPINDI": {
       "Good": 2.0
@@ -47660,7 +47547,7 @@
   },
   "37300790": {
     "PK-L4-Device": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Pakistan-MWH": {
       "Good": 7.0
@@ -47668,7 +47555,7 @@
   },
   "12707053": {
     "PK-L4-Device": {
-      "Good": 2.0
+      "Defective": 2.0
     },
     "Pakistan-MWH": {
       "Good": 24.0
@@ -47905,8 +47792,7 @@
   },
   "17401872": {
     "PK-L4-Device": {
-      "Good": 1.0,
-      "Defective": 18.0
+      "Defective": 19.0
     },
     "Carlcare-Karachi(Saddar)": {
       "Good": 6.0
@@ -47935,7 +47821,7 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 170.0,
+      "Good": 169.0,
       "Defective": 27.0
     },
     "Carlcare-Lahore": {
@@ -48092,7 +47978,8 @@
   },
   "38101926": {
     "PK-L4-Device": {
-      "Good": 19.0
+      "Good": 18.0,
+      "Defective": 1.0
     },
     "Pakistan-MWH": {
       "Good": 3.0
@@ -48302,8 +48189,7 @@
       "Good": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Good": 1.0
     },
     "Advance-E-Bahawalpur": {
       "Good": 1.0
@@ -48355,6 +48241,9 @@
     },
     "Carlcare-Lahore": {
       "Good": 3.0
+    },
+    "Advance-E-Sialkot": {
+      "Good": 2.0
     }
   },
   "12111517": {
@@ -48536,8 +48425,8 @@
   },
   "37301001": {
     "PK-L4-Device": {
-      "Good": 48.0,
-      "Defective": 18.0
+      "Good": 42.0,
+      "Defective": 24.0
     },
     "Pakistan-MWH": {
       "Defective": 50.0
@@ -48553,14 +48442,11 @@
     "MMT-E-Faisalabad": {
       "Good": 4.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "Ali Mobile Zone-M-Kabirwala": {
       "Good": 1.0
     },
     "MMT-E-Multan": {
-      "Good": 7.0,
+      "Good": 9.0,
       "Defective": 2.0
     },
     "Advance-E-Bahawalpur": {
@@ -48592,8 +48478,7 @@
       "Good": 2.0
     },
     "Advance-E-Sareena": {
-      "Good": 1.0,
-      "Defective": 4.0
+      "Defective": 5.0
     },
     "Advance-E-Sukkur": {
       "Defective": 1.0
@@ -49131,7 +49016,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 33.0,
+      "Good": 32.0,
       "Defective": 7.0
     },
     "Carlcare-Lahore": {
@@ -49377,6 +49262,9 @@
   },
   "12109662": {
     "Carlcare-Karachi(Saddar)": {
+      "Good": 1.0
+    },
+    "MMT-E-Multan": {
       "Good": 1.0
     },
     "Advance-E-Bahawalpur": {
@@ -49874,15 +49762,12 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 68.0
+      "Good": 66.0
     },
     "Carlcare-Lahore": {
       "Good": 14.0
     },
     "M&P-E-Lahore": {
-      "Good": 1.0
-    },
-    "Advance-E-Township (LHR)": {
       "Good": 1.0
     }
   },
@@ -50093,7 +49978,7 @@
       "Good": 4.0
     },
     "Pakistan-MWH": {
-      "Defective": 2.0,
+      "Defective": 1.0,
       "Damage": 2.0
     },
     "Carlcare-Lahore": {
@@ -50145,7 +50030,7 @@
     },
     "Pakistan-MWH": {
       "Good": 1.0,
-      "Defective": 66.0
+      "Defective": 64.0
     },
     "Carlcare-Lahore": {
       "Good": 1.0
@@ -50256,9 +50141,6 @@
   "25001586": {
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
-    },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
     },
     "MMT-E-Multan": {
       "Good": 2.0
@@ -50557,7 +50439,7 @@
       "Good": 4.0
     },
     "ITEL ESS LAB-ISB": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "ESS-Lahore-SWH": {
       "Good": 1.0,
@@ -50565,8 +50447,7 @@
       "Damage": 2.0
     },
     "Advance-E-Sialkot": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Defective": 2.0
     }
   },
   "12205846": {
@@ -50764,7 +50645,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 35.0,
+      "Good": 34.0,
       "Defective": 1.0,
       "Damage": 5.0
     },
@@ -50993,8 +50874,7 @@
       "Defective": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 4.0,
-      "Defective": 1.0
+      "Good": 4.0
     },
     "MMT-E-Multan": {
       "Good": 7.0
@@ -51009,7 +50889,7 @@
       "Good": 6.0
     },
     "Pakistan-MWH": {
-      "Good": 37.0,
+      "Good": 35.0,
       "Defective": 7.0
     },
     "Carlcare-Lahore": {
@@ -51329,7 +51209,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 20.0,
+      "Good": 19.0,
       "Defective": 1.0
     },
     "Carlcare-Lahore": {
@@ -51635,7 +51515,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 14.0
+      "Good": 13.0
     },
     "Carlcare-Lahore": {
       "Good": 1.0
@@ -51726,9 +51606,6 @@
     "MMT-E-Faisalabad": {
       "Defective": 2.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "Pakistan-MWH": {
       "Good": 70.0,
       "Defective": 14.0
@@ -51811,12 +51688,6 @@
   "10066780": {
     "Carlcare-Karachi(Saddar)": {
       "Good": 5.0
-    },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
-    "MMT-E-Multan": {
-      "Good": 1.0
     },
     "Pakistan-MWH": {
       "Good": 21.0,
@@ -52608,9 +52479,6 @@
     "Carlcare-Karachi(Saddar)": {
       "Defective": 1.0
     },
-    "Pakistan-MWH": {
-      "Good": 1.0
-    },
     "PK-QM Checking Devices": {
       "Defective": 2.0
     },
@@ -52842,7 +52710,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 26.0,
+      "Good": 27.0,
       "Defective": 3.0
     },
     "Carlcare-Lahore": {
@@ -52856,9 +52724,6 @@
     },
     "M&P-M-Karachi-saddar": {
       "Good": 2.0
-    },
-    "Qaiser Telecom-M-TT Singh": {
-      "Good": 1.0
     },
     "Advance-E-Multan": {
       "Good": 2.0
@@ -53124,8 +52989,8 @@
       "Good": 9.0
     },
     "PK-L4-PCBA": {
-      "Good": 25.0,
-      "Defective": 230.0
+      "Good": 18.0,
+      "Defective": 237.0
     },
     "Carlcare-Gujranwala": {
       "Good": 1.0
@@ -53169,7 +53034,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 21.0
+      "Good": 20.0
     },
     "Carlcare-Lahore": {
       "Good": 2.0
@@ -53356,8 +53221,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 6.0,
-      "Defective": 1.0
+      "Good": 6.0
     }
   },
   "38103651": {
@@ -53560,6 +53424,9 @@
       "Good": 1.0
     },
     "Advance-E-Faisalabad": {
+      "Good": 1.0
+    },
+    "MMT-E-Multan": {
       "Good": 1.0
     },
     "Advance-E-Bahawalpur": {
@@ -53870,7 +53737,7 @@
       "Damage": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 84.0,
+      "Good": 83.0,
       "Defective": 1.0,
       "Damage": 2.0
     },
@@ -54409,7 +54276,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 19.0,
+      "Good": 18.0,
       "Defective": 4.0
     },
     "Carlcare-Lahore": {
@@ -54499,7 +54366,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 50.0,
+      "Good": 49.0,
       "Defective": 4.0
     },
     "Carlcare-Lahore": {
@@ -54785,6 +54652,9 @@
       "Good": 1.0
     },
     "M&P-E-Rawalpindi": {
+      "Defective": 1.0
+    },
+    "Advance-E-Sialkot": {
       "Good": 1.0
     }
   },
@@ -54959,7 +54829,8 @@
       "Good": 2.0
     },
     "PK-L4-PCBA": {
-      "Good": 16.0
+      "Good": 15.0,
+      "Defective": 1.0
     },
     "Carlcare-Gujranwala": {
       "Good": 1.0
@@ -55079,14 +54950,14 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 29.0,
+      "Good": 27.0,
       "Defective": 1.0
     },
     "Carlcare-Lahore": {
       "Good": 3.0
     },
     "Gulf Mobile-E-Taxila": {
-      "Good": 2.0
+      "Good": 3.0
     },
     "Carlcare-Hyderabad": {
       "Good": 8.0
@@ -55394,7 +55265,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 27.0
+      "Good": 25.0
     },
     "Carlcare-Lahore": {
       "Good": 2.0
@@ -55409,7 +55280,7 @@
       "Good": 1.0
     },
     "Advance-E-Hall Road (LHR)": {
-      "Good": 4.0
+      "Good": 1.0
     },
     "Advance-E-Sargodha": {
       "Good": 1.0
@@ -55431,9 +55302,6 @@
     "MMT-E-Faisalabad": {
       "Good": 2.0
     },
-    "Advance-E-Faisalabad": {
-      "Good": 1.0
-    },
     "Ali Mobile Zone-M-Kabirwala": {
       "Good": 1.0
     },
@@ -55448,7 +55316,7 @@
     },
     "Pakistan-MWH": {
       "Good": 95.0,
-      "Defective": 11.0,
+      "Defective": 10.0,
       "Damage": 19.0
     },
     "Carlcare-Lahore": {
@@ -55542,7 +55410,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 10.0,
+      "Good": 9.0,
       "Defective": 8.0,
       "Damage": 12.0
     },
@@ -55747,6 +55615,9 @@
     },
     "Ahmad Mobile-M-Burewala": {
       "Good": 2.0
+    },
+    "Advance-E-Sialkot": {
+      "Good": 1.0
     }
   },
   "17601260": {
@@ -55798,7 +55669,7 @@
       "Good": 1.0
     },
     "Gulf Mobile-E-Taxila": {
-      "Good": 1.0
+      "Good": 2.0
     },
     "DLI-M-MARDAN": {
       "Good": 1.0
@@ -55984,7 +55855,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 45.0,
+      "Good": 44.0,
       "Defective": 1.0
     },
     "Carlcare-Lahore": {
@@ -55994,7 +55865,7 @@
       "Good": 1.0
     },
     "M&P-E-Lahore": {
-      "Good": 1.0
+      "Good": 2.0
     },
     "Grace Mobile-M-Haroonabad": {
       "Good": 1.0
@@ -56184,7 +56055,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 44.0
+      "Good": 43.0
     },
     "Carlcare-Lahore": {
       "Good": 1.0
@@ -56210,9 +56081,6 @@
     },
     "MMT-E-Faisalabad": {
       "Good": 1.0
-    },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
     },
     "MMT-E-Multan": {
       "Good": 1.0
@@ -56306,7 +56174,7 @@
       "Good": 10.0
     },
     "Pakistan-MWH": {
-      "Good": 50.0
+      "Good": 49.0
     },
     "Carlcare-Lahore": {
       "Good": 6.0
@@ -56898,7 +56766,7 @@
       "Good": 21.0
     },
     "Pakistan-MWH": {
-      "Good": 79.0
+      "Good": 78.0
     },
     "Carlcare-Lahore": {
       "Good": 6.0
@@ -56997,8 +56865,7 @@
       "Defective": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 2.0
+      "Good": 1.0
     },
     "MMT-E-Multan": {
       "Defective": 3.0
@@ -57264,7 +57131,7 @@
       "Good": 1.0
     },
     "Advance-E-Sialkot": {
-      "Good": 1.0
+      "Defective": 1.0
     }
   },
   "37600795": {
@@ -58002,11 +57869,14 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 33.0,
+      "Good": 32.0,
       "Defective": 1.0
     },
     "Carlcare-Lahore": {
       "Good": 6.0
+    },
+    "Gulf Mobile-E-Taxila": {
+      "Good": 1.0
     },
     "Carlcare-Hyderabad": {
       "Good": 1.0
@@ -58183,7 +58053,7 @@
     },
     "Pakistan-MWH": {
       "Good": 166.0,
-      "Defective": 14.0
+      "Defective": 3.0
     },
     "Carlcare-Lahore": {
       "Good": 3.0
@@ -58499,9 +58369,6 @@
     "Carlcare-Karachi(Saddar)": {
       "Defective": 2.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "JM TECH-M-CHAKWAL": {
       "Defective": 1.0
     },
@@ -58560,7 +58427,7 @@
       "Good": 7.0
     },
     "Pakistan-MWH": {
-      "Good": 90.0
+      "Good": 89.0
     },
     "Carlcare-Lahore": {
       "Good": 4.0
@@ -58648,7 +58515,7 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Defective": 39.0
+      "Defective": 37.0
     },
     "Carlcare-Lahore": {
       "Good": 3.0
@@ -58723,6 +58590,9 @@
   },
   "38104003": {
     "Carlcare-Karachi(Saddar)": {
+      "Good": 1.0
+    },
+    "Advance-E-Faisalabad": {
       "Good": 1.0
     },
     "Pakistan-MWH": {
@@ -58920,7 +58790,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 233.0,
+      "Good": 232.0,
       "Defective": 9.0,
       "Damage": 1.0
     },
@@ -59247,6 +59117,9 @@
     },
     "Carlcare-Lahore": {
       "Good": 2.0
+    },
+    "M&P-E-Lahore": {
+      "Good": 1.0
     }
   },
   "38000038": {
@@ -59528,7 +59401,7 @@
       "Defective": 10.0
     },
     "Pakistan-MWH": {
-      "Good": 15.0,
+      "Good": 8.0,
       "Defective": 2.0
     },
     "ESS-Lahore-SWH": {
@@ -59553,6 +59426,9 @@
     },
     "Carlcare-Lahore": {
       "Good": 2.0
+    },
+    "Gulf Mobile-E-Taxila": {
+      "Good": 1.0
     },
     "DLI-M-MARDAN": {
       "Defective": 1.0
@@ -59690,7 +59566,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 32.0,
+      "Good": 29.0,
       "Defective": 8.0
     },
     "Carlcare-Lahore": {
@@ -59945,7 +59821,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 55.0,
+      "Good": 54.0,
       "Damage": 1.0
     },
     "Carlcare-Lahore": {
@@ -60230,9 +60106,6 @@
   "17401807": {
     "Carlcare-Karachi(Saddar)": {
       "Good": 1.0
-    },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
     },
     "MMT-E-Multan": {
       "Good": 1.0
@@ -61338,7 +61211,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 77.0,
+      "Good": 76.0,
       "Defective": 5.0,
       "Damage": 4.0
     },
@@ -61501,8 +61374,7 @@
       "Good": 1.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 3.0,
-      "Defective": 1.0
+      "Good": 3.0
     },
     "Pakistan-MWH": {
       "Good": 1.0
@@ -61694,7 +61566,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 52.0,
+      "Good": 51.0,
       "Defective": 3.0
     },
     "Carlcare-Lahore": {
@@ -61710,7 +61582,7 @@
       "Good": 1.0
     },
     "M&P-M-Karachi-saddar": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Carlcare-Islamabad": {
       "Good": 2.0
@@ -61961,7 +61833,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 21.0
+      "Good": 20.0
     },
     "Carlcare-Lahore": {
       "Good": 2.0
@@ -61986,7 +61858,7 @@
       "Good": 3.0
     },
     "Pakistan-MWH": {
-      "Good": 17.0
+      "Good": 15.0
     },
     "Carlcare-Lahore": {
       "Good": 3.0
@@ -62292,7 +62164,8 @@
       "Good": 1.0
     },
     "M&P-M-Karachi-saddar": {
-      "Good": 1.0
+      "Good": 1.0,
+      "Defective": 1.0
     },
     "Carlcare-Islamabad": {
       "Defective": 1.0
@@ -62427,7 +62300,7 @@
       "Defective": 4.0
     },
     "Carlcare-Lahore": {
-      "Good": 2.0
+      "Good": 1.0
     },
     "Gulf Mobile-E-Taxila": {
       "Good": 1.0
@@ -63021,7 +62894,7 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 164.0,
+      "Good": 162.0,
       "Defective": 2.0
     },
     "Carlcare-Lahore": {
@@ -63569,7 +63442,7 @@
       "Defective": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 36.0,
+      "Good": 35.0,
       "Defective": 3.0
     },
     "Carlcare-Lahore": {
@@ -63595,7 +63468,8 @@
       "Good": 1.0
     },
     "M&P-M-Karachi-saddar": {
-      "Good": 5.0
+      "Good": 4.0,
+      "Defective": 1.0
     },
     "Carlcare-Peshawar": {
       "Good": 1.0
@@ -63631,7 +63505,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 9.0,
+      "Good": 8.0,
       "Defective": 9.0
     },
     "Carlcare-Lahore": {
@@ -63833,9 +63707,6 @@
       "Good": 1.0
     },
     "M&P-E-Rawalpindi": {
-      "Good": 1.0
-    },
-    "PGS Mobile-M-ABT": {
       "Good": 1.0
     },
     "Ahmad Mobile-M-Burewala": {
@@ -64088,7 +63959,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 45.0
+      "Good": 44.0
     },
     "Carlcare-Lahore": {
       "Good": 4.0
@@ -64465,6 +64336,9 @@
     "Ali Mobile Zone-M-Kabirwala": {
       "Good": 1.0
     },
+    "MMT-E-Multan": {
+      "Good": 1.0
+    },
     "PCC-E-NOWSHEHRA": {
       "Good": 3.0
     },
@@ -64606,9 +64480,6 @@
   "19200001": {
     "Carlcare-Karachi(Saddar)": {
       "Good": 3.0
-    },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
     },
     "Pakistan-MWH": {
       "Good": 3.0
@@ -65064,7 +64935,7 @@
       "Good": 2.0
     },
     "MMT-E-Multan": {
-      "Good": 2.0
+      "Good": 1.0
     },
     "Advance-E-Bahawalpur": {
       "Good": 7.0
@@ -66100,6 +65971,9 @@
     "Carlcare-Lahore": {
       "Good": 2.0
     },
+    "Gulf Mobile-E-Taxila": {
+      "Good": 1.0
+    },
     "Carlcare-Hyderabad": {
       "Good": 1.0
     },
@@ -66396,7 +66270,7 @@
       "Good": 3.0
     },
     "Pakistan-MWH": {
-      "Good": 68.0,
+      "Good": 67.0,
       "Defective": 22.0,
       "Damage": 2.0
     },
@@ -66428,7 +66302,7 @@
       "Good": 2.0
     },
     "Advance-E-Sargodha": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Advance-E-Township (LHR)": {
       "Good": 1.0
@@ -66582,6 +66456,9 @@
     },
     "PK-QM Checking Devices": {
       "Defective": 1.0
+    },
+    "Advance-E-Sialkot": {
+      "Good": 1.0
     }
   },
   "12108461": {
@@ -66712,11 +66589,10 @@
       "Good": 1.0
     },
     "DLI-M-MARDAN": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Defective": 2.0
     },
     "Advance-E-Sareena": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "M&P-M-Karachi-saddar": {
       "Good": 2.0
@@ -66867,6 +66743,9 @@
     "Advance-E-Faisalabad": {
       "Good": 1.0
     },
+    "MMT-E-Multan": {
+      "Good": 1.0
+    },
     "Pakistan-MWH": {
       "Good": 9.0,
       "Defective": 11.0,
@@ -66891,7 +66770,7 @@
       "Good": 1.0
     },
     "Advance-E-Sargodha": {
-      "Good": 1.0
+      "Defective": 1.0
     },
     "Qaisar Telecom-M-Samundri": {
       "Good": 1.0
@@ -66927,7 +66806,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 30.0,
+      "Good": 28.0,
       "Defective": 8.0
     },
     "Carlcare-Lahore": {
@@ -67201,8 +67080,8 @@
       "Good": 1.0
     },
     "PK-L4-PCBA": {
-      "Good": 9.0,
-      "Defective": 63.0
+      "Good": 8.0,
+      "Defective": 64.0
     }
   },
   "12117095": {
@@ -67214,6 +67093,9 @@
       "Defective": 2.0
     },
     "Advance-E-Gujrat": {
+      "Good": 1.0
+    },
+    "Gulf Mobile-E-Taxila": {
       "Good": 1.0
     },
     "M&P-E-Lahore": {
@@ -67424,7 +67306,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 44.0,
+      "Good": 40.0,
       "Defective": 10.0
     },
     "Carlcare-Lahore": {
@@ -67443,8 +67325,8 @@
       "Good": 2.0
     },
     "MMT-E-RAWALPINDI": {
-      "Good": 4.0,
-      "Defective": 1.0
+      "Good": 3.0,
+      "Defective": 2.0
     },
     "Qaisar Telecom-M-Samundri": {
       "Defective": 1.0
@@ -67508,7 +67390,7 @@
       "Defective": 4.0
     },
     "Pakistan-MWH": {
-      "Good": 5.0,
+      "Good": 3.0,
       "Defective": 8.0
     },
     "ESS-ASC-M-Gujranwala": {
@@ -67549,7 +67431,7 @@
       "Good": 4.0
     },
     "Pakistan-MWH": {
-      "Good": 59.0
+      "Good": 56.0
     },
     "Carlcare-Lahore": {
       "Good": 2.0
@@ -67660,8 +67542,7 @@
       "Good": 11.0
     },
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Good": 1.0
     },
     "Smart Mobile Solutions-E-Mansehra": {
       "Good": 14.0
@@ -67737,14 +67618,11 @@
     "ASC-M-Jhelum": {
       "Good": 1.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "PCC-E-NOWSHEHRA": {
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 104.0,
+      "Good": 107.0,
       "Defective": 5.0
     },
     "Carlcare-Lahore": {
@@ -67760,6 +67638,9 @@
       "Good": 2.0
     },
     "Qaiser Telecom-M-TT Singh": {
+      "Defective": 1.0
+    },
+    "Advance-E-Township (LHR)": {
       "Defective": 1.0
     },
     "M&P-E-Rawalpindi": {
@@ -67813,9 +67694,6 @@
     },
     "MMT-E-Faisalabad": {
       "Good": 1.0
-    },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
     },
     "MMT-E-Multan": {
       "Good": 1.0
@@ -67910,9 +67788,6 @@
     "ASC-M-Jhelum": {
       "Defective": 1.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "Pakistan-MWH": {
       "Good": 13.0,
       "Defective": 15.0
@@ -67970,8 +67845,8 @@
       "Good": 2.0
     },
     "PK-L4-ESS Lab LHR": {
-      "Good": 9.0,
-      "Defective": 77.0
+      "Good": 8.0,
+      "Defective": 78.0
     },
     "PCC-E-NOWSHEHRA": {
       "Good": 1.0
@@ -67980,7 +67855,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 23.0,
+      "Good": 21.0,
       "Defective": 25.0
     },
     "ESS-ASC-M-Gujranwala": {
@@ -68188,7 +68063,7 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 29.0,
+      "Good": 25.0,
       "Defective": 25.0
     },
     "Advance-E-Gujrat": {
@@ -68201,7 +68076,7 @@
       "Defective": 1.0
     },
     "ITEL ESS LAB-KHI": {
-      "Good": 6.0,
+      "Good": 5.0,
       "Defective": 1.0
     },
     "ITEL ESS LAB-ISB": {
@@ -68268,7 +68143,7 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 11.0,
+      "Good": 8.0,
       "Defective": 16.0
     },
     "ESS-Lahore-SWH": {
@@ -68313,7 +68188,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 12.0,
+      "Good": 11.0,
       "Defective": 3.0
     },
     "Carlcare-Lahore": {
@@ -68385,9 +68260,6 @@
   "17601354": {
     "MMT-E-Faisalabad": {
       "Good": 1.0
-    },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
     },
     "Pakistan-MWH": {
       "Good": 6.0
@@ -68609,8 +68481,8 @@
       "Good": 1.0
     },
     "PK-L4-ESS Lab LHR": {
-      "Good": 4.0,
-      "Defective": 30.0
+      "Good": 3.0,
+      "Defective": 31.0
     },
     "Pakistan-MWH": {
       "Defective": 6.0
@@ -69052,9 +68924,6 @@
     "MMT-E-Faisalabad": {
       "Good": 3.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "PCC-E-NOWSHEHRA": {
       "Defective": 2.0
     },
@@ -69173,7 +69042,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 14.0
+      "Good": 21.0
     },
     "Carlcare-Lahore": {
       "Good": 2.0
@@ -69472,9 +69341,6 @@
     "MMT-E-Faisalabad": {
       "Good": 7.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
     "MMT-E-Multan": {
       "Good": 2.0
     },
@@ -69504,7 +69370,7 @@
       "Good": 1.0
     },
     "M&P-E-Rawalpindi": {
-      "Good": 1.0
+      "Defective": 1.0
     }
   },
   "12205712": {
@@ -69617,7 +69483,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 12.0,
+      "Good": 11.0,
       "Defective": 2.0
     },
     "Carlcare-Lahore": {
@@ -69634,9 +69500,6 @@
     "MMT-E-Faisalabad": {
       "Good": 1.0
     },
-    "Advance-E-Faisalabad": {
-      "Defective": 3.0
-    },
     "Pakistan-MWH": {
       "Good": 30.0,
       "Damage": 3.0
@@ -69648,6 +69511,9 @@
       "Good": 1.0
     },
     "Ahmad Mobile-M-Burewala": {
+      "Good": 1.0
+    },
+    "Advance-E-Sialkot": {
       "Good": 1.0
     }
   },
@@ -69708,9 +69574,6 @@
   "12025064": {
     "MMT-E-Faisalabad": {
       "Defective": 1.0
-    },
-    "Advance-E-Faisalabad": {
-      "Defective": 2.0
     },
     "Pakistan-MWH": {
       "Good": 45.0,
@@ -69843,7 +69706,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 9.0,
+      "Good": 8.0,
       "Damage": 1.0
     },
     "Carlcare-Lahore": {
@@ -69901,9 +69764,6 @@
   "19401352": {
     "MMT-E-Faisalabad": {
       "Good": 2.0
-    },
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
     },
     "Ali Mobile Zone-M-Kabirwala": {
       "Good": 2.0
@@ -69994,7 +69854,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 3.0,
+      "Good": 1.0,
       "Defective": 1.0
     },
     "Advance-E-Sareena": {
@@ -70034,7 +69894,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 99.0,
+      "Good": 93.0,
       "Defective": 8.0
     },
     "Carlcare-Lahore": {
@@ -70096,17 +69956,6 @@
       "Good": 2.0
     }
   },
-  "10083786": {
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
-    "Pakistan-MWH": {
-      "Defective": 11.0
-    },
-    "PK-QM Checking Devices": {
-      "Defective": 1.0
-    }
-  },
   "10057300": {
     "Advance-E-Faisalabad": {
       "Good": 1.0
@@ -70135,41 +69984,6 @@
       "Good": 1.0
     }
   },
-  "12707716": {
-    "Advance-E-Faisalabad": {
-      "Defective": 3.0
-    },
-    "MMT-E-Multan": {
-      "Good": 2.0
-    },
-    "Pakistan-MWH": {
-      "Good": 324.0,
-      "Damage": 10.0
-    },
-    "Carlcare-Lahore": {
-      "Good": 1.0
-    },
-    "Carlcare-Hyderabad": {
-      "Good": 1.0,
-      "Defective": 2.0
-    },
-    "DLI-M-MARDAN": {
-      "Defective": 1.0
-    },
-    "M&P-E-Rawalpindi": {
-      "Good": 1.0,
-      "Defective": 1.0
-    },
-    "Carlcare-Gujranwala": {
-      "Good": 1.0
-    },
-    "Ahmad Mobile-M-Burewala": {
-      "Defective": 1.0
-    },
-    "Advance-E-Sialkot": {
-      "Good": 3.0
-    }
-  },
   "10059206": {
     "Advance-E-Faisalabad": {
       "Good": 1.0
@@ -70178,7 +69992,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 30.0
+      "Good": 23.0
     },
     "Advance-E-Hall Road (LHR)": {
       "Good": 1.0
@@ -70231,21 +70045,9 @@
       "Good": 2.0
     }
   },
-  "19401068": {
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
-    "Advance-E-Gujrat": {
-      "Good": 1.0
-    },
-    "Advance-E-Sialkot": {
-      "Good": 2.0
-    }
-  },
   "12113169": {
     "Advance-E-Faisalabad": {
-      "Good": 2.0,
-      "Defective": 1.0
+      "Good": 2.0
     },
     "PCC-E-NOWSHEHRA": {
       "Good": 1.0
@@ -70286,9 +70088,6 @@
     "Advance-E-Faisalabad": {
       "Good": 9.0
     },
-    "MMT-E-Multan": {
-      "Good": 1.0
-    },
     "Advance-E-Bahawalpur": {
       "Good": 1.0
     },
@@ -70296,7 +70095,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 20.0
+      "Good": 17.0
     },
     "Carlcare-Lahore": {
       "Good": 1.0
@@ -70379,17 +70178,6 @@
     },
     "Advance-E-Multan": {
       "Good": 1.0
-    }
-  },
-  "12025319": {
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
-    "Pakistan-MWH": {
-      "Defective": 19.0
-    },
-    "Ahmad Mobile-M-Burewala": {
-      "Defective": 1.0
     }
   },
   "38101308": {
@@ -70503,11 +70291,14 @@
     "Advance-E-Faisalabad": {
       "Good": 2.0
     },
+    "MMT-E-Multan": {
+      "Good": 1.0
+    },
     "PCC-E-NOWSHEHRA": {
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 50.0
+      "Good": 48.0
     },
     "Carlcare-Lahore": {
       "Good": 1.0
@@ -70553,56 +70344,11 @@
       "Good": 1.0
     }
   },
-  "12034016": {
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    },
-    "Advance-E-Bahawalpur": {
-      "Defective": 1.0
-    },
-    "Pakistan-MWH": {
-      "Good": 27.0,
-      "Defective": 71.0
-    }
-  },
   "23002117": {
     "Advance-E-Faisalabad": {
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 1.0
-    }
-  },
-  "12709275": {
-    "Advance-E-Faisalabad": {
-      "Defective": 3.0
-    },
-    "Smart Mobile Solutions-E-Mansehra": {
-      "Good": 1.0
-    },
-    "Pakistan-MWH": {
-      "Defective": 10.0,
-      "Damage": 10.0
-    },
-    "Advance-E-Sukkur": {
-      "Defective": 1.0
-    },
-    "Carlcare-Islamabad": {
-      "Good": 2.0,
-      "Defective": 1.0
-    },
-    "PK-L4-PCBA": {
-      "Semi-manufactured": 16.0
-    },
-    "Carlcare-Gujranwala": {
-      "Good": 2.0,
-      "Defective": 1.0,
-      "Damage": 1.0
-    },
-    "Ahmad Mobile-M-Burewala": {
-      "Defective": 1.0
-    },
-    "Advance-E-Sialkot": {
       "Good": 1.0
     }
   },
@@ -70634,7 +70380,7 @@
     },
     "Pakistan-MWH": {
       "Good": 14.0,
-      "Defective": 13.0,
+      "Defective": 12.0,
       "Damage": 8.0
     },
     "Carlcare-Lahore": {
@@ -70719,21 +70465,15 @@
       "Good": 4.0
     }
   },
-  "10082366": {
-    "Advance-E-Faisalabad": {
-      "Defective": 1.0
-    }
-  },
   "12709229": {
     "Advance-E-Faisalabad": {
-      "Good": 2.0,
-      "Defective": 1.0
+      "Good": 2.0
     },
     "Smart Mobile Solutions-E-Mansehra": {
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 13.0,
+      "Good": 11.0,
       "Defective": 1.0
     },
     "Carlcare-Lahore": {
@@ -70808,8 +70548,7 @@
   },
   "25002329": {
     "Advance-E-Faisalabad": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Good": 1.0
     },
     "Pakistan-MWH": {
       "Defective": 1.0
@@ -70940,7 +70679,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 78.0
+      "Good": 74.0
     },
     "Carlcare-Lahore": {
       "Good": 2.0
@@ -71060,6 +70799,9 @@
     "Advance-E-Gujrat": {
       "Good": 1.0
     },
+    "M&P-E-Lahore": {
+      "Good": 1.0
+    },
     "Carlcare-Peshawar": {
       "Good": 1.0
     },
@@ -71117,18 +70859,6 @@
     },
     "Ahmad Mobile-M-Burewala": {
       "Good": 1.0
-    }
-  },
-  "12033859": {
-    "JM TECH-M-CHAKWAL": {
-      "Defective": 1.0
-    },
-    "Pakistan-MWH": {
-      "Good": 17.0,
-      "Defective": 44.0
-    },
-    "Carlcare-Gujranwala": {
-      "Defective": 1.0
     }
   },
   "17600575": {
@@ -71270,7 +71000,7 @@
       "Good": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 161.0
+      "Good": 160.0
     },
     "M&P-M-Karachi-saddar": {
       "Good": 1.0
@@ -71390,6 +71120,9 @@
     "Carlcare-Lahore": {
       "Good": 1.0,
       "Damage": 3.0
+    },
+    "Gulf Mobile-E-Taxila": {
+      "Good": 1.0
     },
     "Carlcare-Hyderabad": {
       "Damage": 1.0
@@ -71556,7 +71289,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 199.0,
+      "Good": 203.0,
       "Defective": 11.0
     },
     "Carlcare-Lahore": {
@@ -71608,6 +71341,9 @@
       "Defective": 1.0
     },
     "Carlcare-Lahore": {
+      "Good": 1.0
+    },
+    "Gulf Mobile-E-Taxila": {
       "Good": 1.0
     },
     "Carlcare-Hyderabad": {
@@ -71702,6 +71438,9 @@
   "12030434": {
     "Ali Mobile Zone-M-Kabirwala": {
       "Good": 1.0
+    },
+    "MMT-E-Multan": {
+      "Defective": 1.0
     },
     "Smart Mobile Solutions-E-Mansehra": {
       "Good": 1.0
@@ -72080,6 +71819,34 @@
       "Good": 1.0
     }
   },
+  "12707716": {
+    "MMT-E-Multan": {
+      "Good": 2.0
+    },
+    "Pakistan-MWH": {
+      "Good": 324.0,
+      "Damage": 10.0
+    },
+    "Carlcare-Lahore": {
+      "Good": 1.0
+    },
+    "Carlcare-Hyderabad": {
+      "Good": 1.0,
+      "Defective": 2.0
+    },
+    "DLI-M-MARDAN": {
+      "Defective": 1.0
+    },
+    "Carlcare-Gujranwala": {
+      "Good": 1.0
+    },
+    "Ahmad Mobile-M-Burewala": {
+      "Defective": 1.0
+    },
+    "Advance-E-Sialkot": {
+      "Good": 3.0
+    }
+  },
   "23002442": {
     "MMT-E-Multan": {
       "Good": 2.0
@@ -72166,7 +71933,7 @@
       "Defective": 2.0
     },
     "Pakistan-MWH": {
-      "Good": 44.0,
+      "Good": 48.0,
       "Defective": 2.0
     },
     "Carlcare-Lahore": {
@@ -72231,8 +71998,7 @@
       "Good": 1.0
     },
     "Advance-E-Hall Road (LHR)": {
-      "Good": 2.0,
-      "Defective": 1.0
+      "Good": 2.0
     },
     "Advance-E-Multan": {
       "Good": 1.0
@@ -72365,7 +72131,7 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 12.0,
+      "Good": 11.0,
       "Defective": 6.0
     },
     "Carlcare-Lahore": {
@@ -72413,8 +72179,7 @@
       "Defective": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 3.0,
-      "Defective": 1.0
+      "Good": 2.0
     },
     "Advance-E-Gujrat": {
       "Good": 1.0
@@ -72464,7 +72229,7 @@
       "Good": 3.0
     },
     "Pakistan-MWH": {
-      "Good": 161.0,
+      "Good": 160.0,
       "Defective": 2.0
     },
     "Carlcare-Lahore": {
@@ -72483,6 +72248,9 @@
       "Good": 1.0
     },
     "AL Noor Mobile-E-Quetta": {
+      "Good": 1.0
+    },
+    "Advance-E-Sialkot": {
       "Good": 1.0
     }
   },
@@ -72583,6 +72351,17 @@
       "Good": 6.0
     }
   },
+  "17600663": {
+    "MMT-E-Multan": {
+      "Good": 1.0
+    },
+    "Pakistan-MWH": {
+      "Good": 4.0
+    },
+    "Carlcare-Lahore": {
+      "Good": 3.0
+    }
+  },
   "12033086": {
     "MMT-E-Multan": {
       "Defective": 1.0
@@ -72668,7 +72447,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 32.0
+      "Good": 31.0
     },
     "Carlcare-Lahore": {
       "Good": 1.0
@@ -72752,7 +72531,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 25.0,
+      "Good": 26.0,
       "Defective": 1.0
     }
   },
@@ -72883,6 +72662,22 @@
       "Good": 2.0
     }
   },
+  "12204085": {
+    "MMT-E-Multan": {
+      "Good": 1.0
+    },
+    "Pakistan-MWH": {
+      "Good": 2.0,
+      "Defective": 2.0,
+      "Damage": 1.0
+    },
+    "Carlcare-Lahore": {
+      "Good": 3.0
+    },
+    "Carlcare-Hyderabad": {
+      "Good": 1.0
+    }
+  },
   "25101532": {
     "MMT-E-Multan": {
       "Good": 1.0
@@ -73004,7 +72799,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 2.0
+      "Good": 1.0
     },
     "Carlcare-Islamabad": {
       "Good": 1.0
@@ -73054,7 +72849,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 39.0
+      "Good": 40.0
     },
     "Carlcare-Lahore": {
       "Good": 4.0
@@ -73466,6 +73261,9 @@
     },
     "DLI-M-MARDAN": {
       "Defective": 3.0
+    },
+    "ITEL ESS LAB-KHI": {
+      "Defective": 1.0
     },
     "ESS-Lahore-SWH": {
       "Good": 2.0,
@@ -73913,12 +73711,21 @@
       "Defective": 1.0
     }
   },
+  "12034016": {
+    "Advance-E-Bahawalpur": {
+      "Defective": 1.0
+    },
+    "Pakistan-MWH": {
+      "Good": 27.0,
+      "Defective": 71.0
+    }
+  },
   "17601300": {
     "Advance-E-Bahawalpur": {
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 10.0,
+      "Good": 9.0,
       "Defective": 2.0
     },
     "Carlcare-Lahore": {
@@ -74036,6 +73843,9 @@
       "Good": 42.0
     },
     "Carlcare-Hyderabad": {
+      "Good": 1.0
+    },
+    "M&P-E-Lahore": {
       "Good": 1.0
     },
     "Grace Mobile-M-Haroonabad": {
@@ -74817,7 +74627,7 @@
       "Good": 1.0
     },
     "Pakistan-MWH": {
-      "Good": 82.0
+      "Good": 81.0
     },
     "Carlcare-Gujranwala": {
       "Good": 1.0
@@ -74959,6 +74769,36 @@
       "Semi-manufactured": 3.0
     }
   },
+  "12709275": {
+    "Smart Mobile Solutions-E-Mansehra": {
+      "Good": 1.0
+    },
+    "Pakistan-MWH": {
+      "Defective": 10.0,
+      "Damage": 10.0
+    },
+    "Advance-E-Sukkur": {
+      "Defective": 1.0
+    },
+    "Carlcare-Islamabad": {
+      "Good": 2.0,
+      "Defective": 1.0
+    },
+    "PK-L4-PCBA": {
+      "Semi-manufactured": 16.0
+    },
+    "Carlcare-Gujranwala": {
+      "Good": 2.0,
+      "Defective": 1.0,
+      "Damage": 1.0
+    },
+    "Ahmad Mobile-M-Burewala": {
+      "Defective": 1.0
+    },
+    "Advance-E-Sialkot": {
+      "Good": 1.0
+    }
+  },
   "25002892": {
     "Smart Mobile Solutions-E-Mansehra": {
       "Defective": 1.0
@@ -75026,7 +74866,7 @@
   },
   "10083521": {
     "Pakistan-MWH": {
-      "Defective": 2.0
+      "Defective": 1.0
     },
     "PK-QM Checking Devices": {
       "Defective": 1.0
@@ -75421,6 +75261,11 @@
       "Good": 3.0
     }
   },
+  "12027541": {
+    "Pakistan-MWH": {
+      "Good": 1.0
+    }
+  },
   "10049245": {
     "Pakistan-MWH": {
       "Good": 1.0
@@ -75502,11 +75347,6 @@
     },
     "Ahmad Mobile-M-Burewala": {
       "Good": 2.0
-    }
-  },
-  "12112070": {
-    "Pakistan-MWH": {
-      "Defective": 3.0
     }
   },
   "12202569": {
@@ -75759,8 +75599,11 @@
   },
   "17601258": {
     "Pakistan-MWH": {
-      "Good": 21.0,
+      "Good": 20.0,
       "Defective": 1.0
+    },
+    "Gulf Mobile-E-Taxila": {
+      "Good": 1.0
     },
     "M&P-E-Lahore": {
       "Good": 1.0
@@ -75986,7 +75829,7 @@
   },
   "10059632": {
     "Pakistan-MWH": {
-      "Good": 8.0
+      "Good": 9.0
     },
     "Carlcare-Lahore": {
       "Good": 1.0
@@ -77361,7 +77204,7 @@
   },
   "10073051": {
     "Pakistan-MWH": {
-      "Good": 5.0,
+      "Good": 4.0,
       "Defective": 1.0
     },
     "M&P-M-Karachi-saddar": {
@@ -78278,6 +78121,14 @@
       "Good": 2.0
     }
   },
+  "10083786": {
+    "Pakistan-MWH": {
+      "Defective": 10.0
+    },
+    "PK-QM Checking Devices": {
+      "Defective": 1.0
+    }
+  },
   "15301324": {
     "Pakistan-MWH": {
       "Good": 964.0
@@ -78316,8 +78167,7 @@
       "Good": 4.0
     },
     "PK-L4-PCBA": {
-      "Good": 1.0,
-      "Defective": 1.0
+      "Defective": 2.0
     }
   },
   "37301178": {
@@ -79599,7 +79449,7 @@
   },
   "10085173": {
     "Pakistan-MWH": {
-      "Defective": 2.0
+      "Defective": 1.0
     },
     "PK-QM Checking Devices": {
       "Defective": 2.0
@@ -79955,7 +79805,7 @@
   },
   "37600476": {
     "Pakistan-MWH": {
-      "Good": 236.0
+      "Good": 235.0
     }
   },
   "12203744": {
@@ -80727,6 +80577,11 @@
       "Good": 5.0
     }
   },
+  "12026765": {
+    "Pakistan-MWH": {
+      "Good": 1.0
+    }
+  },
   "12033224": {
     "Pakistan-MWH": {
       "Good": 1.0
@@ -80874,6 +80729,14 @@
   "38103693": {
     "Pakistan-MWH": {
       "Good": 70.0
+    }
+  },
+  "12025319": {
+    "Pakistan-MWH": {
+      "Defective": 19.0
+    },
+    "Ahmad Mobile-M-Burewala": {
+      "Defective": 1.0
     }
   },
   "38101749": {
@@ -82159,6 +82022,9 @@
   "10046336": {
     "Pakistan-MWH": {
       "Good": 10.0
+    },
+    "Advance-E-Sialkot": {
+      "Good": 1.0
     }
   },
   "10056541": {
@@ -82754,7 +82620,7 @@
   },
   "10064614": {
     "Pakistan-MWH": {
-      "Good": 14.0
+      "Good": 13.0
     },
     "Carlcare-Lahore": {
       "Good": 1.0
@@ -83506,14 +83372,6 @@
       "Good": 56.0
     }
   },
-  "10086005": {
-    "Pakistan-MWH": {
-      "Defective": 1.0
-    },
-    "DLI-M-MARDAN": {
-      "Defective": 1.0
-    }
-  },
   "15600096": {
     "Pakistan-MWH": {
       "Good": 1.0
@@ -83659,7 +83517,7 @@
   },
   "10054506": {
     "Pakistan-MWH": {
-      "Good": 1.0
+      "Good": 2.0
     },
     "M&P-M-Karachi-saddar": {
       "Good": 1.0
@@ -85178,14 +85036,6 @@
       "Good": 171.0
     }
   },
-  "17600663": {
-    "Pakistan-MWH": {
-      "Good": 4.0
-    },
-    "Carlcare-Lahore": {
-      "Good": 3.0
-    }
-  },
   "12040984": {
     "Pakistan-MWH": {
       "Defective": 1.0
@@ -85499,6 +85349,9 @@
       "Good": 3.0
     },
     "Carlcare-Lahore": {
+      "Good": 1.0
+    },
+    "M&P-E-Lahore": {
       "Good": 1.0
     }
   },
@@ -85976,8 +85829,8 @@
       "Good": 15.0
     },
     "PK-L4-PCBA": {
-      "Good": 3.0,
-      "Defective": 3.0
+      "Good": 2.0,
+      "Defective": 4.0
     }
   },
   "37300905": {
@@ -87124,7 +86977,7 @@
   },
   "12206533": {
     "Pakistan-MWH": {
-      "Good": 3.0
+      "Good": 2.0
     },
     "Carlcare-Lahore": {
       "Good": 2.0
@@ -87651,7 +87504,7 @@
   },
   "10058583": {
     "Pakistan-MWH": {
-      "Good": 17.0
+      "Good": 32.0
     },
     "Carlcare-Lahore": {
       "Good": 1.0
@@ -88026,7 +87879,7 @@
   },
   "12107127": {
     "Pakistan-MWH": {
-      "Good": 2.0,
+      "Good": 1.0,
       "Defective": 3.0
     },
     "Carlcare-Peshawar": {
@@ -88064,7 +87917,7 @@
       "Good": 3.0
     },
     "M&P-E-Rawalpindi": {
-      "Good": 1.0
+      "Defective": 1.0
     }
   },
   "37301492": {
@@ -89262,7 +89115,10 @@
   },
   "10058584": {
     "Pakistan-MWH": {
-      "Good": 25.0
+      "Good": 44.0
+    },
+    "M&P-E-Lahore": {
+      "Good": 2.0
     },
     "Advance-E-Sareena": {
       "Good": 1.0
@@ -90066,7 +89922,7 @@
   },
   "10083519": {
     "Pakistan-MWH": {
-      "Defective": 2.0
+      "Defective": 1.0
     },
     "Carlcare-Gujranwala": {
       "Defective": 1.0
@@ -91230,19 +91086,6 @@
       "Good": 1.0
     }
   },
-  "12204085": {
-    "Pakistan-MWH": {
-      "Good": 2.0,
-      "Defective": 2.0,
-      "Damage": 1.0
-    },
-    "Carlcare-Lahore": {
-      "Good": 3.0
-    },
-    "Carlcare-Hyderabad": {
-      "Good": 1.0
-    }
-  },
   "14201518": {
     "Pakistan-MWH": {
       "Good": 200.0
@@ -91552,6 +91395,9 @@
   "19501152": {
     "Pakistan-MWH": {
       "Good": 36.0
+    },
+    "Gulf Mobile-E-Taxila": {
+      "Good": 1.0
     },
     "Sonie-M-Swat": {
       "Good": 2.0
@@ -92070,8 +91916,8 @@
   },
   "10083776": {
     "Pakistan-MWH": {
-      "Good": 2.0,
-      "Defective": 8.0
+      "Good": 1.0,
+      "Defective": 7.0
     },
     "PK-QM Checking Devices": {
       "Defective": 6.0
@@ -94993,7 +94839,7 @@
   "12706525": {
     "Pakistan-MWH": {
       "Good": 5.0,
-      "Defective": 5.0,
+      "Defective": 3.0,
       "Damage": 7.0
     },
     "Carlcare-Lahore": {
@@ -95398,7 +95244,7 @@
   },
   "10063518": {
     "Pakistan-MWH": {
-      "Good": 4.0
+      "Good": 3.0
     },
     "Carlcare-Lahore": {
       "Good": 2.0
@@ -97665,7 +97511,7 @@
   },
   "10058582": {
     "Pakistan-MWH": {
-      "Good": 26.0
+      "Good": 43.0
     },
     "Advance-E-Sialkot": {
       "Good": 1.0
@@ -100472,6 +100318,14 @@
       "Good": 1.0
     }
   },
+  "19401068": {
+    "Advance-E-Gujrat": {
+      "Good": 1.0
+    },
+    "Advance-E-Sialkot": {
+      "Good": 2.0
+    }
+  },
   "12708162": {
     "Advance-E-Gujrat": {
       "Good": 1.0
@@ -100605,6 +100459,11 @@
   "12707096": {
     "DLI-M-MARDAN": {
       "Good": 1.0
+    }
+  },
+  "10086005": {
+    "DLI-M-MARDAN": {
+      "Defective": 1.0
     }
   },
   "10322617": {
@@ -100891,7 +100750,7 @@
   },
   "12203784": {
     "Advance-E-Township (LHR)": {
-      "Good": 1.0
+      "Defective": 1.0
     }
   },
   "12037787": {
