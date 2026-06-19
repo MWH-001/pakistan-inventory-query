@@ -567,6 +567,26 @@
             
             const totalStock = mainStock + subStock;
             
+            // Calculate total in-transit
+            let totalInTransit = 0;
+            const allCodes = [materialCode];
+            if (substituteData[materialCode]) {
+                substituteData[materialCode].forEach(sub => allCodes.push(sub.code));
+            }
+            allCodes.forEach(code => {
+                if (inTransitData && inTransitData[code]) {
+                    if (warehouse) {
+                        totalInTransit += inTransitData[code][warehouse] || 0;
+                    } else {
+                        Object.entries(inTransitData[code]).forEach(([wh, qty]) => {
+                            if (!wh.includes('MWH')) {
+                                totalInTransit += qty;
+                            }
+                        });
+                    }
+                }
+            });
+            
             // Show summary
             summary.innerHTML = `
                 <div class="summary-item main">
@@ -580,6 +600,10 @@
                 <div class="summary-item total">
                     <div class="label">Total Available</div>
                     <div class="value">${totalStock}</div>
+                </div>
+                <div class="summary-item" style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);">
+                    <div class="label">Total In Transit</div>
+                    <div class="value" style="color: #e65100;">${totalInTransit}</div>
                 </div>
             `;
             
