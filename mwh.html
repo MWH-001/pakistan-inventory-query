@@ -377,6 +377,7 @@
                                 <th>Description</th>
                                 <th>Warehouse</th>
                                 <th>Good Stock</th>
+                                <th>In Transit</th>
                                 <th>Type</th>
                             </tr>
                         </thead>
@@ -418,13 +419,15 @@
         }
         let inventoryData = null;
         let substituteData = null;
+        let inTransitData = null;
         
         // Load data
         async function loadData() {
             try {
-                const [invRes, subRes] = await Promise.all([
+                const [invRes, subRes, transitRes] = await Promise.all([
                     fetch('inventory_index.json?t=' + Date.now()),
-                    fetch('substitute_map.json?t=' + Date.now())
+                    fetch('substitute_map.json?t=' + Date.now()),
+                    fetch('in_transit_index.json?t=' + Date.now())
                 ]);
                 
                 if (!invRes.ok || !subRes.ok) {
@@ -433,6 +436,7 @@
                 
                 inventoryData = await invRes.json();
                 substituteData = await subRes.json();
+                inTransitData = await transitRes.json();
                 
                 // Build warehouse list (include all warehouses)
                 const warehouses = new Set();
@@ -580,15 +584,19 @@
             if (allResults.length === 0) {
                 resultBody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:40px;color:#999;">No stock records found</td></tr>';
             } else {
-                resultBody.innerHTML = allResults.map(r => `
+                resultBody.innerHTML = allResults.map(r => {
+                    const inTransit = inTransitData && inTransitData[r.code] && inTransitData[r.code][r.warehouse] ? inTransitData[r.code][r.warehouse] : 0;
+                    return `
                     <tr>
                         <td>${r.code}</td>
                         <td>${r.desc}</td>
                         <td>${r.warehouse}</td>
                         <td class="${r.stock > 10 ? 'stock-good' : r.stock > 0 ? 'stock-low' : 'stock-zero'}">${r.stock}</td>
+                        <td class="${inTransit > 0 ? 'stock-good' : 'stock-zero'}">${inTransit}</td>
                         <td><span class="badge ${r.type}">${r.type === 'main' ? 'Main' : 'Substitute'}</span></td>
                     </tr>
-                `).join('');
+                    `;
+                }).join('');
             }
             
             resultCard.classList.add('show');
