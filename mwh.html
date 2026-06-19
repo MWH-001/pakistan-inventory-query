@@ -115,7 +115,7 @@
         .search-form {
             display: flex;
             gap: 15px;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             align-items: center;
         }
         
@@ -124,7 +124,7 @@
             align-items: center;
             gap: 8px;
             flex: 1;
-            min-width: 200px;
+            min-width: 0;
         }
         
         .form-group label {
@@ -400,7 +400,7 @@
                     <label>Material Code</label>
                     <input type="text" id="materialCode" placeholder="Enter 8-digit code, e.g. 17401967">
                 </div>
-                <div class="form-group" style="flex-direction: column; align-items: flex-start;">
+                <div class="form-group">
                     <label>Warehouse</label>
                     <div class="warehouse-box">
                         <input type="text" id="warehouseSearch" placeholder="Search warehouse...">
