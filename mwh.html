@@ -398,9 +398,7 @@
             const error = document.getElementById('passwordError');
             
             if (input === PASSWORD) {
-                const today = new Date().toDateString();
                 localStorage.setItem('authenticated', 'true');
-                localStorage.setItem('authDate', today);
                 document.getElementById('passwordOverlay').style.display = 'none';
                 document.getElementById('mainContent').style.display = 'block';
             } else {
@@ -413,10 +411,8 @@
             if (e.key === 'Enter') checkPassword();
         });
         
-        // Check if already authenticated today
-        const authDate = localStorage.getItem('authDate');
-        const today = new Date().toDateString();
-        if (localStorage.getItem('authenticated') === 'true' && authDate === today) {
+        // Check if already authenticated (permanent, first time only)
+        if (localStorage.getItem('authenticated') === 'true') {
             document.getElementById('passwordOverlay').style.display = 'none';
             document.getElementById('mainContent').style.display = 'block';
         }
