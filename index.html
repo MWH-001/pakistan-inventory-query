@@ -381,6 +381,7 @@
                 </div>
                 <div class="form-group" style="flex-direction: column; align-items: flex-start;">
                     <label>Warehouse</label>
+                    <input type="text" id="warehouseSearch" placeholder="Search warehouse..." style="width:100%;margin-bottom:6px;padding:6px 8px;border:1px solid #e0e0e0;border-radius:4px;font-size:12px;">
                     <div class="warehouse-list" id="warehouseList"></div>
                 </div>
                 <button class="search-btn" id="searchBtn">🔍 Query</button>
@@ -472,14 +473,24 @@
                 });
                 
                 const warehouseList = document.getElementById('warehouseList');
+                const warehouseSearch = document.getElementById('warehouseSearch');
                 Array.from(warehouses).sort().forEach(wh => {
                     const item = document.createElement('div');
                     item.className = 'warehouse-item';
+                    item.dataset.warehouse = wh.toLowerCase();
                     item.innerHTML = `
                         <input type="checkbox" id="wh_${wh.replace(/[^a-zA-Z0-9]/g, '_')}" value="${wh}">
                         <label for="wh_${wh.replace(/[^a-zA-Z0-9]/g, '_')}">${wh}</label>
                     `;
                     warehouseList.appendChild(item);
+                });
+                
+                warehouseSearch.addEventListener('input', (e) => {
+                    const searchTerm = e.target.value.toLowerCase();
+                    document.querySelectorAll('.warehouse-item').forEach(item => {
+                        const warehouse = item.dataset.warehouse;
+                        item.style.display = warehouse.includes(searchTerm) ? 'flex' : 'none';
+                    });
                 });
                 
                 // Show update time
