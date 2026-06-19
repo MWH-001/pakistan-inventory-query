@@ -516,6 +516,13 @@
             
             hideError();
             
+            // Update warehouse list to show only selected (first one if multiple)
+            const warehouseList = document.getElementById('warehouseList');
+            if (selectedWarehouses.length > 0) {
+                const displayWarehouse = selectedWarehouses[0]; // Show first selected
+                warehouseList.innerHTML = `<div class="warehouse-item"><input type="checkbox" checked disabled><label>${displayWarehouse}</label></div>`;
+            }
+            
             const resultCard = document.getElementById('resultCard');
             const summary = document.getElementById('summary');
             const resultBody = document.getElementById('resultBody');
