@@ -504,7 +504,32 @@
                 
                 const warehouseList = document.getElementById('warehouseList');
                 const warehouseSearch = document.getElementById('warehouseSearch');
-                Array.from(warehouses).sort().forEach(wh => {
+                
+                // Sort warehouses with custom order
+                const sortedWarehouses = Array.from(warehouses).sort((a, b) => {
+                    // Pakistan-MWH first
+                    if (a === 'Pakistan-MWH') return -1;
+                    if (b === 'Pakistan-MWH') return 1;
+                    
+                    // L4 warehouses second and third
+                    const aL4 = a.includes('L4');
+                    const bL4 = b.includes('L4');
+                    if (aL4 && !bL4) return -1;
+                    if (!aL4 && bL4) return 1;
+                    if (aL4 && bL4) return a.localeCompare(b);
+                    
+                    // Carlcare warehouses 4th to 9th
+                    const aCarlcare = a.toLowerCase().includes('carlcare');
+                    const bCarlcare = b.toLowerCase().includes('carlcare');
+                    if (aCarlcare && !bCarlcare) return -1;
+                    if (!aCarlcare && bCarlcare) return 1;
+                    if (aCarlcare && bCarlcare) return a.localeCompare(b);
+                    
+                    // Rest sorted alphabetically
+                    return a.localeCompare(b);
+                });
+                
+                sortedWarehouses.forEach(wh => {
                     const item = document.createElement('div');
                     item.className = 'warehouse-item';
                     item.dataset.warehouse = wh.toLowerCase();
