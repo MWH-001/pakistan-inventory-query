@@ -398,9 +398,11 @@
             const error = document.getElementById('passwordError');
             
             if (input === PASSWORD) {
+                const today = new Date().toDateString();
+                localStorage.setItem('authenticated', 'true');
+                localStorage.setItem('authDate', today);
                 document.getElementById('passwordOverlay').style.display = 'none';
                 document.getElementById('mainContent').style.display = 'block';
-                sessionStorage.setItem('authenticated', 'true');
             } else {
                 error.style.display = 'block';
                 setTimeout(() => { error.style.display = 'none'; }, 3000);
@@ -411,7 +413,10 @@
             if (e.key === 'Enter') checkPassword();
         });
         
-        if (sessionStorage.getItem('authenticated') === 'true') {
+        // Check if already authenticated today
+        const authDate = localStorage.getItem('authDate');
+        const today = new Date().toDateString();
+        if (localStorage.getItem('authenticated') === 'true' && authDate === today) {
             document.getElementById('passwordOverlay').style.display = 'none';
             document.getElementById('mainContent').style.display = 'block';
         }
