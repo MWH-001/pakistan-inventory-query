@@ -137,21 +137,22 @@
         
         .warehouse-list {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             gap: 8px;
-            max-height: 120px;
-            overflow-y: auto;
+            overflow-x: auto;
             padding: 8px;
             border: 1px solid #e0e0e0;
             border-radius: 6px;
             background: #fafafa;
+            white-space: nowrap;
         }
         
         .warehouse-item {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 4px;
             font-size: 12px;
+            flex-shrink: 0;
         }
         
         .warehouse-item input[type="checkbox"] {
