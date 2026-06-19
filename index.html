@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>库存查询系统</title>
+    <title>Inventory Query System</title>
     <style>
         * {
             margin: 0;
@@ -12,7 +12,7 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
@@ -269,23 +269,23 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>📦 库存查询系统</h1>
-            <p>查询物料及替代料在指定仓库的 Good 库存</p>
+            <h1>📦 Inventory Query System</h1>
+            <p>Query Good stock for materials and their substitutes by warehouse</p>
         </div>
         
         <div class="search-card">
             <div class="search-form">
                 <div class="form-group">
-                    <label>物料编码</label>
-                    <input type="text" id="materialCode" placeholder="输入8位物料编码，如 17401967">
+                    <label>Material Code</label>
+                    <input type="text" id="materialCode" placeholder="Enter 8-digit code, e.g. 17401967">
                 </div>
                 <div class="form-group">
-                    <label>仓库名称</label>
+                    <label>Warehouse</label>
                     <select id="warehouse">
-                        <option value="">全部仓库</option>
+                        <option value="">All Warehouses</option>
                     </select>
                 </div>
-                <button class="search-btn" id="searchBtn">查询</button>
+                <button class="search-btn" id="searchBtn">🔍 Query</button>
             </div>
             <div class="error" id="errorMsg"></div>
         </div>
@@ -294,16 +294,16 @@
             <div class="summary" id="summary"></div>
             
             <div class="table-section">
-                <h3>库存明细</h3>
+                <h3>Stock Details</h3>
                 <div class="table-wrapper">
                     <table id="resultTable">
                         <thead>
                             <tr>
-                                <th>物料编码</th>
-                                <th>描述</th>
-                                <th>仓库</th>
-                                <th>Good 库存</th>
-                                <th>类型</th>
+                                <th>Material Code</th>
+                                <th>Description</th>
+                                <th>Warehouse</th>
+                                <th>Good Stock</th>
+                                <th>Type</th>
                             </tr>
                         </thead>
                         <tbody id="resultBody"></tbody>
@@ -319,7 +319,7 @@
         let inventoryData = null;
         let substituteData = null;
         
-        // 加载数据
+        // Load data
         async function loadData() {
             try {
                 const [invRes, subRes] = await Promise.all([
@@ -328,16 +328,20 @@
                 ]);
                 
                 if (!invRes.ok || !subRes.ok) {
-                    throw new Error('数据加载失败');
+                    throw new Error('Failed to load data');
                 }
                 
                 inventoryData = await invRes.json();
                 substituteData = await subRes.json();
                 
-                // 更新仓库列表
+                // Build warehouse list (exclude Pakistan-MWH)
                 const warehouses = new Set();
                 Object.values(inventoryData).forEach(warehousesObj => {
-                    Object.keys(warehousesObj).forEach(wh => warehouses.add(wh));
+                    Object.keys(warehousesObj).forEach(wh => {
+                        if (!wh.includes('MWH')) {
+                            warehouses.add(wh);
+                        }
+                    });
                 });
                 
                 const warehouseSelect = document.getElementById('warehouse');
@@ -348,23 +352,23 @@
                     warehouseSelect.appendChild(option);
                 });
                 
-                // 显示更新时间
+                // Show update time
                 const now = new Date();
                 document.getElementById('updateTime').textContent = 
-                    `数据更新时间：${now.toLocaleString('zh-CN')}`;
+                    `Last updated: ${now.toLocaleString('en-US')}`;
                 
             } catch (error) {
-                showError('数据加载失败，请稍后重试');
+                showError('Failed to load data. Please try again later.');
             }
         }
         
-        // 查询
+        // Search
         async function search() {
             const materialCode = document.getElementById('materialCode').value.trim();
             const warehouse = document.getElementById('warehouse').value;
             
             if (!materialCode) {
-                showError('请输入物料编码');
+                showError('Please enter a material code');
                 return;
             }
             
@@ -375,13 +379,12 @@
             const resultBody = document.getElementById('resultBody');
             
             resultCard.classList.remove('show');
-            summary.innerHTML = '<div class="loading">查询中</div>';
+            summary.innerHTML = '<div class="loading">Querying</div>';
             resultBody.innerHTML = '';
             
-            // 模拟异步查询
             await new Promise(resolve => setTimeout(resolve, 100));
             
-            // 查询主物料
+            // Query main material
             let mainStock = 0;
             const mainResults = [];
             
@@ -392,21 +395,21 @@
                     if (stock > 0) {
                         mainResults.push({
                             code: materialCode,
-                            desc: '主物料',
+                            desc: 'Main Material',
                             warehouse: warehouse,
                             stock: stock,
                             type: 'main'
                         });
                     }
                 } else {
-                    // 全部仓库
                     Object.entries(inventoryData[materialCode]).forEach(([wh, data]) => {
+                        if (wh.includes('MWH')) return; // exclude MWH
                         const stock = data.Good || 0;
                         mainStock += stock;
                         if (stock > 0) {
                             mainResults.push({
                                 code: materialCode,
-                                desc: '主物料',
+                                desc: 'Main Material',
                                 warehouse: wh,
                                 stock: stock,
                                 type: 'main'
@@ -416,7 +419,7 @@
                 }
             }
             
-            // 查询替代料
+            // Query substitutes
             let subStock = 0;
             const subResults = [];
             
@@ -440,6 +443,7 @@
                             }
                         } else {
                             Object.entries(inventoryData[subCode]).forEach(([wh, data]) => {
+                                if (wh.includes('MWH')) return; // exclude MWH
                                 const stock = data.Good || 0;
                                 subStock += stock;
                                 if (stock > 0) {
@@ -459,26 +463,26 @@
             
             const totalStock = mainStock + subStock;
             
-            // 显示汇总
+            // Show summary
             summary.innerHTML = `
                 <div class="summary-item main">
-                    <div class="label">主物料库存</div>
+                    <div class="label">Main Material Stock</div>
                     <div class="value">${mainStock}</div>
                 </div>
                 <div class="summary-item sub">
-                    <div class="label">替代料库存</div>
+                    <div class="label">Substitute Stock</div>
                     <div class="value">${subStock}</div>
                 </div>
                 <div class="summary-item total">
-                    <div class="label">总库存</div>
+                    <div class="label">Total Available</div>
                     <div class="value">${totalStock}</div>
                 </div>
             `;
             
-            // 显示明细
+            // Show details
             const allResults = [...mainResults, ...subResults];
             if (allResults.length === 0) {
-                resultBody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:40px;color:#999;">未找到库存记录</td></tr>';
+                resultBody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:40px;color:#999;">No stock records found</td></tr>';
             } else {
                 resultBody.innerHTML = allResults.map(r => `
                     <tr>
@@ -486,7 +490,7 @@
                         <td>${r.desc}</td>
                         <td>${r.warehouse}</td>
                         <td class="${r.stock > 10 ? 'stock-good' : r.stock > 0 ? 'stock-low' : 'stock-zero'}">${r.stock}</td>
-                        <td><span class="badge ${r.type}">${r.type === 'main' ? '主物料' : '替代料'}</span></td>
+                        <td><span class="badge ${r.type}">${r.type === 'main' ? 'Main' : 'Substitute'}</span></td>
                     </tr>
                 `).join('');
             }
@@ -504,13 +508,13 @@
             document.getElementById('errorMsg').classList.remove('show');
         }
         
-        // 事件绑定
+        // Event bindings
         document.getElementById('searchBtn').addEventListener('click', search);
         document.getElementById('materialCode').addEventListener('keypress', e => {
             if (e.key === 'Enter') search();
         });
         
-        // 初始化
+        // Init
         loadData();
     </script>
 </body>
