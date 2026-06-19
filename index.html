@@ -135,14 +135,33 @@
             font-size: 12px;
         }
         
-        .form-group input,
-        .form-group select {
-            flex: 1;
-            padding: 8px 10px;
+        .warehouse-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            max-height: 120px;
+            overflow-y: auto;
+            padding: 8px;
             border: 1px solid #e0e0e0;
             border-radius: 6px;
-            font-size: 13px;
-            transition: border-color 0.3s;
+            background: #fafafa;
+        }
+        
+        .warehouse-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+        }
+        
+        .warehouse-item input[type="checkbox"] {
+            margin: 0;
+            cursor: pointer;
+        }
+        
+        .warehouse-item label {
+            cursor: pointer;
+            user-select: none;
         }
         
         .form-group input:focus,
@@ -360,11 +379,9 @@
                     <label>Material Code</label>
                     <input type="text" id="materialCode" placeholder="Enter 8-digit code, e.g. 17401967">
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="flex-direction: column; align-items: flex-start;">
                     <label>Warehouse</label>
-                    <select id="warehouse">
-                        <option value="">All Warehouses</option>
-                    </select>
+                    <div class="warehouse-list" id="warehouseList"></div>
                 </div>
                 <button class="search-btn" id="searchBtn">🔍 Query</button>
             </div>
@@ -454,12 +471,15 @@
                     });
                 });
                 
-                const warehouseSelect = document.getElementById('warehouse');
+                const warehouseList = document.getElementById('warehouseList');
                 Array.from(warehouses).sort().forEach(wh => {
-                    const option = document.createElement('option');
-                    option.value = wh;
-                    option.textContent = wh;
-                    warehouseSelect.appendChild(option);
+                    const item = document.createElement('div');
+                    item.className = 'warehouse-item';
+                    item.innerHTML = `
+                        <input type="checkbox" id="wh_${wh.replace(/[^a-zA-Z0-9]/g, '_')}" value="${wh}">
+                        <label for="wh_${wh.replace(/[^a-zA-Z0-9]/g, '_')}">${wh}</label>
+                    `;
+                    warehouseList.appendChild(item);
                 });
                 
                 // Show update time
@@ -475,7 +495,7 @@
         // Search
         async function search() {
             const materialCode = document.getElementById('materialCode').value.trim();
-            const warehouse = document.getElementById('warehouse').value;
+            const selectedWarehouses = Array.from(document.querySelectorAll('#warehouseList input[type="checkbox"]:checked')).map(cb => cb.value);
             
             if (!materialCode) {
                 showError('Please enter a material code');
@@ -499,18 +519,20 @@
             const mainResults = [];
             
             if (inventoryData[materialCode]) {
-                if (warehouse) {
-                    const stock = inventoryData[materialCode][warehouse]?.Good || 0;
-                    mainStock = stock;
-                    if (stock > 0) {
-                        mainResults.push({
-                            code: materialCode,
-                            desc: 'Main Material',
-                            warehouse: warehouse,
-                            stock: stock,
-                            type: 'main'
-                        });
-                    }
+                if (selectedWarehouses.length > 0) {
+                    selectedWarehouses.forEach(wh => {
+                        const stock = inventoryData[materialCode][wh]?.Good || 0;
+                        mainStock += stock;
+                        if (stock > 0) {
+                            mainResults.push({
+                                code: materialCode,
+                                desc: 'Main Material',
+                                warehouse: wh,
+                                stock: stock,
+                                type: 'main'
+                            });
+                        }
+                    });
                 } else {
                     Object.entries(inventoryData[materialCode]).forEach(([wh, data]) => {
                         if (wh.includes('MWH')) return; // exclude MWH
@@ -539,18 +561,20 @@
                     const subDesc = sub.desc || '';
                     
                     if (inventoryData[subCode]) {
-                        if (warehouse) {
-                            const stock = inventoryData[subCode][warehouse]?.Good || 0;
-                            subStock += stock;
-                            if (stock > 0) {
-                                subResults.push({
-                                    code: subCode,
-                                    desc: subDesc,
-                                    warehouse: warehouse,
-                                    stock: stock,
-                                    type: 'sub'
-                                });
-                            }
+                        if (selectedWarehouses.length > 0) {
+                            selectedWarehouses.forEach(wh => {
+                                const stock = inventoryData[subCode][wh]?.Good || 0;
+                                subStock += stock;
+                                if (stock > 0) {
+                                    subResults.push({
+                                        code: subCode,
+                                        desc: subDesc,
+                                        warehouse: wh,
+                                        stock: stock,
+                                        type: 'sub'
+                                    });
+                                }
+                            });
                         } else {
                             Object.entries(inventoryData[subCode]).forEach(([wh, data]) => {
                                 if (wh.includes('MWH')) return; // exclude MWH
@@ -581,8 +605,10 @@
             }
             allCodes.forEach(code => {
                 if (inTransitData && inTransitData[code]) {
-                    if (warehouse) {
-                        totalInTransit += inTransitData[code][warehouse] || 0;
+                    if (selectedWarehouses.length > 0) {
+                        selectedWarehouses.forEach(wh => {
+                            totalInTransit += inTransitData[code][wh] || 0;
+                        });
                     } else {
                         Object.entries(inTransitData[code]).forEach(([wh, qty]) => {
                             if (!wh.includes('MWH')) {
