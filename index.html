@@ -523,6 +523,20 @@
                     });
                 });
                 
+                // Update search box to show selected warehouse
+                warehouseList.addEventListener('change', (e) => {
+                    if (e.target.type === 'checkbox') {
+                        const checkedBoxes = Array.from(warehouseList.querySelectorAll('input[type="checkbox"]:checked'));
+                        if (checkedBoxes.length > 0) {
+                            // Show first selected warehouse name
+                            warehouseSearch.value = checkedBoxes[0].value;
+                        } else {
+                            // No selection = all warehouses, clear search box
+                            warehouseSearch.value = '';
+                        }
+                    }
+                });
+                
                 // Show update time
                 const now = new Date();
                 document.getElementById('updateTime').textContent = 
