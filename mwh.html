@@ -494,12 +494,10 @@
                 
                 // Build warehouse list (include all warehouses)
                 const warehouses = new Set();
-                Object.values(inventoryData).forEach(warehousesObj => {
-                    Object.keys(warehousesObj).forEach(wh => {
-                        if (!wh.includes('ESS') && !wh.toLowerCase().includes('sri lanka')) {
-                            warehouses.add(wh);
-                        }
-                    });
+                Object.keys(inventoryData).forEach(wh => {
+                    if (!wh.includes('ESS') && !wh.toLowerCase().includes('sri lanka')) {
+                        warehouses.add(wh);
+                    }
                 });
                 
                 const warehouseList = document.getElementById('warehouseList');
