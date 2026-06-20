@@ -492,44 +492,69 @@
                 substituteData = await subRes.json();
                 inTransitData = await transitRes.json();
                 
-                // Build warehouse list (include all warehouses)
-                const warehouses = new Set();
-                Object.values(inventoryData).forEach(warehousesObj => {
-                    Object.keys(warehousesObj).forEach(wh => {
-                        if (!wh.includes('ESS') && !wh.toLowerCase().includes('sri lanka')) {
-                            warehouses.add(wh);
-                        }
-                    });
-                });
+                // Fixed warehouse list (ca875e7 version)
+                const fixedWarehouses = [
+                    'Pakistan-MWH',
+                    'PK-L4-Device',
+                    'PK-L4-ESS Lab LHR',
+                    'PK-L4-PCBA',
+                    'Carlcare-Gujranwala',
+                    'Carlcare-Hyderabad',
+                    'Carlcare-Islamabad',
+                    'Carlcare-Karachi(Saddar)',
+                    'Carlcare-Lahore',
+                    'Carlcare-Peshawar',
+                    'AL Noor Mobile-E-Quetta',
+                    'ASC-M-Jhelum',
+                    'Advance-E-Bahawalpur',
+                    'Advance-E-Faisalabad',
+                    'Advance-E-Gujranwala',
+                    'Advance-E-Gujrat',
+                    'Advance-E-Hall Road (LHR)',
+                    'Advance-E-Multan',
+                    'Advance-E-Sareena',
+                    'Advance-E-Sargodha',
+                    'Advance-E-Sialkot',
+                    'Advance-E-Sukkur',
+                    'Advance-E-Township (LHR)',
+                    'Ahmad Mobile-M-Burewala',
+                    'Ali Mobile Zone-M-Kabirwala',
+                    'Cell Solutions-M-Dik',
+                    'DLI-M-MARDAN',
+                    'ESS-ASC-M-Gujranwala',
+                    'ESS-ASC-M-Peshawar',
+                    'ESS-LAB-Hyderabad',
+                    'ESS-LAB-SUKKUR',
+                    'ESS-Lahore-SWH',
+                    'Fancy Mobile-E-Charsada',
+                    'Grace Mobile-M-Haroonabad',
+                    'Gulf Mobile-E-Taxila',
+                    'ITEL ESS LAB-ISB',
+                    'ITEL ESS LAB-KHI',
+                    'ITS4U-M-Attock',
+                    'JM TECH-M-CHAKWAL',
+                    'M&P-E-Lahore',
+                    'M&P-E-Rawalpindi',
+                    'M&P-M-Karachi-saddar',
+                    'M&P-M-Lahore-Hall road',
+                    'MMT-E-Faisalabad',
+                    'MMT-E-Multan',
+                    'MMT-E-RAWALPINDI',
+                    'PCC-E-NOWSHEHRA',
+                    'PGS Mobile-M-ABT',
+                    'PK-QM Checking Devices',
+                    'Qaisar Telecom-M-Samundri',
+                    'Qaiser Telecom-M-TT Singh',
+                    'SBM-E-TALAGANG',
+                    'Smart Mobile Solutions-E-Mansehra',
+                    'Sonie-M-Swat',
+                    'Sri Lanka-POOVA'
+                ];
                 
                 const warehouseList = document.getElementById('warehouseList');
                 const warehouseSearch = document.getElementById('warehouseSearch');
                 
-                // Sort warehouses with custom order
-                const sortedWarehouses = Array.from(warehouses).sort((a, b) => {
-                    // Pakistan-MWH first
-                    if (a === 'Pakistan-MWH') return -1;
-                    if (b === 'Pakistan-MWH') return 1;
-                    
-                    // L4 warehouses second and third
-                    const aL4 = a.includes('L4');
-                    const bL4 = b.includes('L4');
-                    if (aL4 && !bL4) return -1;
-                    if (!aL4 && bL4) return 1;
-                    if (aL4 && bL4) return a.localeCompare(b);
-                    
-                    // Carlcare warehouses 4th to 9th
-                    const aCarlcare = a.toLowerCase().includes('carlcare');
-                    const bCarlcare = b.toLowerCase().includes('carlcare');
-                    if (aCarlcare && !bCarlcare) return -1;
-                    if (!aCarlcare && bCarlcare) return 1;
-                    if (aCarlcare && bCarlcare) return a.localeCompare(b);
-                    
-                    // Rest sorted alphabetically
-                    return a.localeCompare(b);
-                });
-                
-                sortedWarehouses.forEach(wh => {
+                fixedWarehouses.forEach(wh => {
                     const item = document.createElement('div');
                     item.className = 'warehouse-item';
                     item.dataset.warehouse = wh.toLowerCase();
