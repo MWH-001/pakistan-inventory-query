@@ -494,10 +494,12 @@
                 
                 // Build warehouse list (exclude Pakistan-MWH)
                 const warehouses = new Set();
-                Object.keys(inventoryData).forEach(wh => {
-                    if (!wh.includes('MWH') && !wh.includes('ESS') && !wh.toLowerCase().includes('sri lanka')) {
-                        warehouses.add(wh);
-                    }
+                Object.values(inventoryData).forEach(warehousesObj => {
+                    Object.keys(warehousesObj).forEach(wh => {
+                        if (!wh.includes('MWH') && !wh.includes('ESS') && !wh.toLowerCase().includes('sri lanka')) {
+                            warehouses.add(wh);
+                        }
+                    });
                 });
                 
                 const warehouseList = document.getElementById('warehouseList');
