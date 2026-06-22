@@ -656,7 +656,7 @@
                     });
                 } else {
                     Object.entries(inventoryData[materialCode]).forEach(([wh, data]) => {
-                        if (wh.includes('MWH')) return; // exclude MWH
+                        if (wh.includes('MWH') || wh === 'PK0001') return; // exclude MWH
                         const stock = data.Good || 0;
                         mainStock += stock;
                         if (stock > 0) {
@@ -698,7 +698,7 @@
                             });
                         } else {
                             Object.entries(inventoryData[subCode]).forEach(([wh, data]) => {
-                                if (wh.includes('MWH')) return; // exclude MWH
+                                if (wh.includes('MWH') || wh === 'PK0001') return; // exclude MWH
                                 const stock = data.Good || 0;
                                 subStock += stock;
                                 if (stock > 0) {
@@ -732,7 +732,7 @@
                         });
                     } else {
                         Object.entries(inTransitData[code]).forEach(([wh, qty]) => {
-                            if (!wh.includes('MWH')) {
+                            if (!wh.includes('MWH') && wh !== 'PK0001') {
                                 totalInTransit += qty;
                             }
                         });
