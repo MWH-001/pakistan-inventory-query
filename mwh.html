@@ -19,68 +19,7 @@
             padding: 20px;
         }
         
-        .password-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-        }
-        
-        .password-box {
-            background: white;
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            text-align: center;
-            max-width: 400px;
-            width: 100%;
-        }
-        
-        .password-box h2 {
-            margin-bottom: 20px;
-            color: #333;
-        }
-        
-        .password-box input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 16px;
-            margin-bottom: 15px;
-        }
-        
-        .password-box button {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-        
-        .password-box button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-        }
-        
-        .password-error {
-            color: #e74c3c;
-            margin-top: 10px;
-            display: none;
-        }
-        
         .main-content {
-            display: none;
         }
         
         .container {
@@ -386,15 +325,6 @@
     </style>
 </head>
 <body>
-    <div class="password-overlay" id="passwordOverlay">
-        <div class="password-box">
-            <h2>🔒 Access Required</h2>
-            <input type="password" id="passwordInput" placeholder="Enter password">
-            <button onclick="checkPassword()">Unlock</button>
-            <div class="password-error" id="passwordError">Incorrect password</div>
-        </div>
-    </div>
-    
     <div class="main-content" id="mainContent">
     <div class="container">
         <div class="header">
@@ -447,31 +377,6 @@
     </div>
     
     <script>
-        const PASSWORD = "cannot share";
-        
-        function checkPassword() {
-            const input = document.getElementById('passwordInput').value;
-            const error = document.getElementById('passwordError');
-            
-            if (input === PASSWORD) {
-                localStorage.setItem('authenticated', 'true');
-                document.getElementById('passwordOverlay').style.display = 'none';
-                document.getElementById('mainContent').style.display = 'block';
-            } else {
-                error.style.display = 'block';
-                setTimeout(() => { error.style.display = 'none'; }, 3000);
-            }
-        }
-        
-        document.getElementById('passwordInput').addEventListener('keypress', e => {
-            if (e.key === 'Enter') checkPassword();
-        });
-        
-        // Check if already authenticated (permanent, first time only)
-        if (localStorage.getItem('authenticated') === 'true') {
-            document.getElementById('passwordOverlay').style.display = 'none';
-            document.getElementById('mainContent').style.display = 'block';
-        }
         // Warehouse code to name mapping
         const warehouseNameMap = {"PK0045":"DLI-M-MARDAN","PK0003":"Carlcare-Lahore","PK0054":"Qaiser Telecom-M-TT Singh","PK0013":"M&P-M-Karachi-saddar","PK0038":"PGS Mobile-M-ABT","PK0039":"Advance-E-Multan","PK0040":"Advance-E-Bahawalpur","PK0041":"Advance-E-Faisalabad","PK0048":"Advance-E-Sareena","PK0050":"MMT-M-Multan","PK0061":"Qaisar Telecom-M-Samundri","PK0067":"Ali Mobile Zone-M-Kabirwala","PK0064":"Fancy Mobile-E-Charsada","PK0066":"AL Noor Mobile-E-Quetta","PK0072":"Grace Mobile-M-Haroonabad","PK0006":"M&P-E-Lahore","PK0011":"M&P-E-Rawalpindi","PK0005":"Carlcare-Karachi(Saddar)","PK0053":"JM TECH-M-CHAKWAL","PK0031":"Sonie-M-Swat","PK0049":"MMT-M-Faisalabad","PK0077":"PCC-E-NOWSHEHRA","PK0044":"Gulf Mobile-E-Taxila","PK0075":"Ahmad Mobile-M-Burewala","PK0070":"SBM-E-TALAGANG","PK0065":"Smart Mobile Solutions-E-Mansehra","PK0059":"MMT-E-RAWALPINDI","PK0020":"ITS4U-E-Attock","PK0025":"ASC-E-Jhelum","PK0046":"Cell Solutions-E-Dik","PK0081":"Carlcare-Islamabad","PK0079":"Carlcare-Hyderabad","PK0080":"Carlcare-Peshawar","PK0082":"Carlcare-Gujranwala","PK0083":"Advance-E-Gujrat","PK0086":"Advance-E-Sialkot","PK0088":"Advance-E-Sargodha","PK0087":"Advance-E-Sukkur","PK0089":"Advance-E-Township (LHR)","PK0092":"Advance-E-Hall Road (LHR)","PK-MWH":"Pakistan-MWH","PK0001":"Pakistan-MWH","PK0002":"PK-L4-Device"};
         let inventoryData = null;
