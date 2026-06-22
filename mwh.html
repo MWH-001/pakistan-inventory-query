@@ -628,7 +628,6 @@
             if (inventoryData[materialCode]) {
                 if (selectedWarehouses.length > 0) {
                     selectedWarehouses.forEach(wh => {
-                        if (wh.includes('MWH') || wh === 'PK0001') return; // exclude MWH
                         const stock = inventoryData[materialCode][wh]?.Good || 0;
                         mainStock += stock;
                         if (stock > 0) {
@@ -643,7 +642,6 @@
                     });
                 } else {
                     Object.entries(inventoryData[materialCode]).forEach(([wh, data]) => {
-                        if (wh.includes('MWH') || wh === 'PK0001') return; // exclude MWH
                         const stock = data.Good || 0;
                         mainStock += stock;
                         if (stock > 0) {
