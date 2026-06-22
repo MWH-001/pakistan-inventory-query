@@ -642,6 +642,7 @@
             if (inventoryData[materialCode]) {
                 if (selectedWarehouses.length > 0) {
                     selectedWarehouses.forEach(wh => {
+                        if (wh.includes('MWH') || wh === 'PK0001') return; // exclude MWH
                         const stock = inventoryData[materialCode][wh]?.Good || 0;
                         mainStock += stock;
                         if (stock > 0) {
@@ -684,6 +685,7 @@
                     if (inventoryData[subCode]) {
                         if (selectedWarehouses.length > 0) {
                             selectedWarehouses.forEach(wh => {
+                                if (wh.includes('MWH') || wh === 'PK0001') return; // exclude MWH
                                 const stock = inventoryData[subCode][wh]?.Good || 0;
                                 subStock += stock;
                                 if (stock > 0) {
