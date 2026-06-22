@@ -472,6 +472,8 @@
             document.getElementById('passwordOverlay').style.display = 'none';
             document.getElementById('mainContent').style.display = 'block';
         }
+        // Warehouse code to name mapping
+        const warehouseNameMap = {"PK0045":"DLI-M-MARDAN","PK0003":"Carlcare-Lahore","PK0054":"Qaiser Telecom-M-TT Singh","PK0013":"M&P-M-Karachi-saddar","PK0038":"PGS Mobile-M-ABT","PK0039":"Advance-E-Multan","PK0040":"Advance-E-Bahawalpur","PK0041":"Advance-E-Faisalabad","PK0048":"Advance-E-Sareena","PK0050":"MMT-M-Multan","PK0061":"Qaisar Telecom-M-Samundri","PK0067":"Ali Mobile Zone-M-Kabirwala","PK0064":"Fancy Mobile-E-Charsada","PK0066":"AL Noor Mobile-E-Quetta","PK0072":"Grace Mobile-M-Haroonabad","PK0006":"M&P-E-Lahore","PK0011":"M&P-E-Rawalpindi","PK0005":"Carlcare-Karachi(Saddar)","PK0053":"JM TECH-M-CHAKWAL","PK0031":"Sonie-M-Swat","PK0049":"MMT-M-Faisalabad","PK0077":"PCC-E-NOWSHEHRA","PK0044":"Gulf Mobile-E-Taxila","PK0075":"Ahmad Mobile-M-Burewala","PK0070":"SBM-E-TALAGANG","PK0065":"Smart Mobile Solutions-E-Mansehra","PK0059":"MMT-E-RAWALPINDI","PK0020":"ITS4U-E-Attock","PK0025":"ASC-E-Jhelum","PK0046":"Cell Solutions-E-Dik","PK0081":"Carlcare-Islamabad","PK0079":"Carlcare-Hyderabad","PK0080":"Carlcare-Peshawar","PK0082":"Carlcare-Gujranwala","PK0083":"Advance-E-Gujrat","PK0086":"Advance-E-Sialkot","PK0088":"Advance-E-Sargodha","PK0087":"Advance-E-Sukkur","PK0089":"Advance-E-Township (LHR)","PK0092":"Advance-E-Hall Road (LHR)","PK-MWH":"Pakistan-MWH"};
         let inventoryData = null;
         let substituteData = null;
         let inTransitData = null;
@@ -751,7 +753,7 @@
                     <tr>
                         <td>${r.code}</td>
                         <td>${r.desc}</td>
-                        <td>${r.warehouse}</td>
+                        <td>${warehouseNameMap[r.warehouse] || r.warehouse}</td>
                         <td class="${r.stock > 10 ? 'stock-good' : r.stock > 0 ? 'stock-low' : 'stock-zero'}">${r.stock}</td>
                         <td class="${inTransit > 0 ? 'stock-good' : 'stock-zero'}">${inTransit}</td>
                         <td><span class="badge ${r.type}">${r.type === 'main' ? 'Main' : 'Substitute'}</span></td>
