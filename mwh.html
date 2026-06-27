@@ -653,7 +653,8 @@
                 resultBody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:40px;color:#999;">No stock records found</td></tr>';
             } else {
                 resultBody.innerHTML = allResults.map(r => {
-                    const inTransit = inTransitData && inTransitData[r.code] && inTransitData[r.code][r.warehouse] ? inTransitData[r.code][r.warehouse] : 0;
+                    const whName = warehouseNameMap[r.warehouse] || r.warehouse;
+                    const inTransit = inTransitData && inTransitData[r.code] && inTransitData[r.code][whName] ? inTransitData[r.code][whName] : 0;
                     return `
                     <tr>
                         <td>${r.code}</td>
