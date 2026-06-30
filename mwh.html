@@ -647,12 +647,19 @@
                 </div>
             `;
             
-            // Show details
+            // Show details - deduplicate by warehouse + material code
             const allResults = [...mainResults, ...subResults];
-            if (allResults.length === 0) {
+            const seen = new Set();
+            const dedupedResults = allResults.filter(r => {
+                const key = `${r.code}_${r.warehouse}`;
+                if (seen.has(key)) return false;
+                seen.add(key);
+                return true;
+            });
+            if (dedupedResults.length === 0) {
                 resultBody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:40px;color:#999;">No stock records found</td></tr>';
             } else {
-                resultBody.innerHTML = allResults.map(r => {
+                resultBody.innerHTML = dedupedResults.map(r => {
                     const whName = warehouseNameMap[r.warehouse] || r.warehouse;
                     const inTransit = inTransitData && inTransitData[r.code] && inTransitData[r.code][whName] ? inTransitData[r.code][whName] : 0;
                     return `
