@@ -530,12 +530,19 @@
             let mainStock = 0;
             const mainResults = [];
             
+            // Helper: check if warehouse has in-transit for this material
+            function hasInTransit(code, whName) {
+                if (!inTransitData || !inTransitData[code]) return false;
+                return (inTransitData[code][whName] || 0) > 0;
+            }
+            
             if (inventoryData[materialCode]) {
                 if (selectedWarehouses.length > 0) {
                     selectedWarehouses.forEach(wh => {
                         const stock = inventoryData[materialCode][wh]?.Good || 0;
+                        const whName = warehouseNameMap[wh] || wh;
                         mainStock += stock;
-                        if (stock > 0) {
+                        if (stock > 0 || hasInTransit(materialCode, whName)) {
                             mainResults.push({
                                 code: materialCode,
                                 desc: 'Main Material',
@@ -548,8 +555,9 @@
                 } else {
                     Object.entries(inventoryData[materialCode]).forEach(([wh, data]) => {
                         const stock = data.Good || 0;
+                        const whName = warehouseNameMap[wh] || wh;
                         mainStock += stock;
-                        if (stock > 0) {
+                        if (stock > 0 || hasInTransit(materialCode, whName)) {
                             mainResults.push({
                                 code: materialCode,
                                 desc: 'Main Material',
@@ -575,8 +583,9 @@
                         if (selectedWarehouses.length > 0) {
                             selectedWarehouses.forEach(wh => {
                                 const stock = inventoryData[subCode][wh]?.Good || 0;
+                                const whName = warehouseNameMap[wh] || wh;
                                 subStock += stock;
-                                if (stock > 0) {
+                                if (stock > 0 || hasInTransit(subCode, whName)) {
                                     subResults.push({
                                         code: subCode,
                                         desc: subDesc,
@@ -589,8 +598,9 @@
                         } else {
                             Object.entries(inventoryData[subCode]).forEach(([wh, data]) => {
                                 const stock = data.Good || 0;
+                                const whName = warehouseNameMap[wh] || wh;
                                 subStock += stock;
-                                if (stock > 0) {
+                                if (stock > 0 || hasInTransit(subCode, whName)) {
                                     subResults.push({
                                         code: subCode,
                                         desc: subDesc,
