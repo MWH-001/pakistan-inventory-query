@@ -544,6 +544,9 @@
             let mainStock = 0;
             const mainResults = [];
             
+            // Get material description from index
+            const materialDesc = inventoryData[materialCode]?._desc || 'Main Material';
+            
             // Helper: check if warehouse has in-transit for this material
             function hasInTransit(code, whName) {
                 if (!inTransitData || !inTransitData[code]) return false;
@@ -560,7 +563,7 @@
                         if (stock > 0 || hasInTransit(materialCode, whName)) {
                             mainResults.push({
                                 code: materialCode,
-                                desc: 'Main Material',
+                                desc: materialDesc,
                                 warehouse: wh,
                                 stock: stock,
                                 type: 'main'
@@ -570,13 +573,14 @@
                 } else {
                     Object.entries(inventoryData[materialCode]).forEach(([wh, data]) => {
                         if (wh.includes('MWH') || wh === 'PK0001') return; // exclude MWH
+                        if (wh === '_desc') return; // skip description field
                         const stock = data.Good || 0;
                         const whName = warehouseNameMap[wh] || wh;
                         mainStock += stock;
                         if (stock > 0 || hasInTransit(materialCode, whName)) {
                             mainResults.push({
                                 code: materialCode,
-                                desc: 'Main Material',
+                                desc: materialDesc,
                                 warehouse: wh,
                                 stock: stock,
                                 type: 'main'
