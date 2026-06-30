@@ -544,13 +544,20 @@
             let mainStock = 0;
             const mainResults = [];
             
+            // Helper: check if warehouse has in-transit for this material
+            function hasInTransit(code, whName) {
+                if (!inTransitData || !inTransitData[code]) return false;
+                return (inTransitData[code][whName] || 0) > 0;
+            }
+            
             if (inventoryData[materialCode]) {
                 if (selectedWarehouses.length > 0) {
                     selectedWarehouses.forEach(wh => {
                         if (wh.includes('MWH') || wh === 'PK0001') return; // exclude MWH
                         const stock = inventoryData[materialCode][wh]?.Good || 0;
+                        const whName = warehouseNameMap[wh] || wh;
                         mainStock += stock;
-                        if (stock > 0) {
+                        if (stock > 0 || hasInTransit(materialCode, whName)) {
                             mainResults.push({
                                 code: materialCode,
                                 desc: 'Main Material',
@@ -564,8 +571,9 @@
                     Object.entries(inventoryData[materialCode]).forEach(([wh, data]) => {
                         if (wh.includes('MWH') || wh === 'PK0001') return; // exclude MWH
                         const stock = data.Good || 0;
+                        const whName = warehouseNameMap[wh] || wh;
                         mainStock += stock;
-                        if (stock > 0) {
+                        if (stock > 0 || hasInTransit(materialCode, whName)) {
                             mainResults.push({
                                 code: materialCode,
                                 desc: 'Main Material',
@@ -592,8 +600,9 @@
                             selectedWarehouses.forEach(wh => {
                                 if (wh.includes('MWH') || wh === 'PK0001') return; // exclude MWH
                                 const stock = inventoryData[subCode][wh]?.Good || 0;
+                                const whName = warehouseNameMap[wh] || wh;
                                 subStock += stock;
-                                if (stock > 0) {
+                                if (stock > 0 || hasInTransit(subCode, whName)) {
                                     subResults.push({
                                         code: subCode,
                                         desc: subDesc,
@@ -607,8 +616,9 @@
                             Object.entries(inventoryData[subCode]).forEach(([wh, data]) => {
                                 if (wh.includes('MWH') || wh === 'PK0001') return; // exclude MWH
                                 const stock = data.Good || 0;
+                                const whName = warehouseNameMap[wh] || wh;
                                 subStock += stock;
-                                if (stock > 0) {
+                                if (stock > 0 || hasInTransit(subCode, whName)) {
                                     subResults.push({
                                         code: subCode,
                                         desc: subDesc,
@@ -625,29 +635,7 @@
             
             const totalStock = mainStock + subStock;
             
-            // Calculate total in-transit
-            let totalInTransit = 0;
-            const allCodes = [materialCode];
-            if (substituteData[materialCode]) {
-                substituteData[materialCode].forEach(sub => allCodes.push(sub.code));
-            }
-            allCodes.forEach(code => {
-                if (inTransitData && inTransitData[code]) {
-                    if (selectedWarehouses.length > 0) {
-                        selectedWarehouses.forEach(wh => {
-                            totalInTransit += inTransitData[code][wh] || 0;
-                        });
-                    } else {
-                        Object.entries(inTransitData[code]).forEach(([wh, qty]) => {
-                            if (!wh.includes('MWH') && wh !== 'PK0001') {
-                                totalInTransit += qty;
-                            }
-                        });
-                    }
-                }
-            });
-            
-            // Show summary
+            // Show summary (Total In Transit will be calculated from displayed rows)
             summary.innerHTML = `
                 <div class="summary-item main">
                     <div class="label">Main Material Stock</div>
@@ -663,22 +651,43 @@
                 </div>
                 <div class="summary-item" style="background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);">
                     <div class="label">Total In Transit</div>
-                    <div class="value" style="color: #e65100;">${totalInTransit}</div>
+                    <div class="value" style="color: #e65100;" id="totalInTransitValue">-</div>
                 </div>
             `;
             
-            // Show details
+            // Show details - deduplicate by warehouse + material code
             const allResults = [...mainResults, ...subResults];
-            if (allResults.length === 0) {
-                resultBody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:40px;color:#999;">No stock records found</td></tr>';
+            const seen = new Set();
+            const dedupedResults = allResults.filter(r => {
+                const key = `${r.code}_${r.warehouse}`;
+                if (seen.has(key)) return false;
+                seen.add(key);
+                return true;
+            });
+            
+            // Calculate Total In Transit from displayed rows only
+            let totalInTransit = 0;
+            dedupedResults.forEach(r => {
+                const whName = warehouseNameMap[r.warehouse] || r.warehouse;
+                const inTransit = inTransitData && inTransitData[r.code] && inTransitData[r.code][whName] ? inTransitData[r.code][whName] : 0;
+                totalInTransit += inTransit;
+            });
+            
+            // Update Total In Transit in summary
+            const totalInTransitEl = document.getElementById('totalInTransitValue');
+            if (totalInTransitEl) totalInTransitEl.textContent = totalInTransit;
+            
+            if (dedupedResults.length === 0) {
+                resultBody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:40px;color:#999;">No stock records found</td></tr>';
             } else {
-                resultBody.innerHTML = allResults.map(r => {
-                    const inTransit = inTransitData && inTransitData[r.code] && inTransitData[r.code][r.warehouse] ? inTransitData[r.code][r.warehouse] : 0;
+                resultBody.innerHTML = dedupedResults.map(r => {
+                    const whName = warehouseNameMap[r.warehouse] || r.warehouse;
+                    const inTransit = inTransitData && inTransitData[r.code] && inTransitData[r.code][whName] ? inTransitData[r.code][whName] : 0;
                     return `
                     <tr>
                         <td>${r.code}</td>
                         <td>${r.desc}</td>
-                        <td>${warehouseNameMap[r.warehouse] || r.warehouse}</td>
+                        <td>${whName}</td>
                         <td class="${r.stock > 10 ? 'stock-good' : r.stock > 0 ? 'stock-low' : 'stock-zero'}">${r.stock}</td>
                         <td class="${inTransit > 0 ? 'stock-good' : 'stock-zero'}">${inTransit}</td>
                         <td><span class="badge ${r.type}">${r.type === 'main' ? 'Main' : 'Substitute'}</span></td>
