@@ -364,7 +364,6 @@
                                 <th>Good Stock</th>
                                 <th>In Transit</th>
                                 <th>Type</th>
-                                <th>Region</th>
                             </tr>
                         </thead>
                         <tbody id="resultBody"></tbody>
@@ -536,10 +535,8 @@
             
             // Helper: check if warehouse has in-transit for this material
             function hasInTransit(code, whName) {
-                if (!inTransitData || !inTransitData[code] || !inTransitData[code][whName]) return false;
-                const transitInfo = inTransitData[code][whName];
-                const qty = typeof transitInfo === 'object' ? transitInfo.qty : transitInfo;
-                return qty > 0;
+                if (!inTransitData || !inTransitData[code]) return false;
+                return (inTransitData[code][whName] || 0) > 0;
             }
             
             if (inventoryData[materialCode]) {
@@ -658,11 +655,8 @@
             let totalInTransit = 0;
             dedupedResults.forEach(r => {
                 const whName = warehouseNameMap[r.warehouse] || r.warehouse;
-                if (inTransitData && inTransitData[r.code] && inTransitData[r.code][whName]) {
-                    const transitInfo = inTransitData[r.code][whName];
-                    const qty = typeof transitInfo === 'object' ? transitInfo.qty : transitInfo;
-                    totalInTransit += qty;
-                }
+                const inTransit = inTransitData && inTransitData[r.code] && inTransitData[r.code][whName] ? inTransitData[r.code][whName] : 0;
+                totalInTransit += inTransit;
             });
             
             // Update Total In Transit in summary
@@ -674,17 +668,7 @@
             } else {
                 resultBody.innerHTML = dedupedResults.map(r => {
                     const whName = warehouseNameMap[r.warehouse] || r.warehouse;
-                    let inTransit = 0;
-                    let region = '';
-                    if (inTransitData && inTransitData[r.code] && inTransitData[r.code][whName]) {
-                        const transitInfo = inTransitData[r.code][whName];
-                        if (typeof transitInfo === 'object') {
-                            inTransit = transitInfo.qty || 0;
-                            region = transitInfo.region || '';
-                        } else {
-                            inTransit = transitInfo;
-                        }
-                    }
+                    const inTransit = inTransitData && inTransitData[r.code] && inTransitData[r.code][whName] ? inTransitData[r.code][whName] : 0;
                     return `
                     <tr>
                         <td>${r.code}</td>
@@ -693,7 +677,6 @@
                         <td class="${r.stock > 10 ? 'stock-good' : r.stock > 0 ? 'stock-low' : 'stock-zero'}">${r.stock}</td>
                         <td class="${inTransit > 0 ? 'stock-good' : 'stock-zero'}">${inTransit}</td>
                         <td><span class="badge ${r.type}">${r.type === 'main' ? 'Main' : 'Substitute'}</span></td>
-                        <td>${region}</td>
                     </tr>
                     `;
                 }).join('');
