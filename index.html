@@ -399,16 +399,54 @@
                 substituteData = await subRes.json();
                 inTransitData = await transitRes.json();
                 
-                // Dynamic warehouse list from data (exclude MWH and internal codes)
-                const warehouseSet = new Set();
-                Object.values(inventoryData).forEach(item => {
-                    Object.keys(item).forEach(wh => {
-                        if (wh !== '_desc' && !wh.includes('MWH') && !wh.match(/^PK\d{4}$/) && wh !== 'PK-L4-Device' && wh !== 'LK0001') {
-                            warehouseSet.add(wh);
-                        }
-                    });
-                });
-                const fixedWarehouses = Array.from(warehouseSet).sort();
+                // Fixed warehouse list (original order, corrected names to match data)
+                const fixedWarehouses = [
+                    'PK-L4-Device',
+                    'PK-L4-PCBA',
+                    'Carlcare-Gujranwala',
+                    'Carlcare-Hyderabad',
+                    'Carlcare-Islamabad',
+                    'Carlcare-Karachi(Saddar)',
+                    'Carlcare-Lahore',
+                    'Carlcare-Peshawar',
+                    'AL Noor Mobile-E-Quetta',
+                    'ASC-E-Jhelum',
+                    'Advance-E-Bahawalpur',
+                    'Advance-E-Faisalabad',
+                    'Advance-E-Gujranwala',
+                    'Advance-E-Gujrat',
+                    'Advance-E-Hall Road (LHR)',
+                    'Advance-E-Multan',
+                    'Advance-E-Sareena',
+                    'Advance-E-Sargodha',
+                    'Advance-E-Sialkot',
+                    'Advance-E-Sukkur',
+                    'Advance-E-Township (LHR)',
+                    'Ahmad Mobile-M-Burewala',
+                    'Ali Mobile Zone-M-Kabirwala',
+                    'Cell Solutions-E-Dik',
+                    'DLI-M-MARDAN',
+                    'Fancy Mobile-E-Charsada',
+                    'Grace Mobile-M-Haroonabad',
+                    'Gulf Mobile-E-Taxila',
+                    'ITS4U-E-Attock',
+                    'JM TECH-M-CHAKWAL',
+                    'M&P-E-Lahore',
+                    'M&P-E-Rawalpindi',
+                    'M&P-M-Karachi-saddar',
+                    'M&P-M-Lahore-Hall road',
+                    'MMT-M-Faisalabad',
+                    'MMT-M-Multan',
+                    'MMT-E-RAWALPINDI',
+                    'PCC-E-NOWSHEHRA',
+                    'PGS Mobile-M-ABT',
+                    'PK-QM Checking Devices',
+                    'Qaisar Telecom-M-Samundri',
+                    'Qaiser Telecom-M-TT Singh',
+                    'SBM-E-TALAGANG',
+                    'Smart Mobile Solutions-E-Mansehra',
+                    'Sonie-M-Swat'
+                ];
                 
                 const warehouseList = document.getElementById('warehouseList');
                 const warehouseSearch = document.getElementById('warehouseSearch');
