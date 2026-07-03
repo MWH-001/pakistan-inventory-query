@@ -389,9 +389,9 @@
         async function loadData() {
             try {
                 const [invRes, subRes, transitRes] = await Promise.all([
-                    fetch('inventory_index.json?t=' + Date.now()),
-                    fetch('substitute_map.json?t=' + Date.now()),
-                    fetch('in_transit_index.json?t=' + Date.now())
+                    fetch('inventory_data_v2.json?t=' + Date.now()),
+                    fetch('substitute_v2.json?t=' + Date.now()),
+                    fetch('in_transit_v2.json?t=' + Date.now())
                 ]);
                 
                 if (!invRes.ok || !subRes.ok) {
