@@ -592,14 +592,17 @@
                 }
             }
             
-            // Query substitutes
+            // Query substitutes (bidirectional)
             let subStock = 0;
             const subResults = [];
+            const seenSubCodes = new Set();
             
+            // Forward lookup: substituteData[materialCode]
             if (substituteData[materialCode]) {
                 for (const sub of substituteData[materialCode]) {
                     const subCode = sub.code;
                     const subDesc = sub.desc || '';
+                    seenSubCodes.add(subCode);
                     
                     if (inventoryData[subCode]) {
                         if (selectedWarehouses.length > 0) {
@@ -635,6 +638,50 @@
                                 }
                             });
                         }
+                    }
+                }
+            }
+            
+            // Reverse lookup: find materials that have this as a substitute
+            for (const [parentCode, subs] of Object.entries(substituteData)) {
+                if (parentCode === materialCode || seenSubCodes.has(parentCode)) continue;
+                const revEntry = subs.find(s => s.code === materialCode);
+                if (!revEntry) continue;
+                const revDesc = revEntry.desc || '';
+                
+                if (inventoryData[parentCode]) {
+                    if (selectedWarehouses.length > 0) {
+                        selectedWarehouses.forEach(wh => {
+                            if (wh.includes('MWH')) return;
+                            const stock = inventoryData[parentCode][wh]?.Good || 0;
+                            const whName = wh;
+                            subStock += stock;
+                            if (stock > 0 || hasInTransit(parentCode, whName)) {
+                                subResults.push({
+                                    code: parentCode,
+                                    desc: revDesc,
+                                    warehouse: wh,
+                                    stock: stock,
+                                    type: 'sub-rev'
+                                });
+                            }
+                        });
+                    } else {
+                        Object.entries(inventoryData[parentCode]).forEach(([wh, data]) => {
+                            if (wh.includes('MWH')) return;
+                            const stock = data.Good || 0;
+                            const whName = wh;
+                            subStock += stock;
+                            if (stock > 0 || hasInTransit(parentCode, whName)) {
+                                subResults.push({
+                                    code: parentCode,
+                                    desc: revDesc,
+                                    warehouse: wh,
+                                    stock: stock,
+                                    type: 'sub-rev'
+                                });
+                            }
+                        });
                     }
                 }
             }
