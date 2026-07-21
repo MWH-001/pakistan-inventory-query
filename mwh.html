@@ -458,10 +458,19 @@
                     const item = document.createElement('div');
                     item.className = 'warehouse-item';
                     item.dataset.warehouse = wh.toLowerCase();
+                    const safeId = wh.replace(/[^a-zA-Z0-9]/g, '_');
                     item.innerHTML = `
-                        <input type="checkbox" id="wh_${wh.replace(/[^a-zA-Z0-9]/g, '_')}" value="${wh}">
-                        <label for="wh_${wh.replace(/[^a-zA-Z0-9]/g, '_')}">${wh}</label>
+                        <input type="checkbox" id="wh_${safeId}" value="${wh}">
+                        <label for="wh_${safeId}" style="cursor:pointer;flex:1;">${wh}</label>
                     `;
+                    // Click on the whole item row toggles the checkbox
+                    item.addEventListener('click', (e) => {
+                        if (e.target.type !== 'checkbox') {
+                            const cb = item.querySelector('input[type="checkbox"]');
+                            cb.checked = !cb.checked;
+                            cb.dispatchEvent(new Event('change', { bubbles: true }));
+                        }
+                    });
                     warehouseList.appendChild(item);
                 });
                 
