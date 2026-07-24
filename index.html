@@ -729,6 +729,23 @@
                 return true;
             });
             
+            // Add in-transit-only rows: warehouses with in-transit but no inventory for this material
+            if (inTransitData && inTransitData[materialCode]) {
+                for (const [whName, qty] of Object.entries(inTransitData[materialCode])) {
+                    const key = `${materialCode}_${whName}`;
+                    if (!seen.has(key) && qty > 0) {
+                        dedupedResults.push({
+                            code: materialCode,
+                            desc: materialDesc,
+                            warehouse: whName,
+                            stock: 0,
+                            type: 'main'
+                        });
+                        seen.add(key);
+                    }
+                }
+            }
+            
             // Calculate Total In Transit from displayed rows only
             let totalInTransit = 0;
             dedupedResults.forEach(r => {
@@ -784,4 +801,4 @@
     </script>
 </body>
 </html>
-<!-- Cache bust: 1783065746 -->
+<!-- Cache bust: 1784896053 -->
