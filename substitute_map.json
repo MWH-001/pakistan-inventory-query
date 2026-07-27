@@ -1,4 +1,11 @@
 {
+  "17601287": [
+    {
+      "code": "17601286",
+      "desc": "17601286-CAP FP GF3986 17 ULTRAMARINE BLUE",
+      "scenario": "Real logistics"
+    }
+  ],
   "23002612": [
     {
       "code": "23002617",
@@ -69706,6 +69713,11 @@
   ],
   "12107298": [
     {
+      "code": "12703758",
+      "desc": "12703758-121B PCBA MB H6912 G3 128GB+4GB V1.2 RP",
+      "scenario": "Real logistics"
+    },
+    {
       "code": "12703474",
       "desc": "12703474-121B PCBA MB H6912 G1 128GB+4GB V1.2 RP",
       "scenario": "Real logistics"
@@ -69713,11 +69725,6 @@
     {
       "code": "12107668",
       "desc": "12107668-PCBA MB H6912 G3 128GB+4GB V1.2",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12703758",
-      "desc": "12703758-121B PCBA MB H6912 G3 128GB+4GB V1.2 RP",
       "scenario": "Real logistics"
     }
   ],
@@ -148081,6 +148088,11 @@
   ],
   "10023374": [
     {
+      "code": "10706955",
+      "desc": "10706955-SKDInfinixX688B H659L1ExpBlueID64+4BC1 B",
+      "scenario": "Real logistics"
+    },
+    {
       "code": "10024026",
       "desc": "10024026-Infinix X688B-V H659 C1MoranGreen64+4P01",
       "scenario": "Real logistics"
@@ -148243,11 +148255,6 @@
     {
       "code": "10705582",
       "desc": "10705582-SKDInfinixX688B H659B1 ObsBlackID64+4BC1",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10706955",
-      "desc": "10706955-SKDInfinixX688B H659L1ExpBlueID64+4BC1 B",
       "scenario": "Real logistics"
     },
     {
