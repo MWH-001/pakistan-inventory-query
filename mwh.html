@@ -588,89 +588,77 @@
                 }
             }
             
-            // Query substitutes (bidirectional)
+            // Query substitutes (bidirectional + transitive via BFS)
             let subStock = 0;
             const subResults = [];
             const seenSubCodes = new Set();
+            const subDescMap = {}; // track description for each substitute code
             
-            // Forward lookup: substituteData[materialCode]
-            if (substituteData[materialCode]) {
-                for (const sub of substituteData[materialCode]) {
-                    const subCode = sub.code;
-                    const subDesc = sub.desc || '';
-                    seenSubCodes.add(subCode);
-                    
-                    if (inventoryData[subCode]) {
-                        if (selectedWarehouses.length > 0) {
-                            selectedWarehouses.forEach(wh => {
-                                const stock = inventoryData[subCode][wh]?.Good || 0;
-                                const whName = wh;
-                                subStock += stock;
-                                if (stock > 0 || hasInTransit(subCode, whName)) {
-                                    subResults.push({
-                                        code: subCode,
-                                        desc: subDesc,
-                                        warehouse: wh,
-                                        stock: stock,
-                                        type: 'sub'
-                                    });
-                                }
-                            });
-                        } else {
-                            Object.entries(inventoryData[subCode]).forEach(([wh, data]) => {
-                                const stock = data.Good || 0;
-                                const whName = wh;
-                                subStock += stock;
-                                if (stock > 0 || hasInTransit(subCode, whName)) {
-                                    subResults.push({
-                                        code: subCode,
-                                        desc: subDesc,
-                                        warehouse: wh,
-                                        stock: stock,
-                                        type: 'sub'
-                                    });
-                                }
-                            });
+            // BFS to find all transitive substitutes
+            const queue = [materialCode];
+            const visited = new Set([materialCode]);
+            
+            while (queue.length > 0) {
+                const current = queue.shift();
+                
+                // Forward lookup: substituteData[current]
+                if (substituteData[current]) {
+                    for (const sub of substituteData[current]) {
+                        const subCode = sub.code;
+                        if (!visited.has(subCode)) {
+                            visited.add(subCode);
+                            seenSubCodes.add(subCode);
+                            subDescMap[subCode] = sub.desc || '';
+                            queue.push(subCode);
                         }
+                    }
+                }
+                
+                // Reverse lookup: find materials that have current as a substitute
+                for (const [parentCode, subs] of Object.entries(substituteData)) {
+                    if (visited.has(parentCode)) continue;
+                    const revEntry = subs.find(s => s.code === current);
+                    if (revEntry) {
+                        visited.add(parentCode);
+                        seenSubCodes.add(parentCode);
+                        subDescMap[parentCode] = revEntry.desc || '';
+                        queue.push(parentCode);
                     }
                 }
             }
             
-            // Reverse lookup: find materials that have this as a substitute
-            for (const [parentCode, subs] of Object.entries(substituteData)) {
-                if (parentCode === materialCode || seenSubCodes.has(parentCode)) continue;
-                const revEntry = subs.find(s => s.code === materialCode);
-                if (!revEntry) continue;
-                const revDesc = revEntry.desc || '';
+            // Now query inventory for all found substitutes
+            for (const subCode of seenSubCodes) {
+                const subDesc = subDescMap[subCode] || '';
                 
-                if (inventoryData[parentCode]) {
+                if (inventoryData[subCode]) {
                     if (selectedWarehouses.length > 0) {
                         selectedWarehouses.forEach(wh => {
-                            const stock = inventoryData[parentCode][wh]?.Good || 0;
+                            const stock = inventoryData[subCode][wh]?.Good || 0;
                             const whName = wh;
                             subStock += stock;
-                            if (stock > 0 || hasInTransit(parentCode, whName)) {
+                            if (stock > 0 || hasInTransit(subCode, whName)) {
                                 subResults.push({
-                                    code: parentCode,
-                                    desc: revDesc,
+                                    code: subCode,
+                                    desc: subDesc,
                                     warehouse: wh,
                                     stock: stock,
-                                    type: 'sub-rev'
+                                    type: 'sub'
                                 });
                             }
                         });
                     } else {
-                        Object.entries(inventoryData[parentCode]).forEach(([wh, data]) => {
+                        Object.entries(inventoryData[subCode]).forEach(([wh, data]) => {
                             const stock = data.Good || 0;
                             const whName = wh;
                             subStock += stock;
-                            if (stock > 0 || hasInTransit(parentCode, whName)) {
+                            if (stock > 0 || hasInTransit(subCode, whName)) {
                                 subResults.push({
-                                    code: parentCode,
-                                    desc: revDesc,
+                                    code: subCode,
+                                    desc: subDesc,
                                     warehouse: wh,
                                     stock: stock,
-                                    type: 'sub-rev'
+                                    type: 'sub'
                                 });
                             }
                         });
