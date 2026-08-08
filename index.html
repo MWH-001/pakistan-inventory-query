@@ -644,7 +644,8 @@
             
             // Now query inventory for all found substitutes
             for (const subCode of seenSubCodes) {
-                const subDesc = subDescMap[subCode] || '';
+                // Priority: inventory _desc > substitute_map desc
+                const subDesc = (inventoryData[subCode] && inventoryData[subCode]._desc) || subDescMap[subCode] || '';
                 
                 if (inventoryData[subCode]) {
                     if (selectedWarehouses.length > 0) {
