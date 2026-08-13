@@ -1,4 +1,16 @@
 {
+  "12206500": [
+    {
+      "code": "12206496",
+      "desc": "PF MB+Label KM5 XK67J F1 128+6",
+      "scenario": "Plan"
+    },
+    {
+      "code": "12206496",
+      "desc": "PF MB+Label KM5 XK67J F1 128+6",
+      "scenario": "Real logistics"
+    }
+  ],
   "17601217": [
     {
       "code": "17601218",
@@ -45,13 +57,6 @@
       "code": "12206496",
       "desc": "PF MB+Label KM5 XK67J F1 128+6",
       "scenario": "Plan"
-    }
-  ],
-  "12206500": [
-    {
-      "code": "12206496",
-      "desc": "PF MB+Label KM5 XK67J F1 128+6",
-      "scenario": "Real logistics"
     }
   ],
   "38106118": [
@@ -188743,28 +188748,6 @@
       "scenario": "Real logistics"
     }
   ],
-  "12105304": [
-    {
-      "code": "12701403",
-      "desc": "121B PCBA MB H6114 N3 16GB+1GB V1.2 RP",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12702600",
-      "desc": "121B PCBA MB H6114 N1 16GB+1GB V1.2 RP",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12702175",
-      "desc": "121B PCBA MB H6114 N5 16GB+1GB V1.2 RP",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12701436",
-      "desc": "121B PCBA MB H6114 N6 16GB+1GB V1.2 RP",
-      "scenario": "Real logistics"
-    }
-  ],
   "12105256": [
     {
       "code": "12702230",
@@ -189078,6 +189061,28 @@
     {
       "code": "12105247",
       "desc": "PCBA MB H6113 K11 32GB+3GB V1.2",
+      "scenario": "Real logistics"
+    }
+  ],
+  "12105304": [
+    {
+      "code": "12701403",
+      "desc": "121B PCBA MB H6114 N3 16GB+1GB V1.2 RP",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12702600",
+      "desc": "121B PCBA MB H6114 N1 16GB+1GB V1.2 RP",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12702175",
+      "desc": "121B PCBA MB H6114 N5 16GB+1GB V1.2 RP",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12701436",
+      "desc": "121B PCBA MB H6114 N6 16GB+1GB V1.2 RP",
       "scenario": "Real logistics"
     }
   ],
