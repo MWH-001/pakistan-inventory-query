@@ -1,4 +1,108 @@
 {
+  "12110686": [
+    {
+      "code": "12111013",
+      "desc": "PCBA MB GS1820 B3 4M+8M V4.0",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12111013",
+      "desc": "PCBA MB GS1820 B3 4M+8M V4.0",
+      "scenario": "Plan"
+    }
+  ],
+  "38106631": [
+    {
+      "code": "38106203",
+      "desc": "Middle housing CN5 NEBULA TITANIUM V0 GZ GK N",
+      "scenario": "Plan"
+    },
+    {
+      "code": "38106203",
+      "desc": "Middle housing CN5 NEBULA TITANIUM V0 GZ GK N",
+      "scenario": "Real logistics"
+    }
+  ],
+  "37200550": [
+    {
+      "code": "37200464",
+      "desc": "Gla Cam lens CM6 BLACK R Flicker V0 DT N",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "37200464",
+      "desc": "Gla Cam lens CM6 BLACK R Flicker V0 DT N",
+      "scenario": "Plan"
+    }
+  ],
+  "37301656": [
+    {
+      "code": "37301426",
+      "desc": "Composite plate lens A676L BLACK Flashlight V1 BM W06",
+      "scenario": "Plan"
+    },
+    {
+      "code": "37301426",
+      "desc": "Composite plate lens A676L BLACK Flashlight V1 BM W06",
+      "scenario": "Real logistics"
+    }
+  ],
+  "37301655": [
+    {
+      "code": "37301425",
+      "desc": "Composite plate lens A676L BLACK IR LED V1 BM W06",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "37301425",
+      "desc": "Composite plate lens A676L BLACK IR LED V1 BM W06",
+      "scenario": "Plan"
+    }
+  ],
+  "17601412": [
+    {
+      "code": "17601411",
+      "desc": "CAP FP GSL6158LMSCNB 17 CLOUD WHITE",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "17601411",
+      "desc": "CAP FP GSL6158LMSCNB 17 CLOUD WHITE",
+      "scenario": "Plan"
+    }
+  ],
+  "25001256": [
+    {
+      "code": "25002767",
+      "desc": "AL Bat BL-25BI-L 1800mAh CB",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "25001229",
+      "desc": "BAT itel BL 25BI 2500mAh BIS NTC",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "25001313",
+      "desc": "BAT itel BL 25BI 2500mAh BIS PCT NTC",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "25001484",
+      "desc": "Bat itel BL 25BI 2500mAh NTC BD",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "25001737",
+      "desc": "Bat itel BL 25BI 2500mAh BRT NTC W06",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "25001636",
+      "desc": "Bat itel BL 25BI 2500mAh NTC INtoAFR",
+      "scenario": "Real logistics"
+    }
+  ],
   "17601216": [
     {
       "code": "17601212",
@@ -7839,11 +7943,6 @@
       "code": "17201892",
       "desc": "COB AF 50M S5KJN1SQ03-FXG9 A 6P BG B",
       "scenario": "Real logistics"
-    },
-    {
-      "code": "17201892",
-      "desc": "COB AF 50M S5KJN1SQ03-FXG9 A 6P BG B",
-      "scenario": "Plan"
     }
   ],
   "12709043": [
@@ -10066,13 +10165,6 @@
     {
       "code": "17201717",
       "desc": "CAM FF 8M GC08A3-WA1XA A B 4P B TS V1.0",
-      "scenario": "Plan"
-    }
-  ],
-  "12110686": [
-    {
-      "code": "12111013",
-      "desc": "PCBA MB GS1820 B3 4M+8M V4.0",
       "scenario": "Plan"
     }
   ],
@@ -31317,6 +31409,30 @@
       "scenario": "Real logistics"
     }
   ],
+  "12107844": [
+    {
+      "code": "12108794",
+      "desc": "PCBA MB F6321 C2 64GB+3GB V1.0",
+      "scenario": "Plan"
+    },
+    {
+      "code": "12703997",
+      "desc": "121B PCBA MB F6321 C1 64GB+3GB V1.0 RP",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12704436",
+      "desc": "121B PCBA MB F6321 C2 64GB+3GB V1.0 RP",
+      "scenario": "Real logistics"
+    }
+  ],
+  "12702198": [
+    {
+      "code": "12105081",
+      "desc": "PCBA MB H6114 A12 16GB+2GB V1.2",
+      "scenario": "Plan"
+    }
+  ],
   "12702596": [
     {
       "code": "12105037",
@@ -36551,30 +36667,6 @@
       "code": "12105254",
       "desc": "PCBA MB H6113 L9 32GB+3GB V1.2",
       "scenario": "Real logistics"
-    }
-  ],
-  "12107844": [
-    {
-      "code": "12108794",
-      "desc": "PCBA MB F6321 C2 64GB+3GB V1.0",
-      "scenario": "Plan"
-    },
-    {
-      "code": "12703997",
-      "desc": "121B PCBA MB F6321 C1 64GB+3GB V1.0 RP",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12704436",
-      "desc": "121B PCBA MB F6321 C2 64GB+3GB V1.0 RP",
-      "scenario": "Real logistics"
-    }
-  ],
-  "12702198": [
-    {
-      "code": "12105081",
-      "desc": "PCBA MB H6114 A12 16GB+2GB V1.2",
-      "scenario": "Plan"
     }
   ],
   "12704292": [
@@ -54466,6 +54558,18 @@
       "scenario": "Real logistics"
     }
   ],
+  "12009892": [
+    {
+      "code": "12009888",
+      "desc": "dev TECNO KC1 H6114A1NebulBlackBD16+2D05",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12010124",
+      "desc": "devTECNO KC1 H6114 A1 PolarBluePK16+2D18",
+      "scenario": "Plan"
+    }
+  ],
   "12104582": [
     {
       "code": "12703696",
@@ -59931,18 +60035,6 @@
       "code": "12010723",
       "desc": "dev itel L6501 F6311 C1GradatiBluePK32+3",
       "scenario": "Real logistics"
-    }
-  ],
-  "12009892": [
-    {
-      "code": "12009888",
-      "desc": "dev TECNO KC1 H6114A1NebulBlackBD16+2D05",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12010124",
-      "desc": "devTECNO KC1 H6114 A1 PolarBluePK16+2D18",
-      "scenario": "Plan"
     }
   ],
   "11001508": [
@@ -107845,15 +107937,50 @@
       "scenario": "Real logistics"
     }
   ],
-  "12012855": [
+  "10706733": [
     {
-      "code": "12012712",
-      "desc": "dev itel L6502 F3208 D1IceCrysBlueTH32+3",
+      "code": "10028720",
+      "desc": "Infinix X663 H6915 A3GraBlackEG RDT128+4",
       "scenario": "Real logistics"
     },
     {
-      "code": "12012942",
-      "desc": "dev itel L6502 F3208 D1CosmicShinePK32+3",
+      "code": "10032942",
+      "desc": "Infinix X663 H6915 H1ForceBlackDB3 128+4",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10032946",
+      "desc": "Infinix X663 H6915 H1 Sunset GoldSS128+4",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10032941",
+      "desc": "Infinix X663 H6915 H1 JewelBlueDB3 128+4",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10028061",
+      "desc": "Infinix X663 H6915 A1GlacierGreen128+4EU",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10706732",
+      "desc": "SKD InfinixX663 H6915E1CelSnowPK128+4BC1",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10031163",
+      "desc": "Infinix X663 H6915 H2SunsetGoldEG128+4EU",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10028949",
+      "desc": "InfinixX663 H6915 A1GlacierGreenJO 128+4",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10028050",
+      "desc": "Infinix X663 H6915 E1GlacierGreenPK128+4",
       "scenario": "Plan"
     }
   ],
@@ -115411,53 +115538,6 @@
     {
       "code": "10017036",
       "desc": "itel it2171 G1808 D Sun Red PK 4+4",
-      "scenario": "Plan"
-    }
-  ],
-  "10706733": [
-    {
-      "code": "10032946",
-      "desc": "Infinix X663 H6915 H1 Sunset GoldSS128+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10032941",
-      "desc": "Infinix X663 H6915 H1 JewelBlueDB3 128+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10028061",
-      "desc": "Infinix X663 H6915 A1GlacierGreen128+4EU",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10706732",
-      "desc": "SKD InfinixX663 H6915E1CelSnowPK128+4BC1",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10031163",
-      "desc": "Infinix X663 H6915 H2SunsetGoldEG128+4EU",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10028949",
-      "desc": "InfinixX663 H6915 A1GlacierGreenJO 128+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10028720",
-      "desc": "Infinix X663 H6915 A3GraBlackEG RDT128+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10032942",
-      "desc": "Infinix X663 H6915 H1ForceBlackDB3 128+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10028050",
-      "desc": "Infinix X663 H6915 E1GlacierGreenPK128+4",
       "scenario": "Plan"
     }
   ],
@@ -137698,6 +137778,18 @@
       "scenario": "Real logistics"
     }
   ],
+  "12012855": [
+    {
+      "code": "12012712",
+      "desc": "dev itel L6502 F3208 D1IceCrysBlueTH32+3",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12012942",
+      "desc": "dev itel L6502 F3208 D1CosmicShinePK32+3",
+      "scenario": "Plan"
+    }
+  ],
   "12018676": [
     {
       "code": "12018262",
@@ -141448,6 +141540,28 @@
       "code": "17101329",
       "desc": "CTP 5.45HD+ GT917D IN1 Pro blackTXD V1.0",
       "scenario": "Real logistics"
+    }
+  ],
+  "12203195": [
+    {
+      "code": "12203146",
+      "desc": "PF F hsg+FL(CTP+LCM) S661LP Black",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12203049",
+      "desc": "PF F hsg+FL(CTP+LCM) S661L Black V1.0",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12203129",
+      "desc": "PF F hsg+FL(CTP+LCM) S661LN Black",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12202900",
+      "desc": "PF F hsg+FL(CTP+LCM) S661L Black",
+      "scenario": "Plan"
     }
   ],
   "21205608": [
@@ -158329,28 +158443,6 @@
     {
       "code": "10028174",
       "desc": "Infinix X688B H659 L1 Polar Black PK64+4",
-      "scenario": "Plan"
-    }
-  ],
-  "12203195": [
-    {
-      "code": "12203146",
-      "desc": "PF F hsg+FL(CTP+LCM) S661LP Black",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12203049",
-      "desc": "PF F hsg+FL(CTP+LCM) S661L Black V1.0",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12203129",
-      "desc": "PF F hsg+FL(CTP+LCM) S661LN Black",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12202900",
-      "desc": "PF F hsg+FL(CTP+LCM) S661L Black",
       "scenario": "Plan"
     }
   ],
@@ -201161,6 +201253,21 @@
       "scenario": "Real logistics"
     },
     {
+      "code": "12105110",
+      "desc": "PCBA MB H6114 K11 32GB+2GB V1.2",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12105108",
+      "desc": "PCBA MB H6114 K9 32GB+2GB V1.2",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12105004",
+      "desc": "PCBA MB H6114 K6 32GB+2GB V1.2",
+      "scenario": "Real logistics"
+    },
+    {
       "code": "12104700",
       "desc": "PCBA MB H6114 K2 32GB+2GB V1.2",
       "scenario": "Real logistics"
@@ -201193,21 +201300,6 @@
     {
       "code": "12104744",
       "desc": "PCBA MB H6114 K3 32GB+2GB V1.2",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12105110",
-      "desc": "PCBA MB H6114 K11 32GB+2GB V1.2",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12105108",
-      "desc": "PCBA MB H6114 K9 32GB+2GB V1.2",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12105004",
-      "desc": "PCBA MB H6114 K6 32GB+2GB V1.2",
       "scenario": "Real logistics"
     }
   ],
@@ -211357,6 +211449,23 @@
       "scenario": "Real logistics"
     }
   ],
+  "25001518": [
+    {
+      "code": "25001555",
+      "desc": "Bat Infinix BL 39LX 3900mAh VK IN",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "25001550",
+      "desc": "Bat Infinix BL 39LX 3900mAh LW IN",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "25001536",
+      "desc": "Bat Infinix BL 39LX 3900mAh TM IN",
+      "scenario": "Real logistics"
+    }
+  ],
   "25001635": [
     {
       "code": "25001591",
@@ -211381,23 +211490,6 @@
     {
       "code": "25001182",
       "desc": "BAT itel BL 5C 1150mAh",
-      "scenario": "Real logistics"
-    }
-  ],
-  "25001518": [
-    {
-      "code": "25001555",
-      "desc": "Bat Infinix BL 39LX 3900mAh VK IN",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "25001550",
-      "desc": "Bat Infinix BL 39LX 3900mAh LW IN",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "25001536",
-      "desc": "Bat Infinix BL 39LX 3900mAh TM IN",
       "scenario": "Real logistics"
     }
   ],
@@ -212612,33 +212704,6 @@
     {
       "code": "25001212",
       "desc": "BAT TECNO BL 48AT 4850mAh ATL IN",
-      "scenario": "Real logistics"
-    }
-  ],
-  "25001256": [
-    {
-      "code": "25001229",
-      "desc": "BAT itel BL 25BI 2500mAh BIS NTC",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "25001313",
-      "desc": "BAT itel BL 25BI 2500mAh BIS PCT NTC",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "25001484",
-      "desc": "Bat itel BL 25BI 2500mAh NTC BD",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "25001737",
-      "desc": "Bat itel BL 25BI 2500mAh BRT NTC W06",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "25001636",
-      "desc": "Bat itel BL 25BI 2500mAh NTC INtoAFR",
       "scenario": "Real logistics"
     }
   ],
