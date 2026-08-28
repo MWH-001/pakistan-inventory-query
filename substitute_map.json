@@ -1,4 +1,16 @@
 {
+  "12710196": [
+    {
+      "code": "17401836",
+      "desc": "Oncell 6.78 FHD+ TM H AMOLED BLACK",
+      "scenario": "Plan"
+    },
+    {
+      "code": "17401967",
+      "desc": "Oncell 6.78 FHD+ TM H AMOLED BLACK",
+      "scenario": "Real logistics"
+    }
+  ],
   "25101461": [
     {
       "code": "25101453",
@@ -31596,6 +31608,16 @@
       "scenario": "Plan"
     },
     {
+      "code": "12703588",
+      "desc": "121B PCBA MB F6318 B1 32GB+2GB V1.2 RP",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12704667",
+      "desc": "121B PCBA MB F6318 B3 32G+2G V1.2 RP",
+      "scenario": "Real logistics"
+    },
+    {
       "code": "12109037",
       "desc": "PCBA MB F6318 B3 32G+2G V1.2",
       "scenario": "Real logistics"
@@ -31613,16 +31635,6 @@
     {
       "code": "12109036",
       "desc": "PCBA MB F6318 B4 32G+2G V1.2",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12703588",
-      "desc": "121B PCBA MB F6318 B1 32GB+2GB V1.2 RP",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12704667",
-      "desc": "121B PCBA MB F6318 B3 32G+2G V1.2 RP",
       "scenario": "Real logistics"
     }
   ],
@@ -62964,13 +62976,6 @@
       "scenario": "Real logistics"
     }
   ],
-  "12106074": [
-    {
-      "code": "12702693",
-      "desc": "121B PCBA MB H694 J2 128GB+6GB V1.4 RP",
-      "scenario": "Real logistics"
-    }
-  ],
   "10020027": [
     {
       "code": "10020026",
@@ -64043,6 +64048,13 @@
       "code": "10010753",
       "desc": "TECNO IN5 H3721 champagnegold 32+3 PKP15",
       "scenario": "Plan"
+    }
+  ],
+  "12106074": [
+    {
+      "code": "12702693",
+      "desc": "121B PCBA MB H694 J2 128GB+6GB V1.4 RP",
+      "scenario": "Real logistics"
     }
   ],
   "12019696": [
@@ -104110,6 +104122,16 @@
   ],
   "10705215": [
     {
+      "code": "10703949",
+      "desc": "SKDitelit2171 G1808AEleBlackINtoOP4+4BC1",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10013952",
+      "desc": "itel it2171 G1808 A Sun Red CM 4+4 B",
+      "scenario": "Real logistics"
+    },
+    {
       "code": "10018282",
       "desc": "itel it2171 G1808 A CityBlue AFR 4+4 P01",
       "scenario": "Real logistics"
@@ -104177,16 +104199,6 @@
     {
       "code": "10019950",
       "desc": "itel it2171 G1808 A EleganBlackEG RAY4+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10703949",
-      "desc": "SKDitelit2171 G1808AEleBlackINtoOP4+4BC1",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10013952",
-      "desc": "itel it2171 G1808 A Sun Red CM 4+4 B",
       "scenario": "Real logistics"
     },
     {
@@ -116060,6 +116072,16 @@
   ],
   "10706703": [
     {
+      "code": "10033354",
+      "desc": "InfinixX663 H6915 O2JewelBlueEG LOG128+6",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10028956",
+      "desc": "Infinix X663 H6915 G1CelestiaSnowTN128+6",
+      "scenario": "Real logistics"
+    },
+    {
       "code": "10027895",
       "desc": "InfinixX663 H6915 C1CelestialSnowBD128+6",
       "scenario": "Real logistics"
@@ -116107,16 +116129,6 @@
     {
       "code": "10028988",
       "desc": "Infinix X663 H6915 C1GlacierGreenKH128+6",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10033354",
-      "desc": "InfinixX663 H6915 O2JewelBlueEG LOG128+6",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10028956",
-      "desc": "Infinix X663 H6915 G1CelestiaSnowTN128+6",
       "scenario": "Real logistics"
     },
     {
@@ -177349,13 +177361,6 @@
       "scenario": "Plan"
     }
   ],
-  "12015780": [
-    {
-      "code": "12015782",
-      "desc": "dev Infinix X6811 H857 C1TuscaBrown256+8",
-      "scenario": "Plan"
-    }
-  ],
   "10020975": [
     {
       "code": "10019083",
@@ -183380,6 +183385,13 @@
     {
       "code": "27201856",
       "desc": "Connection inner holder TECNO KB3",
+      "scenario": "Plan"
+    }
+  ],
+  "12015780": [
+    {
+      "code": "12015782",
+      "desc": "dev Infinix X6811 H857 C1TuscaBrown256+8",
       "scenario": "Plan"
     }
   ],
