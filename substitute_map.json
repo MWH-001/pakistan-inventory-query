@@ -1,4 +1,40 @@
 {
+  "38106404": [
+    {
+      "code": "38106885",
+      "desc": "Middle housing X6895 NIGHT PULSE V1 GZ GK N",
+      "scenario": "Plan"
+    },
+    {
+      "code": "38106885",
+      "desc": "Middle housing X6895 NIGHT PULSE V1 GZ GK N",
+      "scenario": "Real logistics"
+    }
+  ],
+  "38106506": [
+    {
+      "code": "38106887",
+      "desc": "Middle housing X6895 SILVER DANCER V1 GZ GK N",
+      "scenario": "Plan"
+    },
+    {
+      "code": "38106887",
+      "desc": "Middle housing X6895 SILVER DANCER V1 GZ GK N",
+      "scenario": "Real logistics"
+    }
+  ],
+  "38106508": [
+    {
+      "code": "38106889",
+      "desc": "Middle housing X6895 DIVE BLUE V1 GZ GK N",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "38106889",
+      "desc": "Middle housing X6895 DIVE BLUE V1 GZ GK N",
+      "scenario": "Plan"
+    }
+  ],
   "38106235": [
     {
       "code": "38106236",
@@ -121929,6 +121965,43 @@
       "scenario": "Plan"
     }
   ],
+  "12014716": [
+    {
+      "code": "12014715",
+      "desc": "dev TECNO LE7 H697 K2EnergyBlueKH2 128+6",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12014425",
+      "desc": "dev TECNO LE7 H697 K2 PolarSilverTR128+6",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12014421",
+      "desc": "devTECNO LE7 H697 K2PolarSilverKH2 128+6",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12013643",
+      "desc": "devTECNO LE7 H697 K2DazzBlackSEA128+6IMT",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12013568",
+      "desc": "devTECNO LE7-V H697 J2PolaSilverAFR128+6",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12014709",
+      "desc": "devTECNO LE7-V H697 J2EnergyBlueAFR128+6",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12014428",
+      "desc": "devTECNO LE7 H697 K2DazzlBlackPK128+6IMT",
+      "scenario": "Plan"
+    }
+  ],
   "35000087": [
     {
       "code": "15503145",
@@ -138164,43 +138237,6 @@
     {
       "code": "12018416",
       "desc": "devInfinix X665B H6222 J1HazeGreenID64+4",
-      "scenario": "Plan"
-    }
-  ],
-  "12014716": [
-    {
-      "code": "12013643",
-      "desc": "devTECNO LE7 H697 K2DazzBlackSEA128+6IMT",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12013568",
-      "desc": "devTECNO LE7-V H697 J2PolaSilverAFR128+6",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12014709",
-      "desc": "devTECNO LE7-V H697 J2EnergyBlueAFR128+6",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12014715",
-      "desc": "dev TECNO LE7 H697 K2EnergyBlueKH2 128+6",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12014425",
-      "desc": "dev TECNO LE7 H697 K2 PolarSilverTR128+6",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12014421",
-      "desc": "devTECNO LE7 H697 K2PolarSilverKH2 128+6",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12014428",
-      "desc": "devTECNO LE7 H697 K2DazzlBlackPK128+6IMT",
       "scenario": "Plan"
     }
   ],
@@ -159738,6 +159774,18 @@
       "scenario": "Plan"
     }
   ],
+  "17001341": [
+    {
+      "code": "17001291",
+      "desc": "LCM 2.8Q TN BOE+GC9307 H2.0mm V1.0",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "17001140",
+      "desc": "LCM STDP 2.8Q TN CTC+ST7789 SI COE V2.0",
+      "scenario": "Real logistics"
+    }
+  ],
   "12019983": [
     {
       "code": "12016129",
@@ -174891,18 +174939,6 @@
       "scenario": "Plan"
     }
   ],
-  "17001341": [
-    {
-      "code": "17001291",
-      "desc": "LCM 2.8Q TN BOE+GC9307 H2.0mm V1.0",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "17001140",
-      "desc": "LCM STDP 2.8Q TN CTC+ST7789 SI COE V2.0",
-      "scenario": "Real logistics"
-    }
-  ],
   "12107729": [
     {
       "code": "12704024",
@@ -179620,6 +179656,13 @@
       "scenario": "Plan"
     }
   ],
+  "12700833": [
+    {
+      "code": "30005486",
+      "desc": "171 CTP X601 champagne gold",
+      "scenario": "Plan"
+    }
+  ],
   "17101443": [
     {
       "code": "17101444",
@@ -183254,13 +183297,6 @@
     {
       "code": "12107637",
       "desc": "PCBA SUB H6222 2 B V1.0",
-      "scenario": "Plan"
-    }
-  ],
-  "12700833": [
-    {
-      "code": "30005486",
-      "desc": "171 CTP X601 champagne gold",
       "scenario": "Plan"
     }
   ],
@@ -193306,6 +193342,11 @@
       "scenario": "Real logistics"
     },
     {
+      "code": "12105127",
+      "desc": "PCBA MB H6114 R3 16GB+1GB V1.3",
+      "scenario": "Real logistics"
+    },
+    {
       "code": "12105308",
       "desc": "PCBA MB H6114 R5 16GB+1GB V1.3",
       "scenario": "Real logistics"
@@ -193318,11 +193359,6 @@
     {
       "code": "12104776",
       "desc": "PCBA MB H6114 R1 16GB+1GB V1.3",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12105127",
-      "desc": "PCBA MB H6114 R3 16GB+1GB V1.3",
       "scenario": "Real logistics"
     }
   ],
