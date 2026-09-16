@@ -280,8 +280,8 @@
 
     const cf = asNumber(row[COL.BF]);  // MWH Inventory → MWH Stock
     const cg = asNumber(row[COL.BG]);  // BWH Inventory → BWH Stock
-    const ch = asNumber(row[COL.BJ]) + asNumber(row[COL.BK]);  // SWH Inventory(UW) + SWH Inventory(OW) → ASC Stock
-    const ci = asNumber(row[COL.BL]) + asNumber(row[COL.BM]);  // SWH In Transit(UW) + SWH In Transit(OW) → Local in transit
+    const ch = asNumber(row[COL.BI]) + asNumber(row[COL.BJ]);  // SWH Inventory(UW) + SWH Inventory(OW) → ASC Stock
+    const ci = asNumber(row[COL.BK]) + asNumber(row[COL.BL]);  // SWH In Transit(UW) + SWH In Transit(OW) → Local in transit
     const cj = asNumber(row[COL.Y]);
     const ck = cf + cg + ch + ci;
     const cl = asNumber(row[COL.BO]);
