@@ -278,8 +278,8 @@
     const stateText = row[COL.Q] == null ? '' : String(row[COL.Q]).trim();
     const eol = getEolAging(stateText, row[COL.R]);
 
-    const cg = asNumber(row[COL.BG]);  // MWH Inventory
-    const cf = asNumber(row[COL.BH]);  // BWH Inventory
+    const cf = asNumber(row[COL.BG]);  // MWH Inventory → 输出到 MWH Stock
+    const cg = asNumber(row[COL.BH]);  // BWH Inventory → 输出到 BWH Stock
     const ch = asNumber(row[COL.BI]);  // BWH In Transit
     const ci = asNumber(row[COL.BJ]) + asNumber(row[COL.BK]);  // SWH Inventory(UW) + SWH Inventory(OW)
     const cj = asNumber(row[COL.Y]);
