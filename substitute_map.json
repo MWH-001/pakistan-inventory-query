@@ -1,4 +1,16 @@
 {
+  "12709430": [
+    {
+      "code": "12114020",
+      "desc": "PCBA MB G1808 L3 4M+4M V1.2",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12114020",
+      "desc": "PCBA MB G1808 L3 4M+4M V1.2",
+      "scenario": "Plan"
+    }
+  ],
   "14201683": [
     {
       "code": "14201689",
@@ -2756,13 +2768,6 @@
     {
       "code": "17401796",
       "desc": "Incell 6.56 HD+ BOE D a-Si BLACK",
-      "scenario": "Plan"
-    }
-  ],
-  "12709430": [
-    {
-      "code": "12114020",
-      "desc": "PCBA MB G1808 L3 4M+4M V1.2",
       "scenario": "Plan"
     }
   ],
@@ -43149,13 +43154,13 @@
       "scenario": "Real logistics"
     },
     {
-      "code": "12701400",
-      "desc": "121B PCBA MB H6114 H3 32GB+2GB V1.2 RP",
+      "code": "12702242",
+      "desc": "121B PCBA MB H6114 H6 32GB+2GB V1.2 RP",
       "scenario": "Real logistics"
     },
     {
-      "code": "12702242",
-      "desc": "121B PCBA MB H6114 H6 32GB+2GB V1.2 RP",
+      "code": "12701400",
+      "desc": "121B PCBA MB H6114 H3 32GB+2GB V1.2 RP",
       "scenario": "Real logistics"
     },
     {
@@ -43174,8 +43179,8 @@
       "scenario": "Real logistics"
     },
     {
-      "code": "12105303",
-      "desc": "PCBA MB H6114 H7 32GB+2GB V1.2",
+      "code": "12104632",
+      "desc": "PCBA MB H6114 H1 32GB+2GB V1.1",
       "scenario": "Real logistics"
     },
     {
@@ -43194,11 +43199,6 @@
       "scenario": "Real logistics"
     },
     {
-      "code": "12104632",
-      "desc": "PCBA MB H6114 H1 32GB+2GB V1.1",
-      "scenario": "Real logistics"
-    },
-    {
       "code": "12104884",
       "desc": "PCBA MB H6114 H3 32GB+2GB V1.2",
       "scenario": "Real logistics"
@@ -43206,6 +43206,11 @@
     {
       "code": "12104766",
       "desc": "PCBA MB H6114 H2 32GB+2GB V1.2",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12105303",
+      "desc": "PCBA MB H6114 H7 32GB+2GB V1.2",
       "scenario": "Real logistics"
     }
   ],
@@ -105404,6 +105409,11 @@
   ],
   "12018684": [
     {
+      "code": "12018676",
+      "desc": "devInfinix X665B H6222 J1RaciBlackLK64+4",
+      "scenario": "Real logistics"
+    },
+    {
       "code": "12018255",
       "desc": "devInfinix X665B H6222 J1RaciBlackTH64+4",
       "scenario": "Real logistics"
@@ -105471,11 +105481,6 @@
     {
       "code": "12018689",
       "desc": "devInfinix X665B H6222 J1ChampGoldBD64+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12018676",
-      "desc": "devInfinix X665B H6222 J1RaciBlackLK64+4",
       "scenario": "Real logistics"
     },
     {
@@ -142972,8 +142977,8 @@
   ],
   "27601411": [
     {
-      "code": "27601410",
-      "desc": "DOC card X650C",
+      "code": "27601105",
+      "desc": "warranty card Infinix TH V2.0 RoHS",
       "scenario": "Real logistics"
     },
     {
@@ -142982,8 +142987,8 @@
       "scenario": "Real logistics"
     },
     {
-      "code": "27601105",
-      "desc": "warranty card Infinix TH V2.0 RoHS",
+      "code": "27601410",
+      "desc": "DOC card X650C",
       "scenario": "Real logistics"
     }
   ],
@@ -142991,11 +142996,6 @@
     {
       "code": "25001631",
       "desc": "Bat Infinix BL 58BX 5850mAh LW IN BD",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "25001679",
-      "desc": "Bat Infinix BL 58BX 5850mAh VK IN",
       "scenario": "Real logistics"
     },
     {
@@ -143026,6 +143026,11 @@
     {
       "code": "25001656",
       "desc": "Bat Infinix BL 58BX 5850mAh ATL IN DP",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "25001679",
+      "desc": "Bat Infinix BL 58BX 5850mAh VK IN",
       "scenario": "Real logistics"
     }
   ],
