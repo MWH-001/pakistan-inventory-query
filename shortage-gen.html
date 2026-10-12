@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shortage Report Generator</title>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f7fa; color: #333; }
+.header { background: #1a73e8; color: white; padding: 16px 24px; }
+.header h1 { font-size: 20px; }
+.header p { font-size: 13px; opacity: 0.85; margin-top: 4px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+/* Upload Section */
+.upload-section { background: white; border-radius: 8px; padding: 24px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.upload-section h2 { font-size: 16px; margin-bottom: 16px; color: #333; }
+.upload-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.upload-item { border: 2px dashed #ddd; border-radius: 8px; padding: 16px; text-align: center; transition: all 0.2s; }
+.upload-item:hover { border-color: #1a73e8; background: #f8f9ff; }
+.upload-item.loaded { border-color: #188038; background: #e8f5e9; }
+.upload-item label { display: block; cursor: pointer; }
+.upload-item .icon { font-size: 32px; margin-bottom: 8px; }
+.upload-item .name { font-size: 13px; font-weight: 600; color: #555; margin-bottom: 4px; }
+.upload-item .desc { font-size: 11px; color: #888; margin-bottom: 8px; }
+.upload-item .status { font-size: 12px; color: #188038; font-weight: 600; display: none; }
+.upload-item.loaded .status { display: block; }
+.upload-item input[type="file"] { display: none; }
+
+/* Action */
+.action-bar { text-align: center; margin: 20px 0; }
+.btn-execute { padding: 12px 48px; font-size: 16px; font-weight: 600; background: #1a73e8; color: white; border: none; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
+.btn-execute:hover { background: #1557b0; transform: translateY(-1px); }
+.btn-execute:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+
+/* Progress */
+.progress-section { display: none; background: white; border-radius: 8px; padding: 24px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.progress-bar { height: 8px; background: #e0e0e0; border-radius: 4px; overflow: hidden; margin: 12px 0; }
+.progress-fill { height: 100%; background: #1a73e8; border-radius: 4px; transition: width 0.3s; width: 0%; }
+.progress-log { font-size: 12px; color: #666; max-height: 120px; overflow-y: auto; font-family: monospace; }
+.progress-log .log-item { padding: 2px 0; }
+.progress-log .log-item.success { color: #188038; }
+.progress-log .log-item.error { color: #d93025; }
+
+/* Result */
+.result-section { display: none; background: white; border-radius: 8px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.result-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.result-header h2 { font-size: 16px; }
+.btn-download { padding: 8px 20px; background: #188038; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; }
+.btn-download:hover { background: #0d652d; }
+
+/* Summary */
+.summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.summary-card { text-align: center; padding: 12px; background: #f8f9fa; border-radius: 8px; }
+.summary-card .value { font-size: 24px; font-weight: 700; color: #1a73e8; }
+.summary-card .label { font-size: 11px; color: #666; margin-top: 4px; }
+.summary-card.warn .value { color: #d93025; }
+.summary-card.ok .value { color: #188038; }
+
+/* Table */
+.table-wrap { overflow-x: auto; max-height: 500px; overflow-y: auto; border: 1px solid #e0e0e0; border-radius: 4px; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+thead { background: #f8f9fa; position: sticky; top: 0; z-index: 1; }
+th { padding: 8px 10px; text-align: left; font-weight: 600; border-bottom: 2px solid #ddd; white-space: nowrap; }
+td { padding: 6px 10px; border-bottom: 1px solid #f0f0f0; white-space: nowrap; }
+tr:hover { background: #f8f9fa; }
+tr.highlight { background: #fff8e1; }
+.stock-yes { color: #188038; font-weight: 600; }
+.stock-no { color: #d93025; }
+.badge { display: inline-block; padding: 2px 6px; border-radius: 8px; font-size: 10px; }
+.badge-pmc { background: #e3f2fd; color: #1565c0; }
+.badge-transit { background: #fff3e0; color: #e65100; }
+.badge-full { background: #e8f5e9; color: #2e7d32; }
+.badge-done { background: #f3e5f5; color: #7b1fa2; }
+.badge-disapproved { background: #fce4ec; color: #c62828; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📦 Shortage Report Generator</h1>
+  <p>上传原始数据 → 点击执行 → 生成分析报告</p>
+</div>
+
+<div class="container">
+  <!-- Upload -->
+  <div class="upload-section">
+    <h2>📁 上传数据文件</h2>
+    <div class="upload-grid">
+      <div class="upload-item" id="upload-shortage">
+        <label>
+          <div class="icon">📋</div>
+          <div class="name">Shortage Report</div>
+          <div class="desc">ShortageSpareApplyReport.xlsx</div>
+          <div class="status" id="status-shortage">✓ 已加载</div>
+          <input type="file" accept=".xlsx,.xls" onchange="handleFile(this, 'shortage')">
+        </label>
+      </div>
+      <div class="upload-item" id="upload-inventory">
+        <label>
+          <div class="icon">📦</div>
+          <div class="name">Inventory Overview</div>
+          <div class="desc">每日库存报告.xlsx</div>
+          <div class="status" id="status-inventory">✓ 已加载</div>
+          <input type="file" accept=".xlsx,.xls" onchange="handleFile(this, 'inventory')">
+        </label>
+      </div>
+      <div class="upload-item" id="upload-transit">
+        <label>
+          <div class="icon">🚚</div>
+          <div class="name">In Transit Report</div>
+          <div class="desc">在途报告.xlsx</div>
+          <div class="status" id="status-transit">✓ 已加载</div>
+          <input type="file" accept=".xlsx,.xls" onchange="handleFile(this, 'transit')">
+        </label>
+      </div>
+      <div class="upload-item" id="upload-consume">
+        <label>
+          <div class="icon">📊</div>
+          <div class="name">Consume Report</div>
+          <div class="desc">JsSpareConsumeReport.xlsx</div>
+          <div class="status" id="status-consume">✓ 已加载</div>
+          <input type="file" accept=".xlsx,.xls" onchange="handleFile(this, 'consume')">
+        </label>
+      </div>
+      <div class="upload-item" id="upload-substitute" style="grid-column: span 2;">
+        <label>
+          <div class="icon">🔗</div>
+          <div class="name">Substitute Map</div>
+          <div class="desc">substitute_map.json（替代料关系，可选）</div>
+          <div class="status" id="status-substitute">✓ 已加载</div>
+          <input type="file" accept=".json" onchange="handleFile(this, 'substitute')">
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Execute -->
+  <div class="action-bar">
+    <button class="btn-execute" id="btnExecute" onclick="execute()" disabled>🚀 执行分析</button>
+  </div>
+
+  <!-- Progress -->
+  <div class="progress-section" id="progressSection">
+    <h2>⏳ 处理中...</h2>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-log" id="progressLog"></div>
+  </div>
+
+  <!-- Result -->
+  <div class="result-section" id="resultSection">
+    <div class="result-header">
+      <h2>✅ 分析结果</h2>
+      <button class="btn-download" onclick="downloadResult()">📥 下载 Excel</button>
+    </div>
+    <div class="summary-grid" id="summaryGrid"></div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>仓库</th>
+            <th>物料编码</th>
+            <th>物料描述</th>
+            <th>Group</th>
+            <th>申请数量</th>
+            <th>状态</th>
+            <th>历史消耗</th>
+            <th>网点库存</th>
+            <th>在途</th>
+            <th>MWH库存</th>
+            <th>型号</th>
+          </tr>
+        </thead>
+        <tbody id="resultBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+// Global data store
+const files = { shortage: null, inventory: null, transit: null, consume: null, substitute: null };
+let resultData = [];
+let resultHeader = [];
+
+function handleFile(input, type) {
+  const file = input.files[0];
+  if (!file) return;
+  
+  const reader = new FileReader();
+  if (type === 'substitute') {
+    reader.onload = (e) => {
+      try {
+        files.substitute = JSON.parse(e.target.result);
+        document.getElementById('upload-substitute').classList.add('loaded');
+        document.getElementById('status-substitute').textContent = `✓ ${Object.keys(files.substitute).length} 种物料`;
+        checkReady();
+      } catch(err) {
+        alert('JSON 解析失败: ' + err.message);
+      }
+    };
+    reader.readAsText(file);
+  } else {
+    reader.onload = (e) => {
+      try {
+        const wb = XLSX.read(e.target.result, { type: 'array' });
+        const ws = wb.Sheets[wb.SheetNames[0]];
+        files[type] = XLSX.utils.sheet_to_json(ws, { defval: '' });
+        const count = files[type].length;
+        document.getElementById(`upload-${type}`).classList.add('loaded');
+        document.getElementById(`status-${type}`).textContent = `✓ ${count} 行`;
+        checkReady();
+      } catch(err) {
+        alert('Excel 解析失败: ' + err.message);
+      }
+    };
+    reader.readAsArrayBuffer(file);
+  }
+}
+
+function checkReady() {
+  const ready = files.shortage && files.inventory && files.transit && files.consume;
+  document.getElementById('btnExecute').disabled = !ready;
+}
+
+function log(msg, cls = '') {
+  const el = document.getElementById('progressLog');
+  const div = document.createElement('div');
+  div.className = 'log-item ' + cls;
+  div.textContent = msg;
+  el.appendChild(div);
+  el.scrollTop = el.scrollHeight;
+}
+
+function setProgress(pct) {
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+async function execute() {
+  document.getElementById('progressSection').style.display = 'block';
+  document.getElementById('resultSection').style.display = 'none';
+  document.getElementById('progressLog').innerHTML = '';
+  document.getElementById('btnExecute').disabled = true;
+  
+  try {
+    // Step 1: Build inventory index
+    setProgress(10);
+    log('[1/5] 构建库存索引...');
+    await sleep(50);
+    const inventoryIdx = buildInventoryIndex(files.inventory);
+    log(`  → ${Object.keys(inventoryIdx).length} 种物料`, 'success');
+    
+    // Step 2: Build in-transit index
+    setProgress(25);
+    log('[2/5] 构建在途索引...');
+    await sleep(50);
+    const transitIdx = buildTransitIndex(files.transit);
+    log(`  → ${Object.keys(transitIdx).length} 种物料`, 'success');
+    
+    // Step 3: Build consume index
+    setProgress(40);
+    log('[3/5] 构建消耗索引...');
+    await sleep(50);
+    const consumeIdx = buildConsumeIndex(files.consume);
+    log(`  → ${Object.keys(consumeIdx).length} 种物料`, 'success');
+    
+    // Step 4: Build substitute map
+    setProgress(55);
+    log('[4/5] 构建替代料索引...');
+    await sleep(50);
+    const subMap = buildSubstituteMap(files.substitute);
+    log(`  → ${Object.keys(subMap).length} 种物料有替代关系`, 'success');
+    
+    // Step 5: Process shortage report
+    setProgress(70);
+    log('[5/5] 分析缺料数据...');
+    await sleep(50);
+    resultData = processShortage(files.shortage, inventoryIdx, transitIdx, consumeIdx, subMap);
+    log(`  → 处理完成: ${resultData.length} 条记录`, 'success');
+    
+    setProgress(100);
+    log('✅ 分析完成！', 'success');
+    
+    await sleep(300);
+    showResult();
+  } catch(err) {
+    log('❌ 错误: ' + err.message, 'error');
+    console.error(err);
+  }
+  
+  document.getElementById('btnExecute').disabled = false;
+}
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+// === Index Builders ===
+
+function buildInventoryIndex(data) {
+  // {materialCode: {warehouseName: {qty}}}
+  const idx = {};
+  for (const row of data) {
+    const code = String(row['Assets/Material Code'] || row['materialCode'] || '').trim();
+    const wh = String(row['Warehouse Name'] || row['warehouseName'] || '').trim();
+    const status = String(row['Status'] || row['materialStatusName'] || '').trim();
+    const qty = Number(row['Available'] || row['quantity'] || 0);
+    if (!code || !wh || status !== 'Good' || qty <= 0) continue;
+    if (!idx[code]) idx[code] = {};
+    idx[code][wh] = (idx[code][wh] || 0) + qty;
+  }
+  return idx;
+}
+
+function buildTransitIndex(data) {
+  // {materialCode: {toWarehouse: qty}}
+  const idx = {};
+  for (const row of data) {
+    const code = String(row['materialCode'] || row['Assets/Material Code'] || '').trim();
+    const toWh = String(row['toWarehouseName'] || row['To Warehouse'] || '').trim();
+    const status = String(row['materialStatusName'] || row['Status'] || '').trim();
+    const qty = Number(row['quantity'] || row['Quantity'] || 0);
+    if (!code || !toWh || status !== 'Good' || qty <= 0) continue;
+    if (!idx[code]) idx[code] = {};
+    idx[code][toWh] = (idx[code][toWh] || 0) + qty;
+  }
+  return idx;
+}
+
+function buildConsumeIndex(data) {
+  // {materialCode: {shopName: qty}}
+  const idx = {};
+  // Try different column name patterns
+  const matKeys = ['MaterialCode', 'Material Code', 'Apply Material Code', 'Consume Material Code_1'];
+  const shopKeys = ['ShopName', 'Shop Name', 'To Warehouse'];
+  const qtyKeys = ['Consume QTY_1', 'Qty', 'Quantity', 'Apply Qty'];
+  
+  for (const row of data) {
+    let code = '', shop = '', qty = 0;
+    for (const k of matKeys) { if (row[k]) { code = String(row[k]).trim(); break; } }
+    for (const k of shopKeys) { if (row[k]) { shop = String(row[k]).trim(); break; } }
+    for (const k of qtyKeys) { if (row[k]) { qty = Number(row[k]) || 0; break; } }
+    if (!code || !shop || qty <= 0) continue;
+    if (!idx[code]) idx[code] = {};
+    idx[code][shop] = (idx[code][shop] || 0) + qty;
+  }
+  return idx;
+}
+
+function buildSubstituteMap(data) {
+  if (!data) return {};
+  // Bidirectional: {code: Set(subCodes)}
+  const map = {};
+  for (const [code, subs] of Object.entries(data)) {
+    if (!Array.isArray(subs)) continue;
+    for (const sub of subs) {
+      const subCode = sub.code || sub;
+      if (!map[code]) map[code] = new Set();
+      if (!map[subCode]) map[subCode] = new Set();
+      map[code].add(String(subCode));
+      map[subCode].add(String(code));
+    }
+  }
+  return map;
+}
+
+function getSubstitutes(code, subMap, depth = 2) {
+  const result = new Set();
+  const visited = new Set([code]);
+  let frontier = [code];
+  for (let d = 0; d < depth && frontier.length > 0; d++) {
+    const next = [];
+    for (const c of frontier) {
+      const subs = subMap[c];
+      if (!subs) continue;
+      for (const s of subs) {
+        if (!visited.has(s)) {
+          visited.add(s);
+          result.add(s);
+          next.push(s);
+        }
+      }
+    }
+    frontier = next;
+  }
+  return result;
+}
+
+// === Main Processing ===
+
+function processShortage(data, inventoryIdx, transitIdx, consumeIdx, subMap) {
+  const results = [];
+  const seen = new Set();
+  
+  for (const row of data) {
+    const applyCode = String(row['Apply Code'] || '').trim();
+    if (applyCode && seen.has(applyCode)) continue;
+    if (applyCode) seen.add(applyCode);
+    
+    const material = String(row['Apply Material Code'] || '').trim();
+    const toWarehouse = String(row['To Warehouse'] || '').trim();
+    const materialDesc = String(row['Apply Material Desc'] || '').trim();
+    const group = String(row['Apply Material Group Code'] || '').trim();
+    const applyQty = Number(row['Apply Qty'] || 0);
+    const status = String(row['Shortage Status'] || '').trim();
+    const model = String(row['JS Order Model'] || '').trim();
+    const shopName = String(row['Shop Name'] || '').trim();
+    const applyOn = String(row['Apply On'] || '').trim();
+    const jsNo = String(row['JS No.'] || '').trim();
+    
+    // Get substitutes
+    const subs = getSubstitutes(material, subMap);
+    
+    // 1. Past consumption (material + substitutes at this warehouse)
+    let consumeQty = 0;
+    const allCodes = [material, ...subs];
+    for (const code of allCodes) {
+      const shopData = consumeIdx[code];
+      if (!shopData) continue;
+      for (const [shop, qty] of Object.entries(shopData)) {
+        if (toWarehouse && shop.toLowerCase().includes(toWarehouse.toLowerCase().split('-').pop()) || 
+            toWarehouse.toLowerCase().includes(shop.toLowerCase().split('-').pop())) {
+          consumeQty += qty;
+        }
+      }
+    }
+    
+    // 2. Shop stock (material + substitutes at this warehouse)
+    let shopStock = 0;
+    for (const code of allCodes) {
+      const whData = inventoryIdx[code];
+      if (!whData) continue;
+      if (toWarehouse && whData[toWarehouse]) {
+        shopStock += whData[toWarehouse];
+      }
+    }
+    
+    // 3. In transit (material + substitutes to this warehouse)
+    let transitQty = 0;
+    for (const code of allCodes) {
+      const whData = transitIdx[code];
+      if (!whData) continue;
+      if (toWarehouse && whData[toWarehouse]) {
+        transitQty += whData[toWarehouse];
+      }
+    }
+    
+    // 4. MWH stock
+    let mwhStock = 0;
+    for (const code of allCodes) {
+      const whData = inventoryIdx[code];
+      if (!whData) continue;
+      for (const [wh, qty] of Object.entries(whData)) {
+        if (wh.toLowerCase().includes('mwh') && wh.toLowerCase().includes('pakistan')) {
+          mwhStock += qty;
+        }
+      }
+    }
+    
+    results.push({
+      applyCode, shopName, toWarehouse, material, materialDesc, group,
+      applyQty, status, model, applyOn, jsNo,
+      consume: consumeQty || null,
+      shopStock: shopStock || null,
+      transit: transitQty || null,
+      mwhStock: mwhStock || null,
+    });
+  }
+  
+  return results;
+}
+
+// === Display & Download ===
+
+function showResult() {
+  document.getElementById('progressSection').style.display = 'none';
+  document.getElementById('resultSection').style.display = 'block';
+  
+  // Summary
+  const total = resultData.length;
+  const hasConsume = resultData.filter(r => r.consume).length;
+  const hasShop = resultData.filter(r => r.shopStock).length;
+  const hasTransit = resultData.filter(r => r.transit).length;
+  const hasMwh = resultData.filter(r => r.mwhStock).length;
+  const noStock = resultData.filter(r => !r.shopStock && !r.transit && !r.mwhStock).length;
+  
+  document.getElementById('summaryGrid').innerHTML = `
+    <div class="summary-card"><div class="value">${total}</div><div class="label">总记录</div></div>
+    <div class="summary-card ok"><div class="value">${hasConsume}</div><div class="label">有历史消耗</div></div>
+    <div class="summary-card ok"><div class="value">${hasShop}</div><div class="label">有网点库存</div></div>
+    <div class="summary-card"><div class="value">${hasTransit}</div><div class="label">有在途</div></div>
+    <div class="summary-card ok"><div class="value">${hasMwh}</div><div class="label">有MWH库存</div></div>
+    <div class="summary-card warn"><div class="value">${noStock}</div><div class="label">⚠️ 无任何库存</div></div>
+  `;
+  
+  // Table
+  const tbody = document.getElementById('resultBody');
+  tbody.innerHTML = resultData.map(r => {
+    const noStock = !r.shopStock && !r.transit && !r.mwhStock;
+    const badgeCls = {'20-PMC in operation':'badge-pmc','30-Logistics in transit':'badge-transit','22-Full Supply':'badge-full','50-SWH STI Completed':'badge-done','15-MWH disapproved':'badge-disapproved'}[r.status] || 'badge-pmc';
+    return `<tr class="${noStock ? 'highlight' : ''}">
+      <td>${r.toWarehouse}</td>
+      <td>${r.material}</td>
+      <td title="${r.materialDesc}">${(r.materialDesc||'').substring(0,35)}</td>
+      <td>${r.group}</td>
+      <td>${r.applyQty}</td>
+      <td><span class="badge ${badgeCls}">${r.status}</span></td>
+      <td>${r.consume ? `<span class="stock-yes">${r.consume}</span>` : '<span class="stock-no">-</span>'}</td>
+      <td>${r.shopStock ? `<span class="stock-yes">${r.shopStock}</span>` : '<span class="stock-no">-</span>'}</td>
+      <td>${r.transit ? `<span class="stock-yes">${r.transit}</span>` : '<span class="stock-no">-</span>'}</td>
+      <td>${r.mwhStock ? `<span class="stock-yes">${r.mwhStock}</span>` : '<span class="stock-no">-</span>'}</td>
+      <td>${r.model || '-'}</td>
+    </tr>`;
+  }).join('');
+}
+
+function downloadResult() {
+  // Build Excel
+  const header = ['Apply Code','Shop Name','To Warehouse','Material Code','Material Desc','Group','Apply Qty','Shortage Status','Past Consumption','Shop Stock','In Transit','MWH Stock','Model','Apply On','JS No.'];
+  const rows = resultData.map(r => [
+    r.applyCode, r.shopName, r.toWarehouse, r.material, r.materialDesc, r.group,
+    r.applyQty, r.status, r.consume || '', r.shopStock || '', r.transit || '', r.mwhStock || '',
+    r.model, r.applyOn, r.jsNo
+  ]);
+  
+  const ws = XLSX.utils.aoa_to_sheet([header, ...rows]);
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Shortage Analysis');
+  
+  // Auto-width
+  const colWidths = header.map((h, i) => {
+    const maxLen = Math.max(h.length, ...rows.map(r => String(r[i]||'').length));
+    return { wch: Math.min(maxLen + 2, 40) };
+  });
+  ws['!cols'] = colWidths;
+  
+  const now = new Date().toISOString().slice(0,10);
+  XLSX.writeFile(wb, `shortage_report_analysis_${now}.xlsx`);
+}
+</script>
+</body>
+</html>
