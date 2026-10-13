@@ -544,7 +544,7 @@
             const mainResults = [];
             
             // Get material description from index
-            const materialDesc = inventoryData[materialCode]?._desc || 'Main Material';
+            const materialDesc = inventoryData[materialCode]?._desc || inTransitData[materialCode]?._desc || 'Main Material';
             
             // Helper: check if warehouse has in-transit for this material
             function hasInTransit(code, whName) {
