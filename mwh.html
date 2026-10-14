@@ -593,22 +593,66 @@
             const seenSubCodes = new Set();
             const subDescMap = {}; // track description for each substitute code
             
+            // 122-122 型号检查函数
+            function extractModel(desc) {
+                if (!desc) return '';
+                const match = desc.match(/\b([A-Z][A-Z0-9]{3,10})\b/);
+                return match ? match[1] : '';
+            }
+            
+            function checkModelCompatible(code1, code2, originalCode) {
+                const group1 = code1.substring(0, 3);
+                const group2 = code2.substring(0, 3);
+                
+                // 122→174 跨组：无需检查型号
+                if ((group1 === '122' && group2 === '174') || (group1 === '174' && group2 === '122')) {
+                    return true;
+                }
+                
+                // 122→122 同组：必须型号一致
+                if (group1 === '122' && group2 === '122') {
+                    const desc1 = (inventoryData[code1] && inventoryData[code1]._desc) || 
+                                  (substituteData[code1] && substituteData[code1][0] && substituteData[code1][0].desc) || '';
+                    const desc2 = (inventoryData[code2] && inventoryData[code2]._desc) || 
+                                  (substituteData[code2] && substituteData[code2][0] && substituteData[code2][0].desc) || '';
+                    const model1 = extractModel(desc1);
+                    const model2 = extractModel(desc2);
+                    
+                    // 如果都能提取到型号，检查是否一致
+                    if (model1 && model2 && model1 !== model2) {
+                        return false;
+                    }
+                }
+                
+                return true;
+            }
+            
             // BFS to find all transitive substitutes
-            const queue = [materialCode];
+            const queue = [{code: materialCode, originalCode: materialCode}];
             const visited = new Set([materialCode]);
             
             while (queue.length > 0) {
-                const current = queue.shift();
+                const {code: current, originalCode} = queue.shift();
+                const currentGroup = current.substring(0, 3);
                 
                 // Forward lookup: substituteData[current]
                 if (substituteData[current]) {
                     for (const sub of substituteData[current]) {
                         const subCode = sub.code;
+                        const subGroup = subCode.substring(0, 3);
+                        
+                        // 122→174→122 路径：检查原始 122 和目标 122 的型号
+                        if (originalCode.substring(0, 3) === '122' && subGroup === '122') {
+                            if (!checkModelCompatible(originalCode, subCode, originalCode)) {
+                                continue;
+                            }
+                        }
+                        
                         if (!visited.has(subCode)) {
                             visited.add(subCode);
                             seenSubCodes.add(subCode);
                             subDescMap[subCode] = sub.desc || '';
-                            queue.push(subCode);
+                            queue.push({code: subCode, originalCode: originalCode});
                         }
                     }
                 }
@@ -618,10 +662,19 @@
                     if (visited.has(parentCode)) continue;
                     const revEntry = subs.find(s => s.code === current);
                     if (revEntry) {
+                        const parentGroup = parentCode.substring(0, 3);
+                        
+                        // 122→174→122 路径：检查原始 122 和目标 122 的型号
+                        if (originalCode.substring(0, 3) === '122' && parentGroup === '122') {
+                            if (!checkModelCompatible(originalCode, parentCode, originalCode)) {
+                                continue;
+                            }
+                        }
+                        
                         visited.add(parentCode);
                         seenSubCodes.add(parentCode);
                         subDescMap[parentCode] = revEntry.desc || '';
-                        queue.push(parentCode);
+                        queue.push({code: parentCode, originalCode: originalCode});
                     }
                 }
             }
