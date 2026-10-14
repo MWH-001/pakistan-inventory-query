@@ -845,16 +845,15 @@ function processShortage(data, inventoryIdx, transitIdx, consumeIdx, subMap, des
     const subs = getSubstitutes(material, subMap, descMap, groupMap, modelMap, 3);
     
     // 1. Past consumption (material + substitutes at this warehouse)
+    // Match by exact warehouse name (same as Python script)
     let consumeQty = 0;
     const allCodes = [material, ...subs];
     for (const code of allCodes) {
       const shopData = consumeIdx[code];
       if (!shopData) continue;
-      for (const [shop, qty] of Object.entries(shopData)) {
-        if (toWarehouse && shop.toLowerCase().includes(toWarehouse.toLowerCase().split('-').pop()) || 
-            toWarehouse.toLowerCase().includes(shop.toLowerCase().split('-').pop())) {
-          consumeQty += qty;
-        }
+      // Exact match: shop name must equal toWarehouse
+      if (toWarehouse && shopData[toWarehouse]) {
+        consumeQty += shopData[toWarehouse];
       }
     }
     
