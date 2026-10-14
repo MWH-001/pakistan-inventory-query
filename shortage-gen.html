@@ -210,13 +210,34 @@ function handleFile(input, type) {
           const ws = wb.Sheets[wb.SheetNames[0]];
           const data = XLSX.utils.sheet_to_json(ws, { defval: '' });
           // Build substitute map from Excel
-          // Expected columns: Material Code, Substitute Codes (comma-separated)
+          // Support multiple formats:
+          // 1. Simple format: Material Code + Substitute Codes (comma-separated)
+          // 2. Alternative Relationship Report: Material + Main material (bidirectional)
           const map = {};
           for (const row of data) {
-            const code = String(row['Material Code'] || row['materialCode'] || row['MaterialCode'] || '').trim();
-            const subs = String(row['Substitute Codes'] || row['substituteCodes'] || row['Substitute'] || row['substitute'] || '').trim();
-            if (!code || !subs) continue;
-            map[code] = subs.split(/[,，;；]/).map(s => s.trim()).filter(s => s);
+            // Format 1: Simple format
+            const code1 = String(row['Material Code'] || row['materialCode'] || row['MaterialCode'] || '').trim();
+            const subs1 = String(row['Substitute Codes'] || row['substituteCodes'] || row['Substitute'] || row['substitute'] || '').trim();
+            if (code1 && subs1) {
+              map[code1] = subs1.split(/[,，;；]/).map(s => s.trim()).filter(s => s);
+              continue;
+            }
+            
+            // Format 2: Alternative Relationship Report (bidirectional)
+            const matField = String(row['Material'] || row['material'] || '').trim();
+            const mainField = String(row['Main material'] || row['mainMaterial'] || row['Main Material'] || '').trim();
+            if (matField && mainField) {
+              // Extract code from "code-description" format
+              const matCode = matField.split('-')[0].trim();
+              const mainCode = mainField.split('-')[0].trim();
+              if (matCode && mainCode) {
+                // Bidirectional: A->B and B->A
+                if (!map[matCode]) map[matCode] = [];
+                if (!map[mainCode]) map[mainCode] = [];
+                if (!map[matCode].includes(mainCode)) map[matCode].push(mainCode);
+                if (!map[mainCode].includes(matCode)) map[mainCode].push(matCode);
+              }
+            }
           }
           files.substitute = map;
           document.getElementById('upload-substitute').classList.add('loaded');
