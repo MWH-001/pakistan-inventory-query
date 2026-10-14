@@ -101,18 +101,18 @@ tr.highlight { background: #fff8e1; }
         <label>
           <div class="icon">📦</div>
           <div class="name">Inventory Overview</div>
-          <div class="desc">每日库存报告.xlsx</div>
+          <div class="desc">每日库存报告.xlsx（支持多选）</div>
           <div class="status" id="status-inventory">✓ 已加载</div>
-          <input type="file" accept=".xlsx,.xls" onchange="handleFile(this, 'inventory')">
+          <input type="file" accept=".xlsx,.xls" multiple onchange="handleFiles(this, 'inventory')">
         </label>
       </div>
       <div class="upload-item" id="upload-transit">
         <label>
           <div class="icon">🚚</div>
           <div class="name">In Transit Report</div>
-          <div class="desc">在途报告.xlsx</div>
+          <div class="desc">在途报告.xlsx（支持多选）</div>
           <div class="status" id="status-transit">✓ 已加载</div>
-          <input type="file" accept=".xlsx,.xls" onchange="handleFile(this, 'transit')">
+          <input type="file" accept=".xlsx,.xls" multiple onchange="handleFiles(this, 'transit')">
         </label>
       </div>
       <div class="upload-item" id="upload-consume">
@@ -128,9 +128,9 @@ tr.highlight { background: #fff8e1; }
         <label>
           <div class="icon">🔗</div>
           <div class="name">Substitute Map</div>
-          <div class="desc">substitute_map.json（替代料关系，可选）</div>
+          <div class="desc">substitute_map.json 或 Excel（替代料关系，可选）</div>
           <div class="status" id="status-substitute">✓ 已加载</div>
-          <input type="file" accept=".json" onchange="handleFile(this, 'substitute')">
+          <input type="file" accept=".json,.xlsx,.xls" onchange="handleFile(this, 'substitute')">
         </label>
       </div>
     </div>
@@ -190,17 +190,44 @@ function handleFile(input, type) {
   
   const reader = new FileReader();
   if (type === 'substitute') {
-    reader.onload = (e) => {
-      try {
-        files.substitute = JSON.parse(e.target.result);
-        document.getElementById('upload-substitute').classList.add('loaded');
-        document.getElementById('status-substitute').textContent = `✓ ${Object.keys(files.substitute).length} 种物料`;
-        checkReady();
-      } catch(err) {
-        alert('JSON 解析失败: ' + err.message);
-      }
-    };
-    reader.readAsText(file);
+    if (file.name.endsWith('.json')) {
+      reader.onload = (e) => {
+        try {
+          files.substitute = JSON.parse(e.target.result);
+          document.getElementById('upload-substitute').classList.add('loaded');
+          document.getElementById('status-substitute').textContent = `✓ ${Object.keys(files.substitute).length} 种物料`;
+          checkReady();
+        } catch(err) {
+          alert('JSON 解析失败: ' + err.message);
+        }
+      };
+      reader.readAsText(file);
+    } else {
+      // Excel format
+      reader.onload = (e) => {
+        try {
+          const wb = XLSX.read(e.target.result, { type: 'array' });
+          const ws = wb.Sheets[wb.SheetNames[0]];
+          const data = XLSX.utils.sheet_to_json(ws, { defval: '' });
+          // Build substitute map from Excel
+          // Expected columns: Material Code, Substitute Codes (comma-separated)
+          const map = {};
+          for (const row of data) {
+            const code = String(row['Material Code'] || row['materialCode'] || row['MaterialCode'] || '').trim();
+            const subs = String(row['Substitute Codes'] || row['substituteCodes'] || row['Substitute'] || row['substitute'] || '').trim();
+            if (!code || !subs) continue;
+            map[code] = subs.split(/[,，;；]/).map(s => s.trim()).filter(s => s);
+          }
+          files.substitute = map;
+          document.getElementById('upload-substitute').classList.add('loaded');
+          document.getElementById('status-substitute').textContent = `✓ ${Object.keys(map).length} 种物料`;
+          checkReady();
+        } catch(err) {
+          alert('Excel 解析失败: ' + err.message);
+        }
+      };
+      reader.readAsArrayBuffer(file);
+    }
   } else {
     reader.onload = (e) => {
       try {
@@ -217,6 +244,158 @@ function handleFile(input, type) {
     };
     reader.readAsArrayBuffer(file);
   }
+}
+
+function handleFiles(input, type) {
+  const fileList = input.files;
+  if (!fileList || fileList.length === 0) return;
+  
+  const total = fileList.length;
+  const statusEl = document.getElementById(`status-${type}`);
+  const uploadEl = document.getElementById(`upload-${type}`);
+  
+  // Show loading state
+  uploadEl.classList.remove('loaded');
+  statusEl.textContent = `加载中 0/${total}...`;
+  statusEl.style.display = 'block';
+  statusEl.style.color = '#1a73e8';
+  
+  let allData = [];
+  let loaded = 0;
+  
+  // Process files sequentially to avoid browser freeze
+  async function processFile(idx) {
+    if (idx >= total) {
+      // All files processed
+      if (type === 'inventory' || type === 'transit') {
+        // Start with existing data if present (for append mode)
+        const dateIdx = files[type] && typeof files[type] === 'object' && !Array.isArray(files[type]) ? files[type] : {};
+        for (let i = 0; i < total; i++) {
+          if (!allData[i] || !allData[i].data || allData[i].data.length === 0) continue;
+          // Extract date from filename or data
+          let date = '';
+          const fileName = allData[i].name;
+          
+          // Priority 1: MM-DD.xlsx format (e.g., "09-30.xlsx" -> "20260930")
+          const mmddMatch = fileName.match(/^(\d{2})-(\d{2})/);
+          if (mmddMatch) {
+            date = '2026' + mmddMatch[1] + mmddMatch[2];
+          }
+          
+          // Priority 2: YYYY-MM-DD or YYYYMMDD in filename (with validation)
+          if (!date) {
+            const yyyymmdd = fileName.match(/(\d{4})[-/]?(\d{2})[-/]?(\d{2})/);
+            if (yyyymmdd) {
+              const year = parseInt(yyyymmdd[1]);
+              const month = parseInt(yyyymmdd[2]);
+              const day = parseInt(yyyymmdd[3]);
+              // Validate: year 2020-2030, month 1-12, day 1-31
+              if (year >= 2020 && year <= 2030 && month >= 1 && month <= 12 && day >= 1 && day <= 31) {
+                date = yyyymmdd[1] + yyyymmdd[2] + yyyymmdd[3];
+              } else {
+                console.log(`⚠️ Filename date invalid: ${year}-${month}-${day}, skipping`);
+              }
+            }
+          }
+          
+          // Priority 3: Extract from data rows - try ALL possible date column names
+          if (!date) {
+            console.log(`🔍 Trying to extract date from data rows for file: ${fileName}`);
+            console.log(`   First row keys:`, Object.keys(allData[i].data[0] || {}));
+            
+            for (let rowIdx = 0; rowIdx < Math.min(5, allData[i].data.length); rowIdx++) {
+              const row = allData[i].data[rowIdx];
+              
+              // Try all known date column names
+              const dateCols = ['Snapshot Date', 'snapshotDate', 'snapshot_date', 
+                                'documentCreateTimeStr', 'order_date', 'Order Date',
+                                'Created On', 'createdOn', 'created_on',
+                                'Date', 'date', 'Apply On', 'applyOn'];
+              
+              for (const colName of dateCols) {
+                const sd = row[colName];
+                if (sd) {
+                  console.log(`   Found value in column '${colName}': ${sd}`);
+                  const m = String(sd).match(/(\d{4})[-/](\d{2})[-/](\d{2})/);
+                  if (m) { 
+                    date = m[1] + m[2] + m[3]; 
+                    console.log(`   ✅ Extracted date: ${date}`);
+                    break; 
+                  }
+                }
+              }
+              if (date) break;
+              
+              // Fallback: search ALL values in the row for a date pattern
+              if (!date) {
+                for (const [key, val] of Object.entries(row)) {
+                  if (val && typeof val === 'string') {
+                    const m = val.match(/(\d{4})[-/](\d{2})[-/](\d{2})/);
+                    if (m) { 
+                      date = m[1] + m[2] + m[3]; 
+                      console.log(`   ✅ Found date in column '${key}': ${date}`);
+                      break; 
+                    }
+                  }
+                }
+              }
+              if (date) break;
+            }
+          }
+          
+          if (!date) {
+            console.warn(`⚠️ Failed to extract date from file: ${fileName}`);
+            date = 'unknown_' + i;
+          }
+          if (!dateIdx[date]) dateIdx[date] = [];
+          dateIdx[date] = dateIdx[date].concat(allData[i].data);
+        }
+        files[type] = dateIdx;
+        const dateCount = Object.keys(dateIdx).length;
+        const rowCount = Object.values(dateIdx).reduce((s, a) => s + a.length, 0);
+        uploadEl.classList.add('loaded');
+        statusEl.textContent = `✓ ${dateCount} 个日期, ${rowCount} 行`;
+        statusEl.style.color = '#188038';
+      } else {
+        let merged = [];
+        for (let i = 0; i < total; i++) {
+          if (allData[i] && allData[i].data) merged = merged.concat(allData[i].data);
+        }
+        files[type] = merged;
+        const count = merged.length;
+        uploadEl.classList.add('loaded');
+        statusEl.textContent = `✓ ${total} 个文件, ${count} 行`;
+        statusEl.style.color = '#188038';
+      }
+      checkReady();
+      return;
+    }
+    
+    const file = fileList[idx];
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const wb = XLSX.read(e.target.result, { type: 'array' });
+        const ws = wb.Sheets[wb.SheetNames[0]];
+        const data = XLSX.utils.sheet_to_json(ws, { defval: '' });
+        allData[idx] = { data: data, name: file.name };
+        loaded++;
+        statusEl.textContent = `加载中 ${loaded}/${total}...`;
+        // Process next file after a short delay to keep UI responsive
+        setTimeout(() => processFile(idx + 1), 10);
+      } catch(err) {
+        alert(`Excel 解析失败 (${file.name}): ` + err.message);
+        setTimeout(() => processFile(idx + 1), 10);
+      }
+    };
+    reader.onerror = () => {
+      alert(`文件读取失败: ${file.name}`);
+      setTimeout(() => processFile(idx + 1), 10);
+    };
+    reader.readAsArrayBuffer(file);
+  }
+  
+  processFile(0);
 }
 
 function checkReady() {
@@ -246,37 +425,43 @@ async function execute() {
   try {
     // Step 1: Build inventory index
     setProgress(10);
-    log('[1/5] 构建库存索引...');
+    log('[1/6] 构建库存索引...');
     await sleep(50);
     const inventoryIdx = buildInventoryIndex(files.inventory);
     log(`  → ${Object.keys(inventoryIdx).length} 种物料`, 'success');
     
     // Step 2: Build in-transit index
     setProgress(25);
-    log('[2/5] 构建在途索引...');
+    log('[2/6] 构建在途索引...');
     await sleep(50);
     const transitIdx = buildTransitIndex(files.transit);
     log(`  → ${Object.keys(transitIdx).length} 种物料`, 'success');
     
     // Step 3: Build consume index
     setProgress(40);
-    log('[3/5] 构建消耗索引...');
+    log('[3/6] 构建消耗索引...');
     await sleep(50);
     const consumeIdx = buildConsumeIndex(files.consume);
     log(`  → ${Object.keys(consumeIdx).length} 种物料`, 'success');
     
-    // Step 4: Build substitute map
+    // Step 4: Build substitute map + indexes
     setProgress(55);
-    log('[4/5] 构建替代料索引...');
+    log('[4/6] 构建替代料索引...');
     await sleep(50);
     const subMap = buildSubstituteMap(files.substitute);
     log(`  → ${Object.keys(subMap).length} 种物料有替代关系`, 'success');
     
+    // Build material description, group, and model indexes from inventory
+    const descMap = buildMaterialDescIndex(inventoryIdx);
+    const groupMap = buildGroupIndex(inventoryIdx);
+    const modelMap = buildModelIndex(inventoryIdx);
+    log(`  → ${Object.keys(descMap).length} 种物料有描述, ${Object.keys(modelMap).length} 种型号`, 'success');
+    
     // Step 5: Process shortage report
     setProgress(70);
-    log('[5/5] 分析缺料数据...');
+    log('[5/6] 分析缺料数据...');
     await sleep(50);
-    resultData = processShortage(files.shortage, inventoryIdx, transitIdx, consumeIdx, subMap);
+    resultData = processShortage(files.shortage, inventoryIdx, transitIdx, consumeIdx, subMap, descMap, groupMap, modelMap);
     log(`  → 处理完成: ${resultData.length} 条记录`, 'success');
     
     setProgress(100);
@@ -297,7 +482,29 @@ function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 // === Index Builders ===
 
 function buildInventoryIndex(data) {
-  // {materialCode: {warehouseName: {qty}}}
+  // Check if data is date-indexed: {date: [rows]}
+  const isDateIndexed = typeof data === 'object' && !Array.isArray(data) && Object.keys(data).some(k => /^\d{8}/.test(k));
+  
+  if (isDateIndexed) {
+    // Build per-date index: {date: {materialCode: {warehouse: qty}}}
+    const result = {};
+    for (const [date, rows] of Object.entries(data)) {
+      const idx = {};
+      for (const row of rows) {
+        const code = String(row['Assets/Material Code'] || row['materialCode'] || '').trim();
+        const wh = String(row['Warehouse Name'] || row['warehouseName'] || '').trim();
+        const status = String(row['Status'] || row['materialStatusName'] || '').trim();
+        const qty = Number(row['Available'] || row['quantity'] || 0);
+        if (!code || !wh || status !== 'Good' || qty <= 0) continue;
+        if (!idx[code]) idx[code] = {};
+        idx[code][wh] = (idx[code][wh] || 0) + qty;
+      }
+      result[date] = idx;
+    }
+    return result;
+  }
+  
+  // Single file: build index and wrap in 'single' key
   const idx = {};
   for (const row of data) {
     const code = String(row['Assets/Material Code'] || row['materialCode'] || '').trim();
@@ -308,31 +515,72 @@ function buildInventoryIndex(data) {
     if (!idx[code]) idx[code] = {};
     idx[code][wh] = (idx[code][wh] || 0) + qty;
   }
-  return idx;
+  return { 'single': idx };
 }
 
 function buildTransitIndex(data) {
-  // {materialCode: {toWarehouse: qty}}
+  // Robust handling of all data formats
+  let allRows = [];
+  let dateMap = {}; // date -> [rows]
+  
+  if (Array.isArray(data)) {
+    allRows = data;
+  } else if (data && typeof data === 'object') {
+    // Flatten all values (handles both date-indexed and unknown_* keys)
+    for (const key of Object.keys(data)) {
+      const val = data[key];
+      if (Array.isArray(val)) {
+        allRows = allRows.concat(val);
+        // Try to extract date from key
+        const dateMatch = key.match(/^(\d{8})/);
+        if (dateMatch) {
+          if (!dateMap[dateMatch[1]]) dateMap[dateMatch[1]] = [];
+          dateMap[dateMatch[1]] = dateMap[dateMatch[1]].concat(val);
+        }
+      }
+    }
+  }
+  
+  // If we have date mapping, build per-date index
+  if (Object.keys(dateMap).length > 0) {
+    const result = {};
+    for (const [date, rows] of Object.entries(dateMap)) {
+      const idx = {};
+      for (const row of rows) {
+        const code = String(row['Assets/Material Code'] || row['materialCode'] || '').trim();
+        const toWh = String(row['To Warehouse'] || row['toWarehouseName'] || '').trim();
+        const status = String(row['Order Material status'] || row['materialStatusName'] || row['Status'] || '').trim();
+        const qty = Number(row['In Transit QTY'] || row['quantity'] || row['Quantity'] || 0);
+        if (!code || !toWh || status !== 'Good' || qty <= 0) continue;
+        if (!idx[code]) idx[code] = {};
+        idx[code][toWh] = (idx[code][toWh] || 0) + qty;
+      }
+      result[date] = idx;
+    }
+    return result;
+  }
+  
+  // Otherwise build single index from all rows
   const idx = {};
-  for (const row of data) {
-    const code = String(row['materialCode'] || row['Assets/Material Code'] || '').trim();
-    const toWh = String(row['toWarehouseName'] || row['To Warehouse'] || '').trim();
-    const status = String(row['materialStatusName'] || row['Status'] || '').trim();
-    const qty = Number(row['quantity'] || row['Quantity'] || 0);
+  for (const row of allRows) {
+    const code = String(row['Assets/Material Code'] || row['materialCode'] || '').trim();
+    const toWh = String(row['To Warehouse'] || row['toWarehouseName'] || '').trim();
+    const status = String(row['Order Material status'] || row['materialStatusName'] || row['Status'] || '').trim();
+    const qty = Number(row['In Transit QTY'] || row['quantity'] || row['Quantity'] || 0);
     if (!code || !toWh || status !== 'Good' || qty <= 0) continue;
     if (!idx[code]) idx[code] = {};
     idx[code][toWh] = (idx[code][toWh] || 0) + qty;
   }
-  return idx;
+  return { 'single': idx };
 }
 
 function buildConsumeIndex(data) {
   // {materialCode: {shopName: qty}}
   const idx = {};
   // Try different column name patterns
-  const matKeys = ['MaterialCode', 'Material Code', 'Apply Material Code', 'Consume Material Code_1'];
+  const matKeys = ['Consume Material Code', 'MaterialCode', 'Material Code', 'Apply Material Code', 'Consume Material Code_1'];
   const shopKeys = ['ShopName', 'Shop Name', 'To Warehouse'];
-  const qtyKeys = ['Consume QTY_1', 'Qty', 'Quantity', 'Apply Qty'];
+  const qtyKeys = ['Consume Qty', 'Consume QTY_1', 'Qty', 'Quantity', 'Apply Qty'];
   
   for (const row of data) {
     let code = '', shop = '', qty = 0;
@@ -344,6 +592,25 @@ function buildConsumeIndex(data) {
     idx[code][shop] = (idx[code][shop] || 0) + qty;
   }
   return idx;
+}
+
+// Material group from code (first 3 digits)
+function getMaterialGroup(code) {
+  return String(code).substring(0, 3);
+}
+
+// Normalize group: 100 and 120 treated as same
+function normalizeGroup(group) {
+  const g = String(group || '').trim();
+  if (g === '100' || g === '120') return '100/120';
+  return g;
+}
+
+// Extract model from description
+function extractModel(desc) {
+  if (!desc) return '';
+  const m = String(desc).match(/\b([A-Z]?\d{3,4}[A-Z]?|KM\d|KL\d|CN\d|X\d{4}|H\d{4})\b/i);
+  return m ? m[1].toUpperCase() : '';
 }
 
 function buildSubstituteMap(data) {
@@ -363,33 +630,162 @@ function buildSubstituteMap(data) {
   return map;
 }
 
-function getSubstitutes(code, subMap, depth = 2) {
+// Build material description index from inventory data
+// Returns {materialCode: desc}
+function buildMaterialDescIndex(inventoryIdx) {
+  const descMap = {};
+  for (const [date, dateData] of Object.entries(inventoryIdx)) {
+    for (const [code, whData] of Object.entries(dateData)) {
+      if (whData._desc) {
+        descMap[code] = whData._desc;
+      }
+    }
+  }
+  return descMap;
+}
+
+// Build group index from inventory: {materialCode: group}
+function buildGroupIndex(inventoryIdx) {
+  const groupMap = {};
+  for (const [date, dateData] of Object.entries(inventoryIdx)) {
+    for (const [code, whData] of Object.entries(dateData)) {
+      if (whData._group) {
+        groupMap[code] = whData._group;
+      } else {
+        // Fallback: derive from code
+        groupMap[code] = getMaterialGroup(code);
+      }
+    }
+  }
+  return groupMap;
+}
+
+// Build model index: {model: Set(materialCodes)}
+function buildModelIndex(inventoryIdx) {
+  const modelMap = {};
+  for (const [date, dateData] of Object.entries(inventoryIdx)) {
+    for (const [code, whData] of Object.entries(dateData)) {
+      const desc = whData._desc || '';
+      const model = extractModel(desc);
+      if (model) {
+        if (!modelMap[model]) modelMap[model] = new Set();
+        modelMap[model].add(code);
+      }
+    }
+  }
+  return modelMap;
+}
+
+// Get all substitutes for a material with full rule support
+// Rules:
+// 1. Bidirectional: A→B means B→A
+// 2. Transitive: A→B→C (depth=3)
+// 3. 122-122: transitive NOT allowed between two 122-group materials, must verify model match
+// 4. 100/120: treated as same group, model match = can substitute, consume accumulates
+function getSubstitutes(code, subMap, descMap, groupMap, modelMap, depth = 3) {
   const result = new Set();
   const visited = new Set([code]);
-  let frontier = [code];
+  const sourceGroup = normalizeGroup(groupMap[code] || getMaterialGroup(code));
+  const sourceModel = extractModel(descMap[code] || '');
+  
+  // BFS for transitive substitutes
+  let frontier = [{code: code, path: [code]}];
+  
   for (let d = 0; d < depth && frontier.length > 0; d++) {
     const next = [];
-    for (const c of frontier) {
+    for (const {code: c, path} of frontier) {
       const subs = subMap[c];
       if (!subs) continue;
       for (const s of subs) {
-        if (!visited.has(s)) {
-          visited.add(s);
-          result.add(s);
-          next.push(s);
+        if (visited.has(s)) continue;
+        
+        const subGroup = normalizeGroup(groupMap[s] || getMaterialGroup(s));
+        const isTransitive = path.length >= 2; // d > 0 means transitive
+        
+        // Rule 3: 122-122 transitive check
+        // If source is 122 and substitute is also 122, and this is transitive (not direct),
+        // then we need model match to allow substitution
+        if (isTransitive && sourceGroup === '122' && subGroup === '122') {
+          const subModel = extractModel(descMap[s] || '');
+          if (!sourceModel || !subModel || sourceModel !== subModel) {
+            // Model doesn't match, skip this transitive 122→122 substitution
+            visited.add(s); // mark visited to avoid re-checking
+            continue;
+          }
         }
+        
+        visited.add(s);
+        result.add(s);
+        next.push({code: s, path: [...path, s]});
       }
     }
     frontier = next;
   }
+  
+  // Rule 4: 100/120 group - find materials in complementary group with same model
+  if (sourceGroup === '100/120' && sourceModel && modelMap[sourceModel]) {
+    for (const matCode of modelMap[sourceModel]) {
+      if (matCode !== code && !result.has(matCode)) {
+        const matGroup = normalizeGroup(groupMap[matCode] || getMaterialGroup(matCode));
+        if (matGroup === '100/120') {
+          result.add(matCode);
+        }
+      }
+    }
+  }
+  
   return result;
 }
 
 // === Main Processing ===
 
-function processShortage(data, inventoryIdx, transitIdx, consumeIdx, subMap) {
+function processShortage(data, inventoryIdx, transitIdx, consumeIdx, subMap, descMap = {}, groupMap = {}, modelMap = {}) {
   const results = [];
   const seen = new Set();
+  
+  // Debug: log data structure
+  console.log('=== DEBUG processShortage ===');
+  console.log('Shortage rows:', data.length);
+  console.log('inventoryIdx dates:', Object.keys(inventoryIdx).sort().slice(0, 20));
+  console.log('transitIdx dates:', Object.keys(transitIdx).sort().slice(0, 20));
+  console.log('consumeIdx entries:', Object.keys(consumeIdx).length);
+  
+  if (data.length > 0) {
+    // Test first 3 rows
+    for (let i = 0; i < Math.min(3, data.length); i++) {
+      const row = data[i];
+      const applyOn = String(row['Apply On'] || '');
+      const dateMatch = applyOn.match(/(\d{4})[-/](\d{2})[-/](\d{2})/);
+      const applyDate = dateMatch ? dateMatch[1] + dateMatch[2] + dateMatch[3] : '';
+      const material = String(row['Apply Material Code'] || '').trim();
+      const toWarehouse = String(row['To Warehouse'] || '').trim();
+      
+      console.log(`\nRow ${i+1}:`);
+      console.log('  Apply On:', applyOn, '-> applyDate:', applyDate);
+      console.log('  Material:', material);
+      console.log('  To Warehouse:', toWarehouse);
+      console.log('  inventoryIdx[applyDate]:', inventoryIdx[applyDate] ? 'FOUND' : 'NOT FOUND');
+      console.log('  transitIdx[applyDate]:', transitIdx[applyDate] ? 'FOUND' : 'NOT FOUND');
+      
+      if (inventoryIdx[applyDate]) {
+        const whData = inventoryIdx[applyDate][material];
+        console.log('  Inventory for this material:', whData || 'NOT FOUND');
+        if (whData) {
+          console.log('    Warehouse stock:', whData[toWarehouse] || 0);
+          // Show all warehouses for this material
+          console.log('    All warehouses:', Object.keys(whData));
+        }
+      }
+      
+      if (transitIdx[applyDate]) {
+        const whData = transitIdx[applyDate][material];
+        console.log('  Transit for this material:', whData || 'NOT FOUND');
+        if (whData) {
+          console.log('    Transit to this warehouse:', whData[toWarehouse] || 0);
+        }
+      }
+    }
+  }
   
   for (const row of data) {
     const applyCode = String(row['Apply Code'] || '').trim();
@@ -407,8 +803,25 @@ function processShortage(data, inventoryIdx, transitIdx, consumeIdx, subMap) {
     const applyOn = String(row['Apply On'] || '').trim();
     const jsNo = String(row['JS No.'] || '').trim();
     
-    // Get substitutes
-    const subs = getSubstitutes(material, subMap);
+    // Extract date from Apply On (format: YYYY-MM-DD or YYYY/MM/DD)
+    let applyDate = '';
+    const dateMatch = applyOn.match(/(\d{4})[-/](\d{2})[-/](\d{2})/);
+    if (dateMatch) {
+      applyDate = dateMatch[1] + dateMatch[2] + dateMatch[3];
+    }
+    
+    // Debug: log first row date matching
+    if (results.length === 0) {
+      console.log('=== DEBUG ===');
+      console.log('Apply On:', applyOn, '-> applyDate:', applyDate);
+      console.log('inventoryIdx keys:', Object.keys(inventoryIdx).slice(0, 10));
+      console.log('transitIdx keys:', Object.keys(transitIdx).slice(0, 10));
+      console.log('inventoryIdx[applyDate]:', inventoryIdx[applyDate] ? 'FOUND' : 'NOT FOUND');
+      console.log('inventoryIdx keys sample:', Object.keys(inventoryIdx).filter(k => k.includes('202')).slice(0, 5));
+    }
+    
+    // Get substitutes with full rule support (including consumption check for 100/120)
+    const subs = getSubstitutes(material, subMap, descMap, groupMap, modelMap, 3);
     
     // 1. Past consumption (material + substitutes at this warehouse)
     let consumeQty = 0;
@@ -424,30 +837,32 @@ function processShortage(data, inventoryIdx, transitIdx, consumeIdx, subMap) {
       }
     }
     
-    // 2. Shop stock (material + substitutes at this warehouse)
+    // 2. Shop stock (material + substitutes at this warehouse) - match by date
     let shopStock = 0;
+    const invData = inventoryIdx[applyDate] || inventoryIdx['single'] || inventoryIdx;
     for (const code of allCodes) {
-      const whData = inventoryIdx[code];
+      const whData = invData[code];
       if (!whData) continue;
       if (toWarehouse && whData[toWarehouse]) {
         shopStock += whData[toWarehouse];
       }
     }
     
-    // 3. In transit (material + substitutes to this warehouse)
+    // 3. In transit (material + substitutes to this warehouse) - match by date
     let transitQty = 0;
+    const transData = transitIdx[applyDate] || transitIdx['single'] || transitIdx;
     for (const code of allCodes) {
-      const whData = transitIdx[code];
+      const whData = transData[code];
       if (!whData) continue;
       if (toWarehouse && whData[toWarehouse]) {
         transitQty += whData[toWarehouse];
       }
     }
     
-    // 4. MWH stock
+    // 4. MWH stock - match by date
     let mwhStock = 0;
     for (const code of allCodes) {
-      const whData = inventoryIdx[code];
+      const whData = invData[code];
       if (!whData) continue;
       for (const [wh, qty] of Object.entries(whData)) {
         if (wh.toLowerCase().includes('mwh') && wh.toLowerCase().includes('pakistan')) {
