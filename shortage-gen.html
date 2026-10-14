@@ -792,13 +792,13 @@ function processShortage(data, inventoryIdx, transitIdx, consumeIdx, subMap, des
     if (applyCode && seen.has(applyCode)) continue;
     if (applyCode) seen.add(applyCode);
     
-    const material = String(row['Apply Material Code'] || '').trim();
+    const material = String(row['Material Code'] || row['Apply Material Code'] || '').trim();
     const toWarehouse = String(row['To Warehouse'] || '').trim();
-    const materialDesc = String(row['Apply Material Desc'] || '').trim();
-    const group = String(row['Apply Material Group Code'] || '').trim();
+    const materialDesc = String(row['Material Desc'] || row['Apply Material Desc'] || '').trim();
+    const group = String(row['Group'] || row['Apply Material Group Code'] || '').trim();
     const applyQty = Number(row['Apply Qty'] || 0);
     const status = String(row['Shortage Status'] || '').trim();
-    const model = String(row['JS Order Model'] || '').trim();
+    const model = String(row['Model'] || row['JS Order Model'] || '').trim();
     const shopName = String(row['Shop Name'] || '').trim();
     const applyOn = String(row['Apply On'] || '').trim();
     const jsNo = String(row['JS No.'] || '').trim();
