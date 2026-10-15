@@ -898,8 +898,19 @@ function processShortage(data, inventoryIdx, transitIdx, consumeIdx, subMap, des
     }
     
     // 2. Shop stock (material + substitutes at this warehouse) - match by date
+    // If exact date not found, use the most recent date before applyDate
     let shopStock = 0;
-    const invData = inventoryIdx[applyDate] || inventoryIdx['single'] || inventoryIdx;
+    let invData = inventoryIdx[applyDate];
+    if (!invData && applyDate) {
+      // Find the most recent date <= applyDate
+      const availableDates = Object.keys(inventoryIdx).filter(d => d !== 'single' && d <= applyDate).sort().reverse();
+      if (availableDates.length > 0) {
+        invData = inventoryIdx[availableDates[0]];
+        console.log(`Shop stock: date ${applyDate} not found, using ${availableDates[0]}`);
+      }
+    }
+    if (!invData) invData = inventoryIdx['single'] || inventoryIdx;
+    
     for (const code of allCodes) {
       const whData = invData[code];
       if (!whData) continue;
