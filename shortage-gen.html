@@ -525,18 +525,36 @@ function buildInventoryIndex(data) {
     return result;
   }
   
-  // Single file: build index and wrap in 'single' key
+  // Single file or array: build index by Snapshot Date column
   const idx = {};
+  let hasSnapshotDate = false;
+  
   for (const row of data) {
     const code = String(row['Assets/Material Code'] || row['materialCode'] || '').trim();
     const wh = String(row['Warehouse Name'] || row['warehouseName'] || '').trim();
     const status = String(row['Status'] || row['materialStatusName'] || '').trim();
     const qty = Number(row['Available'] || row['quantity'] || 0);
+    
+    // Extract date from Snapshot Date column (last column)
+    const snapshotDate = String(row['Snapshot Date'] || row['snapshotDate'] || '').trim();
+    let dateKey = 'single';
+    if (snapshotDate) {
+      const dateMatch = snapshotDate.match(/(\d{4})[-/](\d{2})[-/](\d{2})/);
+      if (dateMatch) {
+        dateKey = dateMatch[1] + dateMatch[2] + dateMatch[3];
+        hasSnapshotDate = true;
+      }
+    }
+    
     if (!code || !wh || status !== 'Good' || qty <= 0) continue;
-    if (!idx[code]) idx[code] = {};
-    idx[code][wh] = (idx[code][wh] || 0) + qty;
+    if (!idx[dateKey]) idx[dateKey] = {};
+    if (!idx[dateKey][code]) idx[dateKey][code] = {};
+    idx[dateKey][code][wh] = (idx[dateKey][code][wh] || 0) + qty;
   }
-  return { 'single': idx };
+  
+  // If no Snapshot Date found, return as-is
+  // If has Snapshot Date, return date-indexed structure
+  return idx;
 }
 
 function buildTransitIndex(data) {
