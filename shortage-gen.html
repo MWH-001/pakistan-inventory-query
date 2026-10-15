@@ -897,29 +897,22 @@ function processShortage(data, inventoryIdx, transitIdx, consumeIdx, subMap, des
       }
     }
     
-    // 2. Shop stock (material + substitutes at this warehouse) - match by date
-    // If exact date not found, use the most recent date before applyDate
+    // 2. Shop stock (material + substitutes at this warehouse) - STRICT date match
+    // Only use inventory from the exact applyDate, no fallback
     let shopStock = 0;
-    let invData = inventoryIdx[applyDate];
-    if (!invData && applyDate) {
-      // Find the most recent date <= applyDate
-      const availableDates = Object.keys(inventoryIdx).filter(d => d !== 'single' && d <= applyDate).sort().reverse();
-      if (availableDates.length > 0) {
-        invData = inventoryIdx[availableDates[0]];
-        console.log(`Shop stock: date ${applyDate} not found, using ${availableDates[0]}`);
+    const invData = inventoryIdx[applyDate];
+    if (invData) {
+      for (const code of allCodes) {
+        const whData = invData[code];
+        if (!whData) continue;
+        if (toWarehouse && whData[toWarehouse]) {
+          const qtyInfo = whData[toWarehouse];
+          const qty = typeof qtyInfo === 'object' ? (qtyInfo.Good || 0) : qtyInfo;
+          shopStock += qty;
+        }
       }
     }
-    if (!invData) invData = inventoryIdx['single'] || inventoryIdx;
-    
-    for (const code of allCodes) {
-      const whData = invData[code];
-      if (!whData) continue;
-      if (toWarehouse && whData[toWarehouse]) {
-        const qtyInfo = whData[toWarehouse];
-        const qty = typeof qtyInfo === 'object' ? (qtyInfo.Good || 0) : qtyInfo;
-        shopStock += qty;
-      }
-    }
+    // If no inventory for this date, shopStock stays 0
     
     // 3. In transit (material + substitutes to this warehouse) - match by date
     let transitQty = 0;
