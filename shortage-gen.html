@@ -918,7 +918,7 @@ function processShortage(data, inventoryIdx, transitIdx, consumeIdx, subMap, des
     
     // 3. In transit (material + substitutes to this warehouse) - match by date
     let transitQty = 0;
-    const transData = transitIdx[applyDate] || transitIdx['single'] || transitIdx;
+    const transData = transitIdx[applyDate] || transitIdx['single'] || transitIdx || {};
     for (const code of allCodes) {
       const whData = transData[code];
       if (!whData) continue;
@@ -929,14 +929,16 @@ function processShortage(data, inventoryIdx, transitIdx, consumeIdx, subMap, des
     
     // 4. MWH stock - match by date
     let mwhStock = 0;
-    for (const code of allCodes) {
-      const whData = invData[code];
-      if (!whData) continue;
-      for (const [wh, qtyInfo] of Object.entries(whData)) {
-        if (wh.toLowerCase().includes('mwh') && wh.toLowerCase().includes('pakistan')) {
-          // qtyInfo 可能是 {Good: 数量} 对象或直接数字
-          const qty = typeof qtyInfo === 'object' ? (qtyInfo.Good || 0) : qtyInfo;
-          mwhStock += qty;
+    if (invData) {
+      for (const code of allCodes) {
+        const whData = invData[code];
+        if (!whData) continue;
+        for (const [wh, qtyInfo] of Object.entries(whData)) {
+          if (wh.toLowerCase().includes('mwh') && wh.toLowerCase().includes('pakistan')) {
+            // qtyInfo 可能是 {Good: 数量} 对象或直接数字
+            const qty = typeof qtyInfo === 'object' ? (qtyInfo.Good || 0) : qtyInfo;
+            mwhStock += qty;
+          }
         }
       }
     }
