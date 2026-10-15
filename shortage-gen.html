@@ -864,7 +864,9 @@ function processShortage(data, inventoryIdx, transitIdx, consumeIdx, subMap, des
       const whData = invData[code];
       if (!whData) continue;
       if (toWarehouse && whData[toWarehouse]) {
-        shopStock += whData[toWarehouse];
+        const qtyInfo = whData[toWarehouse];
+        const qty = typeof qtyInfo === 'object' ? (qtyInfo.Good || 0) : qtyInfo;
+        shopStock += qty;
       }
     }
     
@@ -884,8 +886,10 @@ function processShortage(data, inventoryIdx, transitIdx, consumeIdx, subMap, des
     for (const code of allCodes) {
       const whData = invData[code];
       if (!whData) continue;
-      for (const [wh, qty] of Object.entries(whData)) {
+      for (const [wh, qtyInfo] of Object.entries(whData)) {
         if (wh.toLowerCase().includes('mwh') && wh.toLowerCase().includes('pakistan')) {
+          // qtyInfo 可能是 {Good: 数量} 对象或直接数字
+          const qty = typeof qtyInfo === 'object' ? (qtyInfo.Good || 0) : qtyInfo;
           mwhStock += qty;
         }
       }
