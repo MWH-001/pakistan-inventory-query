@@ -540,19 +540,43 @@ function buildInventoryIndex(data) {
 }
 
 function buildTransitIndex(data) {
-  // Robust handling of all data formats
+  // Handle multiple data formats:
+  // 1. Array of rows (uploaded Excel)
+  // 2. Flat object: {materialCode: {warehouse: qty, _desc: ...}} (pre-built index)
+  // 3. Date-indexed: {date: [{...}]}
+  
+  // Check if it's a pre-built flat index: {materialCode: {warehouse: qty}}
+  const isFlatIndex = typeof data === 'object' && !Array.isArray(data) && 
+    Object.values(data).some(v => typeof v === 'object' && !Array.isArray(v));
+  
+  if (isFlatIndex) {
+    // Convert flat index to date-indexed format with 'single' key
+    const idx = {};
+    for (const [code, whData] of Object.entries(data)) {
+      if (code.startsWith('_')) continue; // skip metadata keys
+      idx[code] = {};
+      for (const [wh, qty] of Object.entries(whData)) {
+        if (wh.startsWith('_')) continue;
+        const goodQty = typeof qty === 'object' ? (qty.Good || 0) : qty;
+        if (goodQty > 0) {
+          idx[code][wh] = goodQty;
+        }
+      }
+    }
+    return { 'single': idx };
+  }
+  
+  // Handle array of rows or date-indexed data
   let allRows = [];
-  let dateMap = {}; // date -> [rows]
+  let dateMap = {};
   
   if (Array.isArray(data)) {
     allRows = data;
   } else if (data && typeof data === 'object') {
-    // Flatten all values (handles both date-indexed and unknown_* keys)
     for (const key of Object.keys(data)) {
       const val = data[key];
       if (Array.isArray(val)) {
         allRows = allRows.concat(val);
-        // Try to extract date from key
         const dateMatch = key.match(/^(\d{8})/);
         if (dateMatch) {
           if (!dateMap[dateMatch[1]]) dateMap[dateMatch[1]] = [];
@@ -562,7 +586,6 @@ function buildTransitIndex(data) {
     }
   }
   
-  // If we have date mapping, build per-date index
   if (Object.keys(dateMap).length > 0) {
     const result = {};
     for (const [date, rows] of Object.entries(dateMap)) {
@@ -581,7 +604,6 @@ function buildTransitIndex(data) {
     return result;
   }
   
-  // Otherwise build single index from all rows
   const idx = {};
   for (const row of allRows) {
     const code = String(row['Assets/Material Code'] || row['materialCode'] || '').trim();
