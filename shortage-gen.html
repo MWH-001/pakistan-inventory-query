@@ -763,13 +763,15 @@ function getSubstitutes(code, subMap, descMap, groupMap, modelMap, depth = 3) {
         const subGroup = normalizeGroup(groupMap[s] || getMaterialGroup(s));
         const isTransitive = path.length >= 2; // d > 0 means transitive
         
-        // Rule 3: 122-122 transitive check
-        // If source is 122 and substitute is also 122, and this is transitive (not direct),
-        // then we need model match to allow substitution
-        if (isTransitive && sourceGroup === '122' && subGroup === '122') {
+        // Rule 3: 122-122 model check (both direct and transitive)
+        // If source is 122 and substitute is also 122, must verify model match
+        if (sourceGroup === '122' && subGroup === '122') {
           const subModel = extractModel(descMap[s] || '');
-          if (!sourceModel || !subModel || sourceModel !== subModel) {
-            // Model doesn't match, skip this transitive 122→122 substitution
+          // X6728 and X6728B treated as same model (B is variant suffix)
+          const baseSourceModel = sourceModel.replace(/B$/, '');
+          const baseSubModel = subModel.replace(/B$/, '');
+          if (!baseSourceModel || !baseSubModel || baseSourceModel !== baseSubModel) {
+            // Model doesn't match, skip this 122→122 substitution
             visited.add(s); // mark visited to avoid re-checking
             continue;
           }
