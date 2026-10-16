@@ -859,6 +859,21 @@ function getSubstitutes(code, subMap, descMap, groupMap, modelMap, depth = 3) {
 
 // === Main Processing ===
 
+function collect100120SameModelCodes(sourceCode, sourceModel, sourceGroup, descMap = {}, groupMap = {}, modelMap = {}) {
+  const result = new Set();
+  if (normalizeGroup(sourceGroup) !== '100/120' || !sourceModel || !modelMap[sourceModel]) {
+    return result;
+  }
+  for (const matCode of modelMap[sourceModel]) {
+    if (matCode === sourceCode) continue;
+    const matGroup = normalizeGroup(groupMap[matCode] || getMaterialGroup(matCode));
+    if (matGroup === '100/120') {
+      result.add(matCode);
+    }
+  }
+  return result;
+}
+
 function processShortage(data, inventoryIdx, transitIdx, consumeIdx, subMap, descMap = {}, groupMap = {}, modelMap = {}) {
   const results = [];
   const seen = new Set();
@@ -943,23 +958,25 @@ function processShortage(data, inventoryIdx, transitIdx, consumeIdx, subMap, des
       console.log('inventoryIdx keys sample:', Object.keys(inventoryIdx).filter(k => k.includes('202')).slice(0, 5));
     }
     
-    // Get substitutes with full rule support (including consumption check for 100/120)
+    // Get substitutes with full rule support
     const subs = getSubstitutes(material, subMap, descMap, groupMap, modelMap, 3);
+    const sourceGroup = normalizeGroup(group || groupMap[material] || getMaterialGroup(material));
+    const sourceModel = extractModel(materialDesc || descMap[material] || '');
+    const sameModel100120Codes = collect100120SameModelCodes(material, sourceModel, sourceGroup, descMap, groupMap, modelMap);
+    const allCodesSet = new Set([material, ...subs, ...sameModel100120Codes]);
+    const allCodes = Array.from(allCodesSet);
     
-    // 1. Past consumption (material + substitutes at this warehouse)
-    // Match by exact warehouse name (same as Python script)
+    // 1. Past consumption (material + substitutes + same-model 100/120 at this warehouse)
     let consumeQty = 0;
-    const allCodes = [material, ...subs];
     for (const code of allCodes) {
       const shopData = consumeIdx[code];
       if (!shopData) continue;
-      // Exact match: shop name must equal toWarehouse
       if (toWarehouse && shopData[toWarehouse]) {
         consumeQty += shopData[toWarehouse];
       }
     }
     
-    // 2. Shop stock (material + substitutes at this warehouse) - STRICT date match
+    // 2. Shop stock (material + substitutes + same-model 100/120 at this warehouse) - STRICT date match
     // Only use inventory from the exact applyDate, no fallback
     let shopStock = 0;
     const invData = inventoryIdx[applyDate];
