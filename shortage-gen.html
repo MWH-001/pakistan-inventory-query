@@ -478,7 +478,7 @@ async function execute() {
     
     // Build material description, group, and model indexes from inventory
     const descMap = buildMaterialDescIndex(inventoryIdx, files.shortage, files.substitute);
-    const groupMap = buildGroupIndex(inventoryIdx);
+    const groupMap = buildGroupIndex(inventoryIdx, files.shortage, files.consume);
     const modelMap = buildModelIndex(inventoryIdx, files.shortage, files.consume);
     log(`  → ${Object.keys(descMap).length} 种物料有描述, ${Object.keys(modelMap).length} 种型号`, 'success');
     
@@ -770,18 +770,38 @@ function buildMaterialDescIndex(inventoryIdx, shortageData = [], substituteData 
 }
 
 // Build group index from inventory: {materialCode: group}
-function buildGroupIndex(inventoryIdx) {
+function buildGroupIndex(inventoryIdx, shortageData = [], consumeData = []) {
   const groupMap = {};
+  
+  // Source 1: inventory
   for (const [date, dateData] of Object.entries(inventoryIdx)) {
     for (const [code, whData] of Object.entries(dateData)) {
       if (whData._group) {
         groupMap[code] = whData._group;
       } else {
-        // Fallback: derive from code
         groupMap[code] = getMaterialGroup(code);
       }
     }
   }
+  
+  // Source 2: shortage (fill missing only)
+  for (const row of shortageData || []) {
+    const code = String(row['Material Code'] || row['Apply Material Code'] || '').trim();
+    const group = String(row['Group'] || row['Apply Material Group Code'] || '').trim();
+    if (code && group && !groupMap[code]) {
+      groupMap[code] = group;
+    }
+  }
+  
+  // Source 3: consume (fill missing only)
+  for (const row of consumeData || []) {
+    const code = String(row['Consume Material Code'] || row['Material Code'] || '').trim();
+    const group = String(row['Consume MaterialGroup Code'] || row['Consume Material Group Code'] || '').trim();
+    if (code && group && !groupMap[code]) {
+      groupMap[code] = group;
+    }
+  }
+  
   return groupMap;
 }
 
