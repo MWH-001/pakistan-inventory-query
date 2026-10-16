@@ -479,7 +479,7 @@ async function execute() {
     // Build material description, group, and model indexes from inventory
     const descMap = buildMaterialDescIndex(inventoryIdx, files.shortage, files.substitute);
     const groupMap = buildGroupIndex(inventoryIdx);
-    const modelMap = buildModelIndex(inventoryIdx);
+    const modelMap = buildModelIndex(inventoryIdx, files.shortage, files.consume);
     log(`  → ${Object.keys(descMap).length} 种物料有描述, ${Object.keys(modelMap).length} 种型号`, 'success');
     
     // Step 5: Process shortage report
@@ -786,18 +786,37 @@ function buildGroupIndex(inventoryIdx) {
 }
 
 // Build model index: {model: Set(materialCodes)}
-function buildModelIndex(inventoryIdx) {
+function buildModelIndex(inventoryIdx, shortageData = [], consumeData = []) {
   const modelMap = {};
+  const addToModelMap = (model, code) => {
+    if (!model || !code) return;
+    if (!modelMap[model]) modelMap[model] = new Set();
+    modelMap[model].add(code);
+  };
+  
+  // Source 1: inventory data
   for (const [date, dateData] of Object.entries(inventoryIdx)) {
     for (const [code, whData] of Object.entries(dateData)) {
       const desc = whData._desc || '';
       const model = extractModel(desc);
-      if (model) {
-        if (!modelMap[model]) modelMap[model] = new Set();
-        modelMap[model].add(code);
-      }
+      addToModelMap(model, code);
     }
   }
+  
+  // Source 2: shortage data
+  for (const row of shortageData || []) {
+    const code = String(row['Material Code'] || row['Apply Material Code'] || '').trim();
+    const model = extractRowModel(row, row['Material Desc'] || row['Apply Material Desc'] || '');
+    addToModelMap(model, code);
+  }
+  
+  // Source 3: consume data
+  for (const row of consumeData || []) {
+    const code = String(row['Consume Material Code'] || row['Material Code'] || '').trim();
+    const model = extractRowModel(row, row['Consume Material Desc'] || row['Material Desc'] || '');
+    addToModelMap(model, code);
+  }
+  
   return modelMap;
 }
 
