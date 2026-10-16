@@ -805,6 +805,7 @@ function getSubstitutes(code, subMap, descMap, groupMap, modelMap, depth = 3) {
 function processShortage(data, inventoryIdx, transitIdx, consumeIdx, subMap, descMap = {}, groupMap = {}, modelMap = {}) {
   const results = [];
   const seen = new Set();
+  // De-duplicate only when BOTH Apply Code and Apply Material Code are the same
   
   // Debug: log data structure
   console.log('=== DEBUG processShortage ===');
@@ -852,8 +853,10 @@ function processShortage(data, inventoryIdx, transitIdx, consumeIdx, subMap, des
   
   for (const row of data) {
     const applyCode = String(row['Apply Code'] || '').trim();
-    if (applyCode && seen.has(applyCode)) continue;
-    if (applyCode) seen.add(applyCode);
+    const applyMaterialCode = String(row['Apply Material Code'] || row['Material Code'] || '').trim();
+    const dedupeKey = (applyCode && applyMaterialCode) ? `${applyCode}||${applyMaterialCode}` : '';
+    if (dedupeKey && seen.has(dedupeKey)) continue;
+    if (dedupeKey) seen.add(dedupeKey);
     
     const material = String(row['Material Code'] || row['Apply Material Code'] || '').trim();
     const toWarehouse = String(row['To Warehouse'] || '').trim();
