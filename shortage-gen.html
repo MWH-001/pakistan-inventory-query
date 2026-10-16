@@ -462,8 +462,12 @@ async function execute() {
     setProgress(40);
     log('[3/6] 构建消耗索引...');
     await sleep(50);
-    const consumeIdx = buildConsumeIndex(files.consume);
-    log(`  → ${Object.keys(consumeIdx).length} 种物料`, 'success');
+    const inventoryRowsForMap = Array.isArray(files.inventory)
+      ? files.inventory
+      : Object.values(files.inventory || {}).flat();
+    const warehouseNameMap = buildWarehouseNameMap(inventoryRowsForMap, files.consume || []);
+    const consumeIdx = buildConsumeIndex(files.consume, warehouseNameMap);
+    log(`  → ${Object.keys(consumeIdx).length} 种物料，${Object.keys(warehouseNameMap).length} 个仓库映射`, 'success');
     
     // Step 4: Build substitute map + indexes
     setProgress(55);
@@ -635,8 +639,34 @@ function buildTransitIndex(data) {
   return { 'single': idx };
 }
 
-function buildConsumeIndex(data) {
-  // {materialCode: {shopName: qty}}
+function normalizeWarehouseName(name) {
+  return String(name || '').toLowerCase().replace(/[^a-z0-9]+/g, '');
+}
+
+function buildWarehouseNameMap(inventoryRows = [], consumeRows = []) {
+  const map = {};
+  const inventoryNames = new Map();
+  
+  for (const row of inventoryRows || []) {
+    const wh = String(row['Warehouse Name'] || row['warehouseName'] || '').trim();
+    if (!wh) continue;
+    inventoryNames.set(normalizeWarehouseName(wh), wh);
+  }
+  
+  for (const row of consumeRows || []) {
+    const shop = String(row['Shop Name'] || row['ShopName'] || '').trim();
+    if (!shop) continue;
+    const norm = normalizeWarehouseName(shop);
+    if (inventoryNames.has(norm)) {
+      map[shop] = inventoryNames.get(norm);
+    }
+  }
+  
+  return map;
+}
+
+function buildConsumeIndex(data, warehouseNameMap = {}) {
+  // {materialCode: {warehouseName: qty}}
   const idx = {};
   // Try different column name patterns
   const matKeys = ['Consume Material Code', 'MaterialCode', 'Material Code', 'Apply Material Code', 'Consume Material Code_1'];
@@ -649,8 +679,9 @@ function buildConsumeIndex(data) {
     for (const k of shopKeys) { if (row[k]) { shop = String(row[k]).trim(); break; } }
     for (const k of qtyKeys) { if (row[k]) { qty = Number(row[k]) || 0; break; } }
     if (!code || !shop || qty <= 0) continue;
+    const mappedWarehouse = warehouseNameMap[shop] || shop;
     if (!idx[code]) idx[code] = {};
-    idx[code][shop] = (idx[code][shop] || 0) + qty;
+    idx[code][mappedWarehouse] = (idx[code][mappedWarehouse] || 0) + qty;
   }
   return idx;
 }
