@@ -705,6 +705,13 @@ function extractModel(desc) {
   return m ? m[1].toUpperCase() : '';
 }
 
+function extractRowModel(row, fallbackDesc = '') {
+  const direct = String(row?.['Model'] || row?.['JS Order Model'] || '').trim();
+  const directModel = extractModel(direct);
+  if (directModel) return directModel;
+  return extractModel(fallbackDesc || row?.['Material Desc'] || row?.['Apply Material Desc'] || '');
+}
+
 function buildSubstituteMap(data) {
   if (!data) return {};
   // Bidirectional: {code: Set(subCodes)}
@@ -961,7 +968,7 @@ function processShortage(data, inventoryIdx, transitIdx, consumeIdx, subMap, des
     // Get substitutes with full rule support
     const subs = getSubstitutes(material, subMap, descMap, groupMap, modelMap, 3);
     const sourceGroup = normalizeGroup(group || groupMap[material] || getMaterialGroup(material));
-    const sourceModel = extractModel(materialDesc || descMap[material] || '');
+    const sourceModel = extractRowModel(row, materialDesc || descMap[material] || '');
     const sameModel100120Codes = collect100120SameModelCodes(material, sourceModel, sourceGroup, descMap, groupMap, modelMap);
     const allCodesSet = new Set([material, ...subs, ...sameModel100120Codes]);
     const allCodes = Array.from(allCodesSet);
