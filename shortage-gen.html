@@ -473,7 +473,7 @@ async function execute() {
     log(`  → ${Object.keys(subMap).length} 种物料有替代关系`, 'success');
     
     // Build material description, group, and model indexes from inventory
-    const descMap = buildMaterialDescIndex(inventoryIdx);
+    const descMap = buildMaterialDescIndex(inventoryIdx, files.shortage, files.substitute);
     const groupMap = buildGroupIndex(inventoryIdx);
     const modelMap = buildModelIndex(inventoryIdx);
     log(`  → ${Object.keys(descMap).length} 种物料有描述, ${Object.keys(modelMap).length} 种型号`, 'success');
@@ -693,8 +693,10 @@ function buildSubstituteMap(data) {
 
 // Build material description index from inventory data
 // Returns {materialCode: desc}
-function buildMaterialDescIndex(inventoryIdx) {
+function buildMaterialDescIndex(inventoryIdx, shortageData = [], substituteData = null) {
   const descMap = {};
+  
+  // Priority 1: inventory data
   for (const [date, dateData] of Object.entries(inventoryIdx)) {
     for (const [code, whData] of Object.entries(dateData)) {
       if (whData._desc) {
@@ -702,6 +704,30 @@ function buildMaterialDescIndex(inventoryIdx) {
       }
     }
   }
+  
+  // Priority 2: shortage report data (fill missing only)
+  for (const row of shortageData || []) {
+    const code = String(row['Material Code'] || row['Apply Material Code'] || '').trim();
+    const desc = String(row['Material Desc'] || row['Apply Material Desc'] || '').trim();
+    if (code && desc && !descMap[code]) {
+      descMap[code] = desc;
+    }
+  }
+  
+  // Priority 3: substitute map data (fill missing only)
+  if (substituteData) {
+    for (const [mainCode, subs] of Object.entries(substituteData)) {
+      if (!Array.isArray(subs)) continue;
+      for (const sub of subs) {
+        const subCode = String(sub.code || sub.sub_code || '').trim();
+        const subDesc = String(sub.desc || '').trim();
+        if (subCode && subDesc && !descMap[subCode]) {
+          descMap[subCode] = subDesc;
+        }
+      }
+    }
+  }
+  
   return descMap;
 }
 
