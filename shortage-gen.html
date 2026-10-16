@@ -712,6 +712,20 @@ function extractRowModel(row, fallbackDesc = '') {
   return extractModel(fallbackDesc || row?.['Material Desc'] || row?.['Apply Material Desc'] || '');
 }
 
+function extractColor(desc) {
+  if (!desc) return '';
+  const upper = String(desc).toUpperCase();
+  const COLOR_PATTERNS = [
+    'TITANIUM GREY','TITANIUM GRAY','TITANIUGREY','TITAN GREY','TITAN GRAY','TITAN GOLD','TITAN SILVER',
+    'DREAM PURPLE','DREAMPURPLE','SHADOW BLUE','SHADOBLUE','IRIS BLUE','BRIGHT SILVER','LIGHT BLUE','DEEP BLUE',
+    'OBSIDIAN BLACK','OBSIDBLACK','MECHA BLUE','TITANIUM BLACK','SILVER','BLACK','BLUE','GREEN','PURPLE','GOLD','GRAY','GREY','WHITE'
+  ];
+  for (const color of COLOR_PATTERNS) {
+    if (upper.includes(color)) return color;
+  }
+  return '';
+}
+
 function buildSubstituteMap(data) {
   if (!data) return {};
   // Bidirectional: {code: Set(subCodes)}
@@ -905,19 +919,23 @@ function getSubstitutes(code, subMap, descMap, groupMap, modelMap, depth = 3) {
 
 // === Main Processing ===
 
-function collectSameModelCodesByTargetGroups(sourceCode, sourceModel, sourceGroup, targetGroups = [], groupMap = {}, modelMap = {}) {
+function collectSameModelCodesByTargetGroups(sourceCode, sourceModel, sourceGroup, targetGroups = [], groupMap = {}, modelMap = {}, descMap = {}, sourceDesc = '') {
   const result = new Set();
   const normalizedSourceGroup = normalizeGroup(sourceGroup);
   const normalizedTargets = (targetGroups || []).map(g => normalizeGroup(g));
   if (!normalizedTargets.includes(normalizedSourceGroup) || !sourceModel || !modelMap[sourceModel]) {
     return result;
   }
+  const sourceColor = normalizedSourceGroup === '122' ? extractColor(sourceDesc || descMap[sourceCode] || '') : '';
   for (const matCode of modelMap[sourceModel]) {
     if (matCode === sourceCode) continue;
     const matGroup = normalizeGroup(groupMap[matCode] || getMaterialGroup(matCode));
-    if (normalizedTargets.includes(matGroup)) {
-      result.add(matCode);
+    if (!normalizedTargets.includes(matGroup)) continue;
+    if (normalizedSourceGroup === '122') {
+      const targetColor = extractColor(descMap[matCode] || '');
+      if (!sourceColor || !targetColor || sourceColor !== targetColor) continue;
     }
+    result.add(matCode);
   }
   return result;
 }
@@ -1010,9 +1028,10 @@ function processShortage(data, inventoryIdx, transitIdx, consumeIdx, subMap, des
     const subs = getSubstitutes(material, subMap, descMap, groupMap, modelMap, 3);
     const sourceGroup = normalizeGroup(group || groupMap[material] || getMaterialGroup(material));
     const sourceModel = extractRowModel(row, materialDesc || descMap[material] || '');
-    const sameModel100120Codes = collectSameModelCodesByTargetGroups(material, sourceModel, sourceGroup, ['100', '120'], groupMap, modelMap);
-    const sameModel121Codes = collectSameModelCodesByTargetGroups(material, sourceModel, sourceGroup, ['121'], groupMap, modelMap);
-    const allCodesSet = new Set([material, ...subs, ...sameModel100120Codes, ...sameModel121Codes]);
+    const sameModel100120Codes = collectSameModelCodesByTargetGroups(material, sourceModel, sourceGroup, ['100', '120'], groupMap, modelMap, descMap, materialDesc);
+    const sameModel121Codes = collectSameModelCodesByTargetGroups(material, sourceModel, sourceGroup, ['121'], groupMap, modelMap, descMap, materialDesc);
+    const sameModel122Codes = collectSameModelCodesByTargetGroups(material, sourceModel, sourceGroup, ['122'], groupMap, modelMap, descMap, materialDesc);
+    const allCodesSet = new Set([material, ...subs, ...sameModel100120Codes, ...sameModel121Codes, ...sameModel122Codes]);
     const allCodes = Array.from(allCodesSet);
     
     // 1. Past consumption (material + substitutes + same-model 100/120 at this warehouse)
