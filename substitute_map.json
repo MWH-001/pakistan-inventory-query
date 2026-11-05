@@ -1,4 +1,16 @@
 {
+  "38104228": [
+    {
+      "code": "38105602",
+      "desc": "Mi hsg CM6 DARK CHROME V2 GZ GK N",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "38105436",
+      "desc": "Mi hsg CM6 DARK CHROME V1 GZ GK N",
+      "scenario": "Real logistics"
+    }
+  ],
   "17001425": [
     {
       "code": "17001428",
@@ -305,32 +317,85 @@
       "scenario": "Real logistics"
     }
   ],
-  "25001874": [
+  "25001492": [
     {
-      "code": "25001877",
-      "desc": "Bat Infinix BL 49LX 4900mAh FH IN",
+      "code": "25001599",
+      "desc": "Bat itel BL 29DI 2920mAh FH NTC NBIS",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "25001599",
+      "desc": "Bat itel BL 29DI 2920mAh FH NTC NBIS",
       "scenario": "Plan"
     },
     {
-      "code": "25001877",
-      "desc": "Bat Infinix BL 49LX 4900mAh FH IN",
+      "code": "25001501",
+      "desc": "Bat itel BL 29DI 2920mAh NTC FH BIS",
       "scenario": "Real logistics"
     },
     {
-      "code": "25001724",
-      "desc": "Bat Infinix BL 49JX 4900mAh ATL IN",
+      "code": "25001520",
+      "desc": "Bat itel BL 29DI 2920mAh HT NTC",
       "scenario": "Real logistics"
     }
   ],
-  "25002426": [
+  "25002786": [
     {
-      "code": "25002476",
-      "desc": "PL Bat BL-5ABT 4900mAh CB",
+      "code": "25002787",
+      "desc": "PL Bat BL-58HT 5850mAh PK",
       "scenario": "Real logistics"
     },
     {
-      "code": "25002476",
-      "desc": "PL Bat BL-5ABT 4900mAh CB",
+      "code": "25002787",
+      "desc": "PL Bat BL-58HT 5850mAh PK",
+      "scenario": "Plan"
+    }
+  ],
+  "25002615": [
+    {
+      "code": "25002654",
+      "desc": "PL Bat BL-51DI 5100mAh CB",
+      "scenario": "Plan"
+    },
+    {
+      "code": "25002654",
+      "desc": "PL Bat BL-51DI 5100mAh CB",
+      "scenario": "Real logistics"
+    }
+  ],
+  "25002041": [
+    {
+      "code": "12710217",
+      "desc": "250B PL Bat 25LT 2550mAh CB",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12710217",
+      "desc": "250B PL Bat 25LT 2550mAh CB",
+      "scenario": "Plan"
+    }
+  ],
+  "25002648": [
+    {
+      "code": "25002654",
+      "desc": "PL Bat BL-51DI 5100mAh CB",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "25002654",
+      "desc": "PL Bat BL-51DI 5100mAh CB",
+      "scenario": "Plan"
+    }
+  ],
+  "25002968": [
+    {
+      "code": "25002967",
+      "desc": "Polymer battery BL-58JT 5800mAh CB GF Air Freight",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "25002967",
+      "desc": "Polymer battery BL-58JT 5800mAh CB GF Air Freight",
       "scenario": "Plan"
     }
   ],
@@ -586,85 +651,32 @@
       "scenario": "Real logistics"
     }
   ],
-  "25001492": [
+  "25001874": [
     {
-      "code": "25001599",
-      "desc": "Bat itel BL 29DI 2920mAh FH NTC NBIS",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "25001599",
-      "desc": "Bat itel BL 29DI 2920mAh FH NTC NBIS",
+      "code": "25001877",
+      "desc": "Bat Infinix BL 49LX 4900mAh FH IN",
       "scenario": "Plan"
     },
     {
-      "code": "25001501",
-      "desc": "Bat itel BL 29DI 2920mAh NTC FH BIS",
+      "code": "25001877",
+      "desc": "Bat Infinix BL 49LX 4900mAh FH IN",
       "scenario": "Real logistics"
     },
     {
-      "code": "25001520",
-      "desc": "Bat itel BL 29DI 2920mAh HT NTC",
+      "code": "25001724",
+      "desc": "Bat Infinix BL 49JX 4900mAh ATL IN",
       "scenario": "Real logistics"
     }
   ],
-  "25002786": [
+  "25002426": [
     {
-      "code": "25002787",
-      "desc": "PL Bat BL-58HT 5850mAh PK",
+      "code": "25002476",
+      "desc": "PL Bat BL-5ABT 4900mAh CB",
       "scenario": "Real logistics"
     },
     {
-      "code": "25002787",
-      "desc": "PL Bat BL-58HT 5850mAh PK",
-      "scenario": "Plan"
-    }
-  ],
-  "25002615": [
-    {
-      "code": "25002654",
-      "desc": "PL Bat BL-51DI 5100mAh CB",
-      "scenario": "Plan"
-    },
-    {
-      "code": "25002654",
-      "desc": "PL Bat BL-51DI 5100mAh CB",
-      "scenario": "Real logistics"
-    }
-  ],
-  "25002041": [
-    {
-      "code": "12710217",
-      "desc": "250B PL Bat 25LT 2550mAh CB",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12710217",
-      "desc": "250B PL Bat 25LT 2550mAh CB",
-      "scenario": "Plan"
-    }
-  ],
-  "25002648": [
-    {
-      "code": "25002654",
-      "desc": "PL Bat BL-51DI 5100mAh CB",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "25002654",
-      "desc": "PL Bat BL-51DI 5100mAh CB",
-      "scenario": "Plan"
-    }
-  ],
-  "25002968": [
-    {
-      "code": "25002967",
-      "desc": "Polymer battery BL-58JT 5800mAh CB GF Air Freight",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "25002967",
-      "desc": "Polymer battery BL-58JT 5800mAh CB GF Air Freight",
+      "code": "25002476",
+      "desc": "PL Bat BL-5ABT 4900mAh CB",
       "scenario": "Plan"
     }
   ],
@@ -4895,13 +4907,6 @@
     {
       "code": "12204965",
       "desc": "Homemade PF 3in1 X6853 TITAN GOLD CE",
-      "scenario": "Real logistics"
-    }
-  ],
-  "38104228": [
-    {
-      "code": "38105436",
-      "desc": "Mi hsg CM6 DARK CHROME V1 GZ GK N",
       "scenario": "Real logistics"
     }
   ],
@@ -107599,6 +107604,13 @@
       "scenario": "Real logistics"
     }
   ],
+  "12108097": [
+    {
+      "code": "12107481",
+      "desc": "PCBA MB H6222 E1 64GB+4GB V1.1",
+      "scenario": "Plan"
+    }
+  ],
   "12107748": [
     {
       "code": "12107590",
@@ -110284,13 +110296,6 @@
       "code": "12107748",
       "desc": "PCBA MB H6915 G3 128GB+6GB V1.2",
       "scenario": "Real logistics"
-    }
-  ],
-  "12108097": [
-    {
-      "code": "12107481",
-      "desc": "PCBA MB H6222 E1 64GB+4GB V1.1",
-      "scenario": "Plan"
     }
   ],
   "12106850": [
@@ -189048,6 +189053,98 @@
       "scenario": "Real logistics"
     }
   ],
+  "10032290": [
+    {
+      "code": "10031256",
+      "desc": "Infinix X665B H6222 J1 RacingBlackID64+4",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10032285",
+      "desc": "InfinixX665B H6222 J1ChampagneGoldKH64+4",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10032297",
+      "desc": "InfinixX665B H6222 J1ChampagneGoldBD64+4",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10031679",
+      "desc": "InfinixX665B H6222 J1HazeGreenTH TLT64+4",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10032257",
+      "desc": "Infinix X665B H6222 K3ChampagGoldJO 64+4",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10034519",
+      "desc": "Infinix X665B L1 HORIZON BLUE SA 64+4",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10031257",
+      "desc": "Infinix X665B H6222 J1 HorizonBlueID64+4",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10032284",
+      "desc": "Infinix X665B H6222 J1 HorizonBlueKH64+4",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10031250",
+      "desc": "Infinix X665B H6222 J1RacBlackTH TLT64+4",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10032283",
+      "desc": "Infinix X665B H6222 J1 RacingBlackKH64+4",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10031258",
+      "desc": "InfinixX665B H6222 J1ChampagneGoldID64+4",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10034520",
+      "desc": "Infinix X665B L1 CHAMPAGNE GOLD SA 64+4",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10032749",
+      "desc": "Infinix X665B-V H6222 K3HorizBlueAFR64+4",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10032287",
+      "desc": "Infinix X665B H6222 J1 RacingBlackPK64+4",
+      "scenario": "Plan"
+    },
+    {
+      "code": "10032275",
+      "desc": "InfinixX665B H6222 J1RacingBlackKH2 64+4",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10032288",
+      "desc": "Infinix X665B H6222 J1 HorizonBluePK64+4",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10032289",
+      "desc": "InfinixX665B H6222 J1ChampagneGoldPK64+4",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "10031683",
+      "desc": "Infinix X665B H6222 J1 Haze Green ID64+4",
+      "scenario": "Real logistics"
+    }
+  ],
   "12017967": [
     {
       "code": "12017825",
@@ -238417,98 +238514,6 @@
       "code": "10030532",
       "desc": "itel P552W SA360 D1 Silver Purple PK32+2",
       "scenario": "Plan"
-    }
-  ],
-  "10032290": [
-    {
-      "code": "10032285",
-      "desc": "InfinixX665B H6222 J1ChampagneGoldKH64+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10032297",
-      "desc": "InfinixX665B H6222 J1ChampagneGoldBD64+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10031679",
-      "desc": "InfinixX665B H6222 J1HazeGreenTH TLT64+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10032257",
-      "desc": "Infinix X665B H6222 K3ChampagGoldJO 64+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10034519",
-      "desc": "Infinix X665B L1 HORIZON BLUE SA 64+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10031257",
-      "desc": "Infinix X665B H6222 J1 HorizonBlueID64+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10032284",
-      "desc": "Infinix X665B H6222 J1 HorizonBlueKH64+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10031250",
-      "desc": "Infinix X665B H6222 J1RacBlackTH TLT64+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10032283",
-      "desc": "Infinix X665B H6222 J1 RacingBlackKH64+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10031258",
-      "desc": "InfinixX665B H6222 J1ChampagneGoldID64+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10034520",
-      "desc": "Infinix X665B L1 CHAMPAGNE GOLD SA 64+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10032749",
-      "desc": "Infinix X665B-V H6222 K3HorizBlueAFR64+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10031256",
-      "desc": "Infinix X665B H6222 J1 RacingBlackID64+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10032287",
-      "desc": "Infinix X665B H6222 J1 RacingBlackPK64+4",
-      "scenario": "Plan"
-    },
-    {
-      "code": "10032275",
-      "desc": "InfinixX665B H6222 J1RacingBlackKH2 64+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10032288",
-      "desc": "Infinix X665B H6222 J1 HorizonBluePK64+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10032289",
-      "desc": "InfinixX665B H6222 J1ChampagneGoldPK64+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10031683",
-      "desc": "Infinix X665B H6222 J1 Haze Green ID64+4",
-      "scenario": "Real logistics"
     }
   ],
   "10031149": [
