@@ -396,7 +396,43 @@
         let inventoryData = null;
         let substituteData = null;
         let inTransitData = null;
-        
+        let battery250Descriptions = {};
+
+        // Report-derived 250 relation participants, including codes without a 250 prefix.
+        function buildBattery250Descriptions(mapping) {
+            const descriptions = {};
+            function add(code, values) {
+                if (!Array.isArray(values)) return;
+                descriptions[code] ||= new Set();
+                for (const value of values) if (typeof value === 'string' && value) descriptions[code].add(value);
+            }
+            for (const [source, entries] of Object.entries(mapping)) {
+                for (const entry of entries) {
+                    add(source, entry.source_battery250_descs);
+                    add(entry.code, entry.battery250_descs);
+                }
+            }
+            return descriptions;
+        }
+        function battery250Model(code, inventory, descriptions) {
+            const inventoryDesc = inventory[code]?._desc;
+            const texts = inventoryDesc ? [inventoryDesc] : Array.from(descriptions[code] || []);
+            const models = new Set();
+            for (const text of texts) {
+                const matches = text.matchAll(/(?<![A-Za-z0-9])([0-9]{2}[A-Z]{2})(?![A-Za-z0-9])/g);
+                for (const match of matches) models.add(match[1]);
+            }
+            return models.size === 1 ? [...models][0] : '';
+        }
+        function battery250Compatible(source, target, inventory, descriptions) {
+            const involves250 = code => code.startsWith('250') || Object.hasOwn(descriptions, code) ||
+                String(inventory[code]?._group || '') === '250';
+            if (!involves250(source) && !involves250(target)) return true;
+            const a = battery250Model(source, inventory, descriptions);
+            const b = battery250Model(target, inventory, descriptions);
+            return !!a && a === b;
+        }
+
         // Load data
         async function loadData() {
             try {
@@ -412,6 +448,7 @@
                 
                 inventoryData = await invRes.json();
                 substituteData = await subRes.json();
+                battery250Descriptions = buildBattery250Descriptions(substituteData);
                 inTransitData = await transitRes.json();
                 
                 // Fixed warehouse list (updated 2026-07-18)
@@ -599,7 +636,7 @@
                 } else {
                     Object.entries(inventoryData[materialCode]).forEach(([wh, data]) => {
                         if (wh.includes('MWH')) return; // exclude MWH
-                        if (wh === '_desc') return; // skip description field
+                        if (wh.startsWith('_')) return; // skip material metadata
                         const stock = data.Good || 0;
                         const frozen = data.Frozen || 0;
                         const whName = wh;
@@ -671,6 +708,7 @@
                     for (const sub of substituteData[current]) {
                         const subCode = sub.code;
                         const subGroup = subCode.substring(0, 3);
+                        if (!battery250Compatible(originalCode, subCode, inventoryData, battery250Descriptions)) continue;
                         
                         // 122→174→122 路径：检查原始 122 和目标 122 的型号
                         if (originalCode.substring(0, 3) === '122' && subGroup === '122') {
@@ -694,6 +732,7 @@
                     const revEntry = subs.find(s => s.code === current);
                     if (revEntry) {
                         const parentGroup = parentCode.substring(0, 3);
+                        if (!battery250Compatible(originalCode, parentCode, inventoryData, battery250Descriptions)) continue;
                         
                         // 122→174→122 路径：检查原始 122 和目标 122 的型号
                         if (originalCode.substring(0, 3) === '122' && parentGroup === '122') {
@@ -736,6 +775,7 @@
                         });
                     } else {
                         Object.entries(inventoryData[subCode]).forEach(([wh, data]) => {
+                            if (wh.startsWith('_')) return; // skip material metadata
                             if (wh.includes('MWH')) return; // exclude MWH
                             const stock = data.Good || 0;
                             const frozen = data.Frozen || 0;
