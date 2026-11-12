@@ -1,4 +1,16 @@
 {
+  "12710156": [
+    {
+      "code": "12112248",
+      "desc": "PCBA MB Pock1 S29 A1 4M+8M V1.0",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12112248",
+      "desc": "PCBA MB Pock1 S29 A1 4M+8M V1.0",
+      "scenario": "Plan"
+    }
+  ],
   "12115176": [
     {
       "code": "12115174",
@@ -2748,13 +2760,6 @@
     {
       "code": "12111998",
       "desc": "Homemade PCBA MB H6933 B1 128G+4G V1.2",
-      "scenario": "Plan"
-    }
-  ],
-  "12710156": [
-    {
-      "code": "12112248",
-      "desc": "PCBA MB Pock1 S29 A1 4M+8M V1.0",
       "scenario": "Plan"
     }
   ],
@@ -24561,13 +24566,13 @@
       "scenario": "Plan"
     },
     {
-      "code": "12202958",
-      "desc": "PF F hsg XG+FL(CTP+LCM) X6511B Black HX",
+      "code": "12202857",
+      "desc": "PF F hsg XG+FL(CTP+LCM) X6511E Black TM",
       "scenario": "Real logistics"
     },
     {
-      "code": "12202857",
-      "desc": "PF F hsg XG+FL(CTP+LCM) X6511E Black TM",
+      "code": "12202958",
+      "desc": "PF F hsg XG+FL(CTP+LCM) X6511B Black HX",
       "scenario": "Real logistics"
     },
     {
@@ -150130,6 +150135,11 @@
   ],
   "10022227": [
     {
+      "code": "10022219",
+      "desc": "Infinix X692-V H694 K IcelFantasySA128+6",
+      "scenario": "Real logistics"
+    },
+    {
       "code": "10022203",
       "desc": "Infinix X692-V H694 K SilvDiamondNG128+6",
       "scenario": "Real logistics"
@@ -150187,11 +150197,6 @@
     {
       "code": "10021641",
       "desc": "Infinix X692-V H694 M SilvDiamondBO128+6",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10022219",
-      "desc": "Infinix X692-V H694 K IcelFantasySA128+6",
       "scenario": "Real logistics"
     },
     {
@@ -199015,6 +199020,11 @@
   ],
   "10032290": [
     {
+      "code": "10031257",
+      "desc": "Infinix X665B H6222 J1 HorizonBlueID64+4",
+      "scenario": "Real logistics"
+    },
+    {
       "code": "10032284",
       "desc": "Infinix X665B H6222 J1 HorizonBlueKH64+4",
       "scenario": "Real logistics"
@@ -199072,11 +199082,6 @@
     {
       "code": "10034519",
       "desc": "Infinix X665B L1 HORIZON BLUE SA 64+4",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "10031257",
-      "desc": "Infinix X665B H6222 J1 HorizonBlueID64+4",
       "scenario": "Real logistics"
     },
     {
@@ -366315,18 +366320,6 @@
       "scenario": "Real logistics"
     }
   ],
-  "12702442": [
-    {
-      "code": "12702464",
-      "desc": "121B PCBA MB H626 F5 64GB+6GB V1.2 RP",
-      "scenario": "Real logistics"
-    },
-    {
-      "code": "12702569",
-      "desc": "121B PCBA MB H626 F1 64GB+6GB V1.2 RP",
-      "scenario": "Real logistics"
-    }
-  ],
   "12702809": [
     {
       "code": "12702810",
@@ -366478,6 +366471,18 @@
     {
       "code": "12702485",
       "desc": "121B PCBA MB H6114 I10 32GB+2GB V1.2 RP",
+      "scenario": "Real logistics"
+    }
+  ],
+  "12702442": [
+    {
+      "code": "12702464",
+      "desc": "121B PCBA MB H626 F5 64GB+6GB V1.2 RP",
+      "scenario": "Real logistics"
+    },
+    {
+      "code": "12702569",
+      "desc": "121B PCBA MB H626 F1 64GB+6GB V1.2 RP",
       "scenario": "Real logistics"
     }
   ],
